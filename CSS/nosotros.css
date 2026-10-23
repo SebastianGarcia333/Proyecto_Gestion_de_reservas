@@ -1,0 +1,82 @@
+
+/* PALETA colores elegido por el equipo */
+:root {
+    --azul-oscuro: #12212E;
+    --azul-petroleo: #307082;
+    --verde-azulado: #6CA3A2;
+    --beige: #ECE7DC;
+    --naranja: #EA9940;
+}
+
+/* Fondo general de la página */
+body {
+    background-color: #ECE7DC;
+}
+
+/* TARJETAS INFORMATIVAS */
+.tarjeta-info {
+    background-color: var(#fff);
+    border: 1px solid var(--verde-azulado);
+    padding: 28px;
+    border-radius: 20px;
+    box-shadow: 0 5px 18px rgba(18, 33, 46, 0.10);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 22px rgba(18, 33, 46, 0.15);
+}
+
+.etiqueta-nosotros {
+    display: inline-block;
+    background-color: var(--azul-petroleo);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 30px;
+}
+
+.titulo-nosotros {
+    color: var(--azul-oscuro);
+    font-weight: 700;
+}
+
+/*  MISIÓN Y VISIÓN  */
+.tarjeta-mision {
+    border-top: 5px solid var(--azul-petroleo);
+    background-color: var(#fff);
+}
+
+.tarjeta-vision {
+    border-top: 5px solid var(--naranja);
+}
+
+/*  CARRUSEL */
+#carouselDestinos .carousel-control-prev-icon,
+#carouselDestinos .carousel-control-next-icon {
+    background-color: var(--azul-oscuro);
+    border-radius: 50%;
+    padding: 20px;
+}
+
+#carouselDestinos .carousel-caption {
+    background-color: rgba(18, 33, 46, 0.85);
+    border-radius: 14px;
+}
+
+
+/* TARJETAS DE PRESENTACIÓN DEL EQUIPO */
+
+.tarjeta-equipo {
+    background-color: #ECE7DC;
+    border: 2px solid #6CA3A2;
+    border-top: 5px solid #307082;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(18, 33, 46, 0.10);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+}
+
