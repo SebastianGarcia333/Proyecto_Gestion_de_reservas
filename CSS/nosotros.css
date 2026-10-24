@@ -68,7 +68,7 @@ body {
 /* TARJETAS DE PRESENTACIÓN DEL EQUIPO */
 
 .tarjeta-equipo {
-    background-color: #ECE7DC;
+    background-color: var(--beige);
     border: 2px solid #6CA3A2;
     border-top: 5px solid #307082;
     border-radius: 20px;
@@ -80,3 +80,32 @@ body {
                 border-color 0.3s ease;
 }
 
+/* Head Acerca de nosotros */
+.bg-azul{
+    background-color: var(--azul-petroleo);
+}
+
+.footer-azul{
+    background-color: var(--azul-oscuro);
+}
+
+/* Tarjetas personales */
+.tarjetas-personales{
+    background-color: var(--beige);
+    border: none;
+    border-radius: 2rem;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjetas-personales:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    
+    /* Efecto Neon */
+    box-shadow: 
+        0 0 0 2px #ff7b00, 
+        0 0 20px rgba(255, 123, 0, 0.6), 
+        0 15px 35px rgba(0, 0, 0, 0.15);
+}
