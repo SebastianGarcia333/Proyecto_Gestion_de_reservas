@@ -109,3 +109,10 @@ body {
         0 0 20px rgba(255, 123, 0, 0.6), 
         0 15px 35px rgba(0, 0, 0, 0.15);
 }
+
+
+.seccion-equipo-header {
+    max-width: 85%;
+    background: linear-gradient(135deg, rgba(52, 125, 139, 0.12) 0%, rgba(52, 125, 139, 0.04) 100%);
+    border: 1px solid rgba(52, 125, 139, 0.25);
+}
