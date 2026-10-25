@@ -1,4 +1,3 @@
-
 /* PALETA colores elegido por el equipo */
 :root {
     --azul-oscuro: #12212E;
@@ -8,9 +7,49 @@
     --naranja: #EA9940;
 }
 
-/* Fondo de la pagina */
-body {
-    background-color: #ECE7DC;
+h1{
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Toda la pagina */
+body{
+    background-color: var(--beige);
+    font-family: 'Inter', sans-serif;
+}
+/* Tamaño General */
+
+.container {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.esencia{
+    text-align: center;
+}
+
+#carouselDestinos {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#carouselDestinos:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 18px rgba(18, 33, 46, 0.10);
+}
+
+.imagen-mision-vision {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imagen-mision-vision:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 18px rgba(18, 33, 46, 0.10);
 }
 
 /* TARJETAS INFORMATIVAS */
@@ -18,7 +57,7 @@ body {
     border: 1px solid var(--verde-azulado);
     padding: 28px;
     border-radius: 20px;
-    box-shadow: 0 5px 18px rgba(18, 33, 46, 0.10);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-top: 5px solid var(--azul-petroleo);
 }
@@ -27,6 +66,21 @@ body {
     transform: translateY(-5px);
     box-shadow: 0 5px 18px rgba(18, 33, 46, 0.10);
 }
+
+.tarjeta-mision-vision {
+    border: 1px solid var(--naranja);
+    padding: 28px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid var(--naranja);
+}
+
+.tarjeta-mision-vision:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 18px rgba(18, 33, 46, 0.10);
+}
+
 
 .etiqueta-nosotros {
     display: inline-block;
@@ -41,26 +95,13 @@ body {
     font-weight: 700;
 }
 
-/*  MISIÓN Y VISIÓN  */
-.tarjeta-mision {
-    border-top: 5px solid var(--naranja);
-}
-
-.tarjeta-vision {
-    border-top: 5px solid var(--naranja);
-}
-
-/* Head Acerca de nosotros */
-.head-nosotros{
-    background-color: var(--azul-petroleo);
-}
-
-.footer-azul{
+.footer-azul {
     background-color: var(--azul-oscuro);
 }
 
+
 /* Tarjetas personales */
-.tarjetas-personales{
+.tarjetas-personales {
     background-color: var(--beige);
     border: none;
     border-radius: 2rem;
@@ -71,15 +112,24 @@ body {
 
 .tarjetas-personales:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-    
-    /* Efecto Neon */
-    box-shadow: 
-        0 0 0 2px #ff7b00, 
-        0 0 20px rgba(255, 123, 0, 0.6), 
-        0 15px 35px rgba(0, 0, 0, 0.15);
-}
+    box-shadow: 0 5px 18px rgba(18, 33, 46, 0.10);
 
+    /* Efecto Neon */
+    box-shadow:
+        0 0 10px rgba(255, 123, 0, 0.8),
+        0 0 20px rgba(255, 123, 0, 0.6),
+        0 0 30px rgba(255, 123, 0, 0.4) !important;
+    transition: all 0.3s ease;
+
+    .rounded-circle {
+        border-color: #ff7b00 !important;
+        box-shadow:
+            0 0 10px rgba(255, 123, 0, 0.8),
+            0 0 20px rgba(255, 123, 0, 0.6),
+            0 0 30px rgba(255, 123, 0, 0.4) !important;
+        transition: all 0.3s ease;
+    }
+}
 
 .seccion-equipo-header {
     max-width: 100%;
@@ -87,12 +137,12 @@ body {
     border: 1px solid rgba(52, 125, 139, 0.25);
 }
 
-
+/*  Header Acerca de nosotros */
 .hero-section {
     position: relative;
     height: 80vh;
     min-height: 600px;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 .hero-image {
@@ -101,7 +151,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
     z-index: 1;
 }
 
@@ -111,7 +161,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 2;
 }
 
@@ -119,10 +169,83 @@ body {
     z-index: 3;
 }
 
-.container{
+
+
+/* Contenedor principal de la tarjeta */
+.tarjeta-fade {
+    position: relative;
     width: 100%;
-    max-width: 1200px; 
-    margin: 0 auto;    
-    padding-left: 2rem;
-    padding-right: 2rem;
+    height: 280px;
+    background-color: var(--beige);
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--verde-azulado);
+    border-top: 5px solid var(--azul-petroleo);
+
+}
+
+.nuestros-valores{
+    text-align: center;
+}
+
+.tarjeta-fade:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 18px rgba(18, 33, 46, 0.10);
+}
+
+
+/* valores cartas*/
+.contenido-frente,
+.contenido-atras {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    transition: opacity 1.3s ease;
+}
+
+/* El frente */
+.contenido-frente {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* La parte atras*/
+.contenido-atras {
+    opacity: 0;
+    z-index: 1;
+}
+
+/* Al pasar el mouse, frente*/
+.tarjeta-fade:hover .contenido-frente {
+    opacity: 0;
+    z-index: 1;
+}
+
+/* al pasar mouse atras*/
+.tarjeta-fade:hover .contenido-atras {
+    opacity: 1;
+    z-index: 2;
+}
+
+.icono-contenedor {
+    background-color: var(--beige);
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.titulo-valor {
+    color: var(--azul-oscuro);
+}
+
+.contenido-atras p {
+    color: var(--azul-oscuro);
+}
+
+.texto-valores {
+    font-size: 18px;
 }

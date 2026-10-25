@@ -4,33 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acerca de Nosotros - Agencia de Viajes</title>
-    <!-- Bootstrap CSS -->
+    <title>Acerca de Nosotros</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/nosotros.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-<header class="hero-section text-white text-center d-flex align-items-center justify-content-center">
-    <img src="../Img/Paisaje.jpg" alt="Fondo de viajes" class="hero-image">
-    <div class="hero-overlay"></div>
-
-    <div class="container position-relative z-index-1">
-        <h1 class="display-3 fw-bold">Acerca de Nosotros</h1>
-        <p class="lead mb-4">Conoce nuestra historia, misión y el equipo apasionado detrás de tus próximos viajes.</p>
-    </div>
-</header>
+    <header class="hero-section text-white text-center d-flex align-items-center justify-content-center">
+        <img src="../Img/Paisaje.jpg" alt="Fondo de viajes" class="hero-image">
+        <div class="hero-overlay"></div>
+        <div class="head-nosotros container position-relative z-index-1">
+            <h1 class="display-3 fw-bold">Acerca de Nosotros</h1>
+            <p class="lead mb-4">Conoce nuestra historia, misión y el equipo apasionado detrás de tus próximos viajes.
+            </p>
+        </div>
+    </header>
 
     <main class="container my-5">
 
-        <section class="row align-items-center mb-5">
+        <div style="height: 50px; width: 100%;"></div>
+
+        <section class="nuestra_agencia row align-items-center mb-5">
             <div class="col-lg-6 mb-4 mb-lg-0">
                 <article class="tarjeta-info h-100">
                     <span class="etiqueta-nosotros">Nuestra agencia</span>
-
                     <h2 class="titulo-nosotros mt-3">Nuestra Historia, Tu proximo Viaje</h2>
-
-                    <p>
+                    <p class="texto-general">
                         Creemos que cada aventura comienza mucho antes de hacer las maletas.
                         Nos apasiona conectarte con destinos inolvidables y experiencias únicas diseñadas a tu medida.
                         Simplificamos cada paso de tu planificación con alternativas flexibles que se adaptan a lo que
@@ -44,113 +48,184 @@
             <div class="col-lg-6">
                 <div id="carouselDestinos" class="carousel slide shadow-sm rounded-4 overflow-hidden"
                     data-bs-ride="carousel">
-
                     <div class="carousel-inner">
                         <!-- Imagen 1 -->
                         <div class="carousel-item active">
-                            <img src="../Img/rio.jpg"
-                                class="d-block w-100 object-fit-cover" style="height: 385px;" alt="Playa tropical">
+                            <img src="../Img/rio.jpg" class="d-block w-100 object-fit-cover" style="height: 370px;"
+                                alt="Playa tropical">
                         </div>
-
                         <!-- Imagen 2 -->
                         <div class="carousel-item">
-                            <img src="../Img/Playa2.jpg"
-                                class="d-block w-100 object-fit-cover" style="height: 385px;"
+                            <img src="../Img/Playa2.jpg" class="d-block w-100 object-fit-cover" style="height: 370px;"
                                 alt="Montañas y naturaleza">
                         </div>
-
                         <!-- Imagen 3 -->
                         <div class="carousel-item">
-                            <img src="../Img/playa.jpg"
-                                class="d-block w-100 object-fit-cover" style="height: 385px;" alt="Calles de París">
+                            <img src="../Img/playa.jpg" class="d-block w-100 object-fit-cover" style="height: 370px;"
+                                alt="Calles de París">
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <section class="row align-items-stretch g-4 mb-5">
-
+        <section class="mision-vision row align-items-stretch g-4 mb-5">
             <!-- Imagen -->
             <div class="col-lg-6">
-                <div class="shadow-sm rounded-4 overflow-hidden h-100">
-                    <img src="../Img/pareja.jpg"
-                        alt="Nuestra agencia de viajes" class="w-100 h-100 object-fit-cover" style="min-height: 350px;">
+                <div class="imagen-mision-vision shadow-sm rounded-4 overflow-hidden h-100">
+                    <img src="../Img/pareja.jpg" alt="Nuestra agencia de viajes" class="w-100 h-100 object-fit-cover"
+                        style="min-height: 350px;">
                 </div>
             </div>
 
             <!-- Mision y vision -->
             <div class="col-lg-6 d-flex flex-column gap-4">
 
-                <article class="tarjeta-info tarjeta-mision flex-grow-1 p-4">
+                <article class="tarjeta-mision-vision flex-grow-1 p-4">
                     <h2 class="titulo-nosotros">Misión</h2>
-                    <p class="mb-0">
+                    <p class="texto-general">
                         Transformar la manera de explorar el mundo mediante una asesoría cercana, innovadora y
                         personalizada, guiando y acompañando a cada viajero en la creación de experiencias memorables
                         que conecten profundamente con sus sueños, gustos y necesidades.
                     </p>
                 </article>
 
-                <article class="tarjeta-info tarjeta-vision flex-grow-1 p-4">
+                <article class="tarjeta-mision-vision flex-grow-1 p-4">
                     <h2 class="titulo-nosotros">Visión</h2>
-                    <p class="mb-0">
+                    <p class="texto-general">
                         Posicionarnos como la agencia de viajes líder a nivel regional e internacional, reconocida por
                         revolucionar la forma en que las personas exploran el mundo mediante plataformas digitales
                         innovadoras, experiencias hiperpersonalizadas y un firme compromiso con el turismo sostenible.
                     </p>
                 </article>
-
             </div>
-
         </section>
+
+        <div style="height: 60px; width: 100%;"></div>
+
+
+        <!-- Valores -->
+        <section class="valores align-items-stretch g-4 mb-5">
+            <div class="d-flex flex-column gap-4">
+                <h2 class="titulo-nosotros nuestros-valores">Nuestra Esencia</h2>
+                <p class="esencia">Lo que creemos, lo que sentimos y lo que entregamos en cada destino.</p>
+                <div class="row row-cols-1 row-cols-md-3 g-4 text-start">
+                    <section class="container my-5">
+                        <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center text-center">
+                            <!-- Valor 1 -->
+                            <div class="col">
+                                <div
+                                    class="tarjeta-fade p-4 d-flex flex-column align-items-center justify-content-center">
+                                    <div
+                                        class="contenido-frente d-flex flex-column align-items-center justify-content-center">
+                                        <div class="icono-contenedor mb-3">
+                                            <img src="../Img/icono_escudo_azul (1).png" alt="Confianza"
+                                                class="img-fluid" style="width: 130px; height: 150px;">
+                                        </div>
+                                        <h3 class="card-title fw-bold titulo-valor">Confianza y Seguridad</h3>
+                                    </div>
+                                    <div
+                                        class="contenido-atras d-flex flex-column align-items-center justify-content-center">
+                                        <h4 class="h5 fw-bold titulo-valor mb-3">Confianza y Seguridad</h4>
+                                        <p class="texto-general">
+                                            Tu tranquilidad es nuestro destino. Nos encargamos de cada detalle,
+                                            desde la documentación hasta el soporte 24/7 en tu viaje.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Valor 2 -->
+                            <div class="col">
+                                <div
+                                    class="tarjeta-fade p-4 d-flex flex-column align-items-center justify-content-center">
+                                    <div
+                                        class="contenido-frente d-flex flex-column align-items-center justify-content-center">
+                                        <div class="icono-contenedor mb-3">
+                                            <img src="../Img/icono_llama_puno_azul (1).png" alt="Pasión"
+                                                class="img-fluid" style="width: 130px; height: 150px;">
+                                        </div>
+                                        <h3 class="card-title fw-bold titulo-valor">Búsqueda interior</h3>
+                                    </div>
+                                    <div
+                                        class="contenido-atras d-flex flex-column align-items-center justify-content-center">
+                                        <h4 class="h5 fw-bold titulo-valor mb-3">Búsqueda interior</h4>
+                                        <p class="texto-general">
+                                            Te inspiramos a explorar el mundo más allá de lo convencional con
+                                            experiencias auténticas y memorables.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Valor 3 -->
+                            <div class="col">
+                                <div
+                                    class="tarjeta-fade p-4 d-flex flex-column align-items-center justify-content-center">
+                                    <div
+                                        class="contenido-frente d-flex flex-column align-items-center justify-content-center">
+                                        <div class="icono-contenedor mb-3">
+                                            <img src="../Img/icono_engranaje_azul (1).png" alt="Cercanía"
+                                                class="img-fluid" style="width: 160px; height: 160px;">
+                                        </div>
+                                        <h3 class="card-title fw-bold titulo-valor">Personalización</h3>
+                                    </div>
+                                    <div
+                                        class="contenido-atras d-flex flex-column align-items-center justify-content-center">
+                                        <h4 class="h5 fw-bold titulo-valor mb-3">Personalización</h4>
+                                        <p class="texto-general">
+                                            No vendemos paquetes masivos, creamos tu viaje ideal acompañándote de
+                                            forma humana y cercana.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
     </main>
 
+
+    <div style="height: 10px; width: 100%;"></div>
 
     <div class="row my-5 pt-4">
         <div class="col-12">
             <div class="seccion-equipo-header p-4 rounded-4 shadow-sm text-center mx-auto">
-                <h2 class="titulo-nosotros display-6 fw-bold mt-2 mb-2">Nuestro Equipo de Trabajo</h2>
-                <p class="mb-0 text-muted">El equipo de desarrollo.</p>
+                <h2 class="titulo-nosotros display-6 fw-bold mt-2 mb-2">Quienes Hacen Realidad Tu Viaje</h2>
+                <p class="texto equipo">Las mentes detrás de cada experiencia inolvidable.</p>
             </div>
         </div>
     </div>
 
     <section class="container text-center my-5">
-
-        <div class="row g-4 justify-content-center mb-4">
-
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-4 justify-content-center mb-4">
             <!-- Miembro 1 -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col">
                 <div class="card h-100 tarjetas-personales">
-                    <div class="card-body d-flex flex-column p-4">
-                        <!-- Pongan su Foto -->
+                    <div class="card-body d-flex flex-column p-3">
                         <div class="mb-3">
                             <img src="Foto" alt="Foto del integrante"
                                 class="rounded-circle shadow-sm border border-2 border-white object-fit-cover"
-                                style="width: 180px; height: 180px;">
+                                style="width: 140px; height: 140px;">
                         </div>
-                        <h5 class="card-title fw-bold">Nombre</h5>
+                        <h5 class="card-title fw-bold fs-6">Nombre 1</h5>
                         <p class="text-muted small">Desarrollador Full Stack</p>
-
-                        <div class="mt-auto pt-3 border-top d-flex justify-content-center gap-2">
+                        <div class="mt-auto pt-3 border-top d-flex justify-content-center gap-2 flex-wrap">
                             <a href="https://github.com/tu-usuario" target="_blank"
                                 class="btn btn-outline-dark btn-sm d-flex align-items-center gap-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
                                     class="bi bi-github" viewBox="0 0 16 16">
                                     <path
                                         d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
                                 </svg>
-                                GitHub
                             </a>
                             <a href="https://linkedin.com/in/tu-usuario" target="_blank"
                                 class="btn btn-outline-primary btn-sm d-flex align-items-center gap-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
                                     class="bi bi-linkedin" viewBox="0 0 16 16">
                                     <path
                                         d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
                                 </svg>
-                                LinkedIn
                             </a>
                         </div>
                     </div>
@@ -158,36 +233,33 @@
             </div>
 
             <!-- Miembro 2 -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col">
                 <div class="card h-100 tarjetas-personales">
-                    <div class="card-body d-flex flex-column p-4">
-                        <!-- Imagen de perfil redonda -->
+                    <div class="card-body d-flex flex-column p-3">
                         <div class="mb-3">
-                            <img src="https://media.licdn.com/dms/image/v2/D4E03AQGDI0Wyj2Ei0Q/profile-displayphoto-scale_400_400/B4EaEdEW2GGwAg-/0/1791489046702?e=1794441600&v=beta&t=LPeeZdE7Q-Rx1q0JlryUeIwfP6tr2L_0TJ4TyHTxL7s"
-                                alt="Foto del integrante"
+                            <img src="Foto" alt="Foto del integrante"
                                 class="rounded-circle shadow-sm border border-2 border-white object-fit-cover"
-                                style="width: 180px; height: 180px;">
+                                style="width: 140px; height: 140px;">
                         </div>
-                        <h5 class="card-title fw-bold">Sebastian Garcia</h5>
-                        <p class="text-muted small">Systems Engineer | Full-stack developer
-                        <div class="mt-auto pt-3 border-top d-flex justify-content-center gap-2">
-                            <a href="https://github.com/SebastianGarcia333" target="_blank"
+                        <h5 class="card-title fw-bold fs-6">Nombre 1</h5>
+                        <p class="text-muted small">Desarrollador Full Stack</p>
+
+                        <div class="mt-auto pt-3 border-top d-flex justify-content-center gap-2 flex-wrap">
+                            <a href="https://github.com/tu-usuario" target="_blank"
                                 class="btn btn-outline-dark btn-sm d-flex align-items-center gap-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
                                     class="bi bi-github" viewBox="0 0 16 16">
                                     <path
                                         d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
                                 </svg>
-                                GitHub
                             </a>
-                            <a href="https://www.linkedin.com/in/juansebastiangg/" target="_blank"
+                            <a href="https://linkedin.com/in/tu-usuario" target="_blank"
                                 class="btn btn-outline-primary btn-sm d-flex align-items-center gap-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
                                     class="bi bi-linkedin" viewBox="0 0 16 16">
                                     <path
                                         d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
                                 </svg>
-                                LinkedIn
                             </a>
                         </div>
                     </div>
@@ -195,75 +267,68 @@
             </div>
 
             <!-- Miembro 3 -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col">
                 <div class="card h-100 tarjetas-personales">
-                    <div class="card-body d-flex flex-column p-4">
-                        <!-- Pongan su Foto -->
+                    <div class="card-body d-flex flex-column p-3">
                         <div class="mb-3">
-                            <img src="Foto" alt="Foto del integrante"
+                            <img src="https://media.licdn.com/dms/image/v2/D4E03AQGDI0Wyj2Ei0Q/profile-displayphoto-scale_400_400/B4EaEdEW2GGwAg-/0/1791489046702?e=1794441600&v=beta&t=LPeeZdE7Q-Rx1q0JlryUeIwfP6tr2L_0TJ4TyHTxL7s"
+                                alt="Foto del integrante"
                                 class="rounded-circle shadow-sm border border-2 border-white object-fit-cover"
-                                style="width: 180px; height: 180px;">
+                                style="width: 140px; height: 140px;">
                         </div>
-                        <h5 class="card-title fw-bold">Nombre</h5>
-                        <p class="text-muted small">Desarrollador Full Stack</p>
+                        <h5 class="card-title fw-bold fs-6">Sebastian Garcia</h5>
+                        <p class="text-muted small">Systems Engineer | Full-stack developer</p>
 
-                        <div class="mt-auto pt-3 border-top d-flex justify-content-center gap-2">
-                            <a href="https://github.com/tu-usuario" target="_blank"
+                        <div class="mt-auto pt-3 border-top d-flex justify-content-center gap-2 flex-wrap">
+                            <a href="https://github.com/SebastianGarcia333" target="_blank"
                                 class="btn btn-outline-dark btn-sm d-flex align-items-center gap-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
                                     class="bi bi-github" viewBox="0 0 16 16">
                                     <path
                                         d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
                                 </svg>
-                                GitHub
                             </a>
-                            <a href="https://linkedin.com/in/tu-usuario" target="_blank"
+                            <a href="https://www.linkedin.com/in/juansebastiangg/" target="_blank"
                                 class="btn btn-outline-primary btn-sm d-flex align-items-center gap-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
                                     class="bi bi-linkedin" viewBox="0 0 16 16">
                                     <path
                                         d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
                                 </svg>
-                                LinkedIn
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="row g-4 justify-content-center">
             <!-- Miembro 4 -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col">
                 <div class="card h-100 tarjetas-personales">
-                    <div class="card-body d-flex flex-column p-4">
-                        <!-- Pongan su Foto -->
+                    <div class="card-body d-flex flex-column p-3">
                         <div class="mb-3">
                             <img src="Foto" alt="Foto del integrante"
                                 class="rounded-circle shadow-sm border border-2 border-white object-fit-cover"
-                                style="width: 180px; height: 180px;">
+                                style="width: 140px; height: 140px;">
                         </div>
-                        <h5 class="card-title fw-bold">Nombre</h5>
+                        <h5 class="card-title fw-bold fs-6">Nombre 1</h5>
                         <p class="text-muted small">Desarrollador Full Stack</p>
 
-                        <div class="mt-auto pt-3 border-top d-flex justify-content-center gap-2">
+                        <div class="mt-auto pt-3 border-top d-flex justify-content-center gap-2 flex-wrap">
                             <a href="https://github.com/tu-usuario" target="_blank"
                                 class="btn btn-outline-dark btn-sm d-flex align-items-center gap-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
                                     class="bi bi-github" viewBox="0 0 16 16">
                                     <path
                                         d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
                                 </svg>
-                                GitHub
                             </a>
                             <a href="https://linkedin.com/in/tu-usuario" target="_blank"
                                 class="btn btn-outline-primary btn-sm d-flex align-items-center gap-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
                                     class="bi bi-linkedin" viewBox="0 0 16 16">
                                     <path
                                         d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
                                 </svg>
-                                LinkedIn
                             </a>
                         </div>
                     </div>
@@ -271,41 +336,39 @@
             </div>
 
             <!-- Miembro 5 -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col">
                 <div class="card h-100 tarjetas-personales">
-                    <div class="card-body d-flex flex-column p-4">
-                        <!-- Pongan su Foto -->
+                    <div class="card-body d-flex flex-column p-3">
                         <div class="mb-3">
                             <img src="Foto" alt="Foto del integrante"
                                 class="rounded-circle shadow-sm border border-2 border-white object-fit-cover"
-                                style="width: 180px; height: 180px;">
+                                style="width: 140px; height: 140px;">
                         </div>
-                        <h5 class="card-title fw-bold">Nombre</h5>
+                        <h5 class="card-title fw-bold fs-6">Nombre 1</h5>
                         <p class="text-muted small">Desarrollador Full Stack</p>
 
-                        <div class="mt-auto pt-3 border-top d-flex justify-content-center gap-2">
+                        <div class="mt-auto pt-3 border-top d-flex justify-content-center gap-2 flex-wrap">
                             <a href="https://github.com/tu-usuario" target="_blank"
                                 class="btn btn-outline-dark btn-sm d-flex align-items-center gap-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
                                     class="bi bi-github" viewBox="0 0 16 16">
                                     <path
                                         d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
                                 </svg>
-                                GitHub
                             </a>
-                            <a href="https://www.linkedin.com/in/juansebastiangg/" target="_blank"
+                            <a href="https://linkedin.com/in/tu-usuario" target="_blank"
                                 class="btn btn-outline-primary btn-sm d-flex align-items-center gap-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
                                     class="bi bi-linkedin" viewBox="0 0 16 16">
                                     <path
                                         d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
                                 </svg>
-                                LinkedIn
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
     </main>
@@ -317,7 +380,6 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
