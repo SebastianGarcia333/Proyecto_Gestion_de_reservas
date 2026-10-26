@@ -196,7 +196,7 @@ html, body {
 
 .hero-section {
     position: relative;
-    height: 80vh; /* Controla la altura del banner (puedes cambiarlo a 60vh si lo quieres más corto) */
+    height: 80vh;
     min-height: 400px;
     width: 100%;
     overflow: hidden;
@@ -206,10 +206,10 @@ html, body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Centra perfectamente la imagen */
+    transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Evita que la imagen se deforme al escalar */
+    object-fit: cover;
     z-index: 1;
 }
 
@@ -219,7 +219,7 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Capa oscura para resaltar el texto */
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 2;
 }
 
