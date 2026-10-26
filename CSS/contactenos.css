@@ -134,3 +134,17 @@ h1, h2, h3 {
 .footer-azul {
     background-color: var(--azul-oscuro);
 }
+
+.tarjeta-escribenos {
+    border: 0px solid var(--naranja);
+    padding: 28px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--beige);
+}
+ 
+.tarjeta-escribenos:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 18px rgba(18, 33, 46, 0.10);
+}
