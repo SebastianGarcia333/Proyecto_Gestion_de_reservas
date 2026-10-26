@@ -1,4 +1,4 @@
-/* PALETA colores elegido por el equipo */
+/* PALETA de colores elegida por el equipo */
 :root {
     --azul-oscuro: #12212E;
     --azul-petroleo: #307082;
@@ -7,19 +7,19 @@
     --naranja: #EA9940;
 }
 
-h1 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-}
-
-/* Toda la pagina */
-body {
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
     background-color: var(--beige);
     font-family: 'Inter', sans-serif;
 }
 
-/* Tamaño General */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
 
 .container {
     width: 100%;
@@ -29,21 +29,106 @@ body {
     padding-right: 2rem;
 }
 
+/* HEADER / BARRA DE NAVEGACIÓN SUPERIOR */
+.custom-header {
+    background-color: var(--azul-oscuro) !important;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+}
 
-/* Tarjeta Escribeno */
+.custom-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #ffffff !important;
+    letter-spacing: -0.5px;
+}
 
-.tarjeta-escribenos {
-    border: 0px solid var(--naranja);
+.custom-header .nav-link {
+    color: #e2e8f0 !important;
+    font-size: 0.95rem;
+    font-weight: 400;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    transition: color 0.2s ease-in-out;
+}
+
+.custom-header .nav-link:hover {
+    color: var(--naranja) !important;
+}
+
+.btn-explorar {
+    background: linear-gradient(135deg, #f5a638 0%, var(--naranja) 100%);
+    color: var(--azul-oscuro) !important;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: none;
+    padding: 0.55rem 1.25rem;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-explorar:hover {
+    background: linear-gradient(135deg, var(--naranja) 0%, #d8832a 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(234, 153, 64, 0.3);
+}
+
+.custom-toggler {
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+.hero-section {
+    position: relative;
+    height: 70vh;
+    min-height: 400px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.hero-section .container {
+    z-index: 3;
+    position: relative;
+}
+
+.tarjeta-mision-vision {
+    background-color: var(--beige);
+    border: 1px solid var(--naranja);
     padding: 28px;
     border-radius: 20px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: var(--beige);
+    border-top: 5px solid var(--naranja);
 }
 
-.tarjeta-escribenos:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 18px rgba(18, 33, 46, 0.10);
+.titulo-nosotros {
+    color: var(--azul-oscuro);
+    font-weight: 700;
 }
 
 .footer-azul {
