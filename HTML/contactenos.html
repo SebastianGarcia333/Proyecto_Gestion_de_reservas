@@ -17,10 +17,12 @@
 <body>
     <header class="custom-header sticky-top shadow-sm">
         <nav class="navbar navbar-expand-lg navbar-dark p-0">
-            <div class="container-fluid px-lg-5"> 
+            <div class="container-fluid px-lg-5">
                 <a class="navbar-brand custom-brand my-auto" href="index.html">Pasion viajera</a>
 
-                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPasión" aria-controls="navbarPasión" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarPasión" aria-controls="navbarPasión" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -49,8 +51,10 @@
                     <div class="d-flex justify-content-center pb-2 pb-lg-0">
                         <a href="catalogo.html" class="btn btn-explorar d-flex align-items-center gap-2">
                             <span>Explorar viajes</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-search" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                             </svg>
                         </a>
                     </div>
@@ -104,28 +108,39 @@
                 <form action="https://formspree.io/f/xwlllwdr" method="POST">
 
                     <input type="hidden" name="_accept" value="application/json">
-                    
+
                     <div class="formulario-input mb-3">
                         <label for="nombre" class="form-label">Nombre completo</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ej: Mariana Rojas" required>
+                        <input type="text" class="form-control" id="nombre" name="nombre"
+                            placeholder="Ej: Mariana Rojas">
                     </div>
 
                     <div class="formulario-input mb-3">
-                        <label for="email" class="form-label">Correo electrónico</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Ej: Mariana@hotmail.com" required>
+                        <label for="correo" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control" id="correo" name="correo"
+                            placeholder="Ej: Mariana@hotmail.com">
+                    </div>
+
+                    <div class="formulario-input mb-3">
+                        <label for="telefono" class="form-label">Teléfono</label>
+                        <input type="tel" class="form-control" id="telefono" name="telefono"
+                            placeholder="Ej: 3001234567">
                     </div>
 
                     <div class="formulario-input mb-3">
                         <label for="destino" class="form-label">Destino de interés</label>
-                        <input type="text" class="form-control" id="destino" name="destino" placeholder="Ej: San Andres, Colombia">
+                        <input type="text" class="form-control" id="destino" name="destino"
+                            placeholder="Ej: San Andres, Colombia">
                     </div>
 
                     <div class="formulario-input mb-3">
                         <label for="mensaje" class="form-label">Mensaje</label>
-                        <textarea class="form-control" id="mensaje" name="mensaje" rows="3" placeholder="..." required></textarea>
+                        <textarea class="form-control" id="mensaje" name="mensaje" rows="3" placeholder="..."
+                           ></textarea>
                     </div>
 
-                    <button type="submit" class="boton-enviar btn btn-warning text-white w-100 fw-bold">Enviar mensaje</button>
+                    <button type="submit" class="boton-enviar btn btn-warning text-white w-100 fw-bold">Enviar
+                        mensaje</button>
                 </form>
             </div>
 
@@ -140,6 +155,42 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function validarFormulario(evento) {
+            evento.preventDefault();
+
+            const nombre = document.getElementById("nombre").value.trim();
+            const correo = document.getElementById("correo").value.trim();
+            const telefono = document.getElementById("telefono").value.trim();
+            const mensaje = document.getElementById("mensaje").value.trim();
+
+            const correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo);
+            const telefonoValido = /^[0-9]{7,15}$/.test(telefono);
+
+            if (nombre === "") {
+                alert("Escribe tu nombre.");
+                return;
+            }
+            if (!correoValido) {
+                alert("Escribe un correo válido.");
+                return;
+            }
+            if (!telefonoValido) {
+                alert("El teléfono debe tener solo números (entre 7 y 15 dígitos).");
+                return;
+            }
+            if (mensaje === "") {
+                alert("Escribe un mensaje.");
+                return;
+            }
+
+            evento.target.submit();
+        }
+
+        document.querySelector("form").addEventListener("submit", validarFormulario);
+    </script>
+
 </body>
 
 </html>
