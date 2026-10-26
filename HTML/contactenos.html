@@ -15,15 +15,58 @@
 </head>
 
 <body>
-    <header class="hero-section text-white text-center d-flex align-items-center justify-content-center">
+    <header class="custom-header sticky-top shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-dark p-0">
+            <div class="container-fluid px-lg-5"> 
+                <a class="navbar-brand custom-brand my-auto" href="index.html">Pasion viajera</a>
+
+                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPasión" aria-controls="navbarPasión" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarPasión">
+                    <ul class="navbar-menu navbar-nav mx-auto mb-2 mb-lg-0 py-2 py-lg-0 text-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="catalogo.html">Catalogo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="acerca_de_nosotros.html">Acerca de Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active fw-bold" href="contactanos.html">Contactanos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="admin.html">Administrador</a>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex justify-content-center pb-2 pb-lg-0">
+                        <a href="catalogo.html" class="btn btn-explorar d-flex align-items-center gap-2">
+                            <span>Explorar viajes</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-section text-white text-center d-flex align-items-center justify-content-center">
         <img src="../Img/Paisaje.jpg" alt="Fondo de viajes" class="hero-image">
         <div class="hero-overlay"></div>
         <div class="head-nosotros container position-relative z-index-1">
             <h1 class="display-3 fw-bold">Contactanos</h1>
-            <p class="lead mb-4">.....
-            </p>
+            <p class="lead mb-4">Estamos aquí para resolver tus dudas y ayudarte a planear tu próxima aventura.</p>
         </div>
-    </header>
+    </section>
 
     <main class="container my-5">
 
