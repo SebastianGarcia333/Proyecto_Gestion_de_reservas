@@ -16,42 +16,71 @@
 
 <body>
     <header class="hero-section text-white text-center d-flex align-items-center justify-content-center">
-        <img src="../Img/Paisaje.jpg" alt="Fondo de viajes" class="hero-image">
-        <div class="hero-overlay"></div>
-        <div class="head-nosotros container position-relative z-index-1">
-            <h1 class="display-3 fw-bold">Contactanos</h1>
-            <p class="lead mb-4">.....
-            </p>
-        </div>
+
     </header>
 
     <main class="container my-5">
 
-        <div style="height: 50px; width: 100%;"></div>
+        <section class="contacto-seccion row g-4 align-items-center my-4 p-4 p-md-5 rounded-4">
 
-        <section class="mision-vision row align-items-stretch g-4 mb-5">
-            <!-- Imagen -->
-            <div class="col-lg-6">
+            <!--Contacto -->
+            <div class="col-lg-6 pe-lg-5">
+                <span class="text-uppercase small fw-semibold text-muted tracking-wider">Contáctenos</span>
+                <h2 class="display-5 fw-bold my-3 titulo-serif">Hablemos de tu próximo viaje.</h2>
+                <p class="text-muted mb-4 lead fs-6">
+                    Cuéntanos a dónde quieres ir, cuántos días tienes y qué tipo de experiencia buscas.
+                    Te respondemos con una propuesta a la medida.
+                </p>
 
+                <div class="d-flex flex-column gap-3 mt-4">
+                    <div>
+                        <span class="d-block small text-muted">Correo</span>
+                        <strong class="text-dark">correo@pasionviajera.com</strong>
+                    </div>
+                    <div>
+                        <span class="d-block small text-muted">Teléfono</span>
+                        <strong class="text-dark">+57 300 000 0000</strong>
+                    </div>
+                    <div>
+                        <span class="d-block small text-muted">Horario</span>
+                        <strong class="text-dark">Lunes a viernes, 9:00 – 18:00</strong>
+                    </div>
+                </div>
             </div>
 
-            <!-- Mision y vision -->
-            <div class="col-lg-6 d-flex flex-column gap-4">
+            <!--Formulario -->
+            <div class="tarjeta-escribenos col-md-6">
+                    <h3 class="h4 mb-3 fw-bold">Escríbenos</h3>
 
-                <article class="tarjeta-mision-vision flex-grow-1 p-4">
-                    <h2 class="titulo-nosotros">Contactanos</h2>
-                    <p class="texto-general">
-                        ...
-                    </p>
-                </article>
+                    <form action="#" method="POST">
+                        <div class="formulario-input mb-3">
+                            <label for="nombre" class="form-label">Nombre completo</label>
+                            <input type="text" class="form-control" id="nombre" placeholder="Ej: Mariana Rojas">
+                        </div>
 
+                        <div class="formulario-input mb-3">
+                            <label for="email" class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control" id="email" placeholder="Ej: Mariana@hotmail.com" >
+                        </div>
+
+                        <div class="formulario-input mb-3">
+                            <label for="destino" class="form-label">Destino de interés</label>
+                            <input type="text" class="form-control" id="destino" placeholder="Ej: San Andres, Colombia">
+                        </div>
+
+                        <div class="formulario-input mb-3">
+                            <label for="mensaje" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="mensaje" rows="3" placeholder="..."></textarea>
+                        </div>
+
+                        <button type="submit" class="boton-enviar btn btn-warning text-white w-100 fw-bold">Enviar mensaje</button>
+                    </form>
+                </div>
             </div>
+
         </section>
 
-        <div style="height: 60px; width: 100%;"></div>
-
     </main>
-
 
     <footer class="footer-azul text-white text-center py-3 mt-5">
         <div class="container">
