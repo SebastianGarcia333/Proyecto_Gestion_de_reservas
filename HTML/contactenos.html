@@ -97,34 +97,36 @@
                 </div>
             </div>
 
-            <!--Formulario -->
+            <!-- Formulario -->
             <div class="tarjeta-escribenos col-md-6">
-                    <h3 class="h4 mb-3 fw-bold">Escríbenos</h3>
+                <h3 class="h4 mb-3 fw-bold">Escríbenos</h3>
 
-                    <form action="#" method="POST">
-                        <div class="formulario-input mb-3">
-                            <label for="nombre" class="form-label">Nombre completo</label>
-                            <input type="text" class="form-control" id="nombre" placeholder="Ej: Mariana Rojas">
-                        </div>
+                <form action="https://formspree.io/f/xwlllwdr" method="POST">
 
-                        <div class="formulario-input mb-3">
-                            <label for="email" class="form-label">Correo electrónico</label>
-                            <input type="email" class="form-control" id="email" placeholder="Ej: Mariana@hotmail.com" >
-                        </div>
+                    <input type="hidden" name="_accept" value="application/json">
+                    
+                    <div class="formulario-input mb-3">
+                        <label for="nombre" class="form-label">Nombre completo</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ej: Mariana Rojas" required>
+                    </div>
 
-                        <div class="formulario-input mb-3">
-                            <label for="destino" class="form-label">Destino de interés</label>
-                            <input type="text" class="form-control" id="destino" placeholder="Ej: San Andres, Colombia">
-                        </div>
+                    <div class="formulario-input mb-3">
+                        <label for="email" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Ej: Mariana@hotmail.com" required>
+                    </div>
 
-                        <div class="formulario-input mb-3">
-                            <label for="mensaje" class="form-label">Mensaje</label>
-                            <textarea class="form-control" id="mensaje" rows="3" placeholder="..."></textarea>
-                        </div>
+                    <div class="formulario-input mb-3">
+                        <label for="destino" class="form-label">Destino de interés</label>
+                        <input type="text" class="form-control" id="destino" name="destino" placeholder="Ej: San Andres, Colombia">
+                    </div>
 
-                        <button type="submit" class="boton-enviar btn btn-warning text-white w-100 fw-bold">Enviar mensaje</button>
-                    </form>
-                </div>
+                    <div class="formulario-input mb-3">
+                        <label for="mensaje" class="form-label">Mensaje</label>
+                        <textarea class="form-control" id="mensaje" name="mensaje" rows="3" placeholder="..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="boton-enviar btn btn-warning text-white w-100 fw-bold">Enviar mensaje</button>
+                </form>
             </div>
 
         </section>
