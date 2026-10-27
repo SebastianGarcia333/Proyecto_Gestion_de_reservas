@@ -1,150 +1,179 @@
-/* PALETA de colores elegida por el equipo */
-:root {
-    --azul-oscuro: #12212E;
-    --azul-petroleo: #307082;
-    --verde-azulado: #6CA3A2;
-    --beige: #ECE7DC;
-    --naranja: #EA9940;
+/* Estilos propios de Contáctanos; la paleta, el header, la portada y el pie están en base.css */
+
+/* Las dos columnas cambian a la vez, desde 992 px; por debajo el formulario ocupa todo el ancho */
+.contacto {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(2rem, 6vw, 5.5rem);
+    align-items: start;
 }
 
-html, body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-    background-color: var(--beige);
-    font-family: 'Inter', sans-serif;
+.contacto-texto {
+    display: grid;
+    gap: 1.25rem;
+    position: sticky;
+    top: 100px;
 }
 
-h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    letter-spacing: 0.5px;
+.datos-contacto {
+    display: grid;
+    gap: 1.1rem;
+    margin: 0.75rem 0 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--linea);
 }
 
-.container {
-    width: 100%;
-    max-width: 1250px;
-    margin: 0 auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
+.datos-contacto div {
+    display: grid;
+    gap: 0.1rem;
 }
 
-/* HEADER / BARRA DE NAVEGACIÓN SUPERIOR */
-.custom-header {
-    background-color: var(--azul-oscuro) !important;
-    padding-top: 0.8rem;
-    padding-bottom: 0.8rem;
-}
-
-.custom-brand {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: #ffffff !important;
-    letter-spacing: -0.5px;
-}
-
-.custom-header .nav-link {
-    color: #e2e8f0 !important;
-    font-size: 0.95rem;
+.datos-contacto dt {
+    font-size: 0.875rem;
     font-weight: 400;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-    transition: color 0.2s ease-in-out;
+    color: var(--texto-suave);
 }
 
-.custom-header .nav-link:hover {
-    color: var(--naranja) !important;
-}
-
-.btn-explorar {
-    background: linear-gradient(135deg, #f5a638 0%, var(--naranja) 100%);
-    color: var(--azul-oscuro) !important;
+.datos-contacto dd {
+    margin: 0;
+    font-size: 1.06rem;
     font-weight: 600;
-    font-size: 0.95rem;
-    border: none;
-    padding: 0.55rem 1.25rem;
-    border-radius: 6px;
-    transition: all 0.2s ease-in-out;
 }
 
-.btn-explorar:hover {
-    background: linear-gradient(135deg, var(--naranja) 0%, #d8832a 100%);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 10px rgba(234, 153, 64, 0.3);
-}
-
-.custom-toggler {
-    border-color: rgba(255, 255, 255, 0.2) !important;
-}
-
-.custom-toggler .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-}
-
-.hero-section {
-    position: relative;
-    height: 70vh;
-    min-height: 400px;
-    width: 100%;
-    overflow: hidden;
-}
-
-.hero-image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 2;
-}
-
-.hero-section .container {
-    z-index: 3;
-    position: relative;
-}
-
-.tarjeta-mision-vision {
-    background-color: var(--beige);
-    border: 1px solid var(--naranja);
-    padding: 28px;
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-top: 5px solid var(--naranja);
-}
-
-.titulo-nosotros {
-    color: var(--azul-oscuro);
-    font-weight: 700;
-}
-
-.footer-azul {
-    background-color: var(--azul-oscuro);
-}
-
+/* Formulario: conserva la sombra pero ya no se mueve al pasar el ratón */
 .tarjeta-escribenos {
-    border: 0px solid var(--naranja);
-    padding: 28px;
+    display: grid;
+    gap: 1.4rem;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    background-color: var(--papel);
+    border: 1px solid var(--linea);
     border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: var(--beige);
+    box-shadow: 0 14px 34px rgba(18, 33, 46, 0.1);
 }
- 
-.tarjeta-escribenos:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 18px rgba(18, 33, 46, 0.10);
+
+.campo-destino {
+    display: grid;
+    gap: 0.4rem;
+    padding-bottom: 0.4rem;
+}
+
+.campo-destino label {
+    font-family: var(--fuente-titulos);
+    font-style: italic;
+    font-weight: 600;
+    font-size: clamp(1.6rem, 3.4vw, 2.1rem);
+    line-height: 1.2;
+}
+
+.campo-destino input {
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid var(--naranja);
+    border-radius: 0;
+    background: transparent;
+    padding: 0.5rem 0 0.6rem;
+    font-size: clamp(1.25rem, 2.4vw, 1.5rem);
+    font-weight: 500;
+    color: var(--azul-oscuro);
+}
+
+.campo-destino input::placeholder {
+    color: rgba(18, 33, 46, 0.4);
+}
+
+.campo-destino input:focus {
+    outline: none;
+    border-bottom-color: var(--azul-petroleo);
+}
+
+.campo-destino .ayuda {
+    font-size: 0.875rem;
+    color: var(--texto-suave);
+}
+
+.campos {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 1.1rem;
+}
+
+.formulario-input {
+    display: grid;
+    gap: 0.4rem;
+    align-content: start;
+}
+
+.campo-ancho {
+    grid-column: 1 / -1;
+}
+
+.formulario-input label {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.formulario-input input,
+.formulario-input textarea {
+    width: 100%;
+    background-color: var(--blanco);
+    border: 1px solid rgba(18, 33, 46, 0.22);
+    border-radius: 8px;
+    padding: 0.7rem 0.8rem;
+    font-size: 1rem;
+    color: var(--azul-oscuro);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.formulario-input textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+.formulario-input input::placeholder,
+.formulario-input textarea::placeholder {
+    color: rgba(18, 33, 46, 0.55);
+}
+
+/* Foco en azul petróleo en lugar del azul de Bootstrap */
+.formulario-input input:focus,
+.formulario-input textarea:focus {
+    outline: none;
+    border-color: var(--azul-petroleo);
+    box-shadow: 0 0 0 3px rgba(48, 112, 130, 0.25);
+}
+
+.formulario-input [aria-invalid="true"] {
+    border-color: var(--error);
+}
+
+.mensaje-error {
+    font-size: 0.85rem;
+    color: var(--error);
+}
+
+.mensaje-error:empty {
+    display: none;
+}
+
+.boton-enviar {
+    width: 100%;
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
+    font-size: 1rem;
+}
+
+@media (max-width: 991.98px) {
+    .contacto {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .contacto-texto {
+        position: static;
+    }
+}
+
+@media (max-width: 560px) {
+    .campos {
+        grid-template-columns: minmax(0, 1fr);
+    }
 }

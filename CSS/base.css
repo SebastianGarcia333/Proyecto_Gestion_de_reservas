@@ -1,0 +1,306 @@
+/* Estilos compartidos por todas las páginas: se carga después de Bootstrap y antes del CSS de cada página */
+
+/* PALETA de colores elegida por el equipo */
+:root {
+    --azul-oscuro: #12212E;
+    --azul-petroleo: #307082;
+    --verde-azulado: #6CA3A2;
+    --beige: #ECE7DC;
+    --naranja: #EA9940;
+    --naranja-hover: #d8832a;
+    --blanco: #ffffff;
+    --texto-suave: rgba(18, 33, 46, 0.75);
+    --linea: rgba(18, 33, 46, 0.14);
+    --papel: rgba(255, 255, 255, 0.55);
+    --error: #9B2C1F;
+    --fuente-titulos: 'Playfair Display', Georgia, serif;
+    --fuente-texto: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--beige);
+    color: var(--azul-oscuro);
+    font-family: var(--fuente-texto);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+    line-height: 1.15;
+    text-wrap: balance;
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+:focus-visible {
+    outline: 2px solid var(--naranja);
+    outline-offset: 3px;
+}
+
+.envoltura {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+
+/* HEADER / BARRA DE NAVEGACIÓN SUPERIOR */
+.custom-header {
+    background-color: var(--azul-oscuro);
+}
+
+.custom-header .navbar {
+    min-height: 68px;
+}
+
+.custom-brand {
+    font-family: var(--fuente-titulos);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--blanco) !important;
+    letter-spacing: -0.3px;
+}
+
+.custom-header .nav-link {
+    color: #e2e8f0 !important;
+    font-size: 0.95rem;
+    padding: 1.4rem 0.75rem 1.2rem !important;
+    border-bottom: 3px solid transparent;
+    transition: color 0.2s ease;
+}
+
+.custom-header .nav-link:hover {
+    color: var(--naranja) !important;
+}
+
+/* Página actual: el enlace lleva aria-current="page" */
+.custom-header .nav-link[aria-current="page"] {
+    color: var(--naranja) !important;
+    border-bottom-color: var(--naranja);
+}
+
+.custom-toggler {
+    border: 1px solid rgba(236, 231, 220, 0.3) !important;
+    color: var(--beige);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.4rem 0.8rem;
+}
+
+.custom-toggler:focus {
+    box-shadow: none;
+}
+
+@media (max-width: 991.98px) {
+    .custom-header .navbar-collapse {
+        padding-bottom: 1rem;
+    }
+
+    .custom-header .nav-link {
+        padding: 0.75rem 0.25rem !important;
+        border-bottom: 1px solid rgba(236, 231, 220, 0.12);
+    }
+
+    .custom-header .nav-link[aria-current="page"] {
+        border-bottom-color: rgba(236, 231, 220, 0.12);
+        font-weight: 600;
+    }
+
+    .custom-header .btn-explorar {
+        margin-top: 1rem;
+        width: 100%;
+    }
+}
+
+/* Botón de acción principal: naranja con texto azul oscuro (contraste 7,1:1) */
+.btn-explorar,
+.boton-principal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: var(--naranja);
+    color: var(--azul-oscuro) !important;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: none;
+    padding: 0.65rem 1.25rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-explorar:hover,
+.boton-principal:hover {
+    background-color: var(--naranja-hover);
+}
+
+/* PORTADA de cada página: misma altura en todas, título abajo a la izquierda */
+.hero-section {
+    position: relative;
+    min-height: min(62vh, 560px);
+    display: grid;
+    align-items: end;
+    color: var(--blanco);
+    overflow: hidden;
+}
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(18, 33, 46, 0.42);
+}
+
+.hero-section .envoltura {
+    position: relative;
+    z-index: 1;
+    padding-top: 7.5rem;
+    padding-bottom: 3.5rem;
+    display: grid;
+    gap: 0.9rem;
+}
+
+.hero-section h1 {
+    font-size: clamp(2.6rem, 7vw, 4.75rem);
+    letter-spacing: -0.5px;
+}
+
+.hero-section p {
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    max-width: 46ch;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+/* Secciones y textos comunes */
+.seccion {
+    padding-top: 5.5rem;
+}
+
+.seccion:last-of-type {
+    padding-bottom: 6rem;
+}
+
+.titulo-seccion {
+    font-size: clamp(1.9rem, 3.6vw, 2.6rem);
+}
+
+.texto-seccion {
+    font-size: 1.06rem;
+    color: var(--texto-suave);
+    max-width: 60ch;
+}
+
+.texto-general {
+    font-size: 1.06rem;
+    line-height: 1.7;
+    max-width: 58ch;
+}
+
+.encabezado-seccion {
+    display: grid;
+    gap: 0.6rem;
+    margin-bottom: 2.5rem;
+}
+
+@media (max-width: 640px) {
+    .seccion {
+        padding-top: 4rem;
+    }
+}
+
+/* PIE DE PÁGINA */
+.footer-azul {
+    background-color: var(--azul-oscuro);
+    color: rgba(236, 231, 220, 0.8);
+    font-size: 0.95rem;
+}
+
+.footer-azul .envoltura {
+    padding-top: 3.5rem;
+    padding-bottom: 1.75rem;
+    display: grid;
+    gap: 2.25rem;
+}
+
+.footer-columnas {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 2rem;
+}
+
+.footer-marca {
+    font-family: var(--fuente-titulos);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--blanco);
+    margin-bottom: 0.5rem;
+}
+
+.footer-azul h2 {
+    font-family: var(--fuente-texto);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--naranja);
+    margin-bottom: 0.6rem;
+}
+
+.footer-azul ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.4rem;
+}
+
+.footer-azul a {
+    color: rgba(236, 231, 220, 0.8);
+    text-decoration: none;
+}
+
+.footer-azul a:hover {
+    color: var(--naranja);
+}
+
+.footer-base {
+    border-top: 1px solid rgba(236, 231, 220, 0.16);
+    padding-top: 1.1rem;
+    font-size: 0.875rem;
+}
+
+@media (max-width: 720px) {
+    .footer-columnas {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}

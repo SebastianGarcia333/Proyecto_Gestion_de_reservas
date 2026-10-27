@@ -1,307 +1,309 @@
-/* PALETA colores elegido por el equipo */
-:root {
-    --azul-oscuro: #12212E;
-    --azul-petroleo: #307082;
-    --verde-azulado: #6CA3A2;
-    --beige: #ECE7DC;
-    --naranja: #EA9940;
+/* Estilos propios de Acerca de nosotros; la paleta, el header, la portada y el pie están en base.css */
+
+/* Nuestra agencia */
+.agencia {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: center;
 }
 
-h1{
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    letter-spacing: 0.5px;
+.agencia-texto {
+    display: grid;
+    gap: 1.1rem;
 }
-
-/* Toda la pagina */
-
-html, body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-    background-color: var(--beige);
-    font-family: 'Inter', sans-serif;
-}
-/* Tamaño General */
-
-.container {
-    width: 100%;
-    max-width: 1250px;
-    margin: 0 auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-
-.esencia{
-    text-align: center;
-}
-
-#carouselDestinos {
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#carouselDestinos:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 18px rgba(18, 33, 46, 0.10);
-}
-
-.imagen-mision-vision {
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.imagen-mision-vision:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 18px rgba(18, 33, 46, 0.10);
-}
-
-/* TARJETAS INFORMATIVAS */
-.tarjeta-info {
-    border: 1px solid var(--verde-azulado);
-    padding: 28px;
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-top: 5px solid var(--azul-petroleo);
-}
-
-.tarjeta-info:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 18px rgba(18, 33, 46, 0.10);
-}
-
-.tarjeta-mision-vision {
-    border: 1px solid var(--naranja);
-    padding: 28px;
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-top: 5px solid var(--naranja);
-}
-
-.tarjeta-mision-vision:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 18px rgba(18, 33, 46, 0.10);
-}
-
 
 .etiqueta-nosotros {
-    display: inline-block;
-    background-color: var(--azul-petroleo);
-    color: #ffffff;
-    padding: 8px 16px;
-    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--azul-petroleo);
 }
 
-.titulo-nosotros {
-    color: var(--azul-oscuro);
-    font-weight: 700;
-}
-
-.footer-azul {
+.carrusel {
+    border-radius: 18px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    max-width: 100%;
     background-color: var(--azul-oscuro);
 }
 
-
-/* Tarjetas personales */
-.tarjetas-personales {
-    background-color: var(--beige);
-    border: none;
-    border-radius: 2rem;
-
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.carrusel .carousel-inner,
+.carrusel .carousel-item,
+.carrusel .carousel-item img {
+    height: 100%;
 }
 
-.tarjetas-personales:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 18px rgba(18, 33, 46, 0.10);
-
-    /* Efecto Neon */
-    box-shadow:
-        0 0 10px rgba(255, 123, 0, 0.8),
-        0 0 20px rgba(255, 123, 0, 0.6),
-        0 0 30px rgba(255, 123, 0, 0.4) !important;
-    transition: all 0.3s ease;
-
-    .rounded-circle {
-        border-color: #ff7b00 !important;
-        box-shadow:
-            0 0 10px rgba(255, 123, 0, 0.8),
-            0 0 20px rgba(255, 123, 0, 0.6),
-            0 0 30px rgba(255, 123, 0, 0.4) !important;
-        transition: all 0.3s ease;
-    }
+.carrusel .carousel-item img {
+    object-fit: cover;
 }
 
-.seccion-equipo-header {
-    max-width: 100%;
-    background: linear-gradient(135deg, rgba(52, 125, 139, 0.12) 0%, rgba(52, 125, 139, 0.04) 100%);
-    border: 1px solid rgba(52, 125, 139, 0.25);
+.carrusel .carousel-indicators {
+    justify-content: flex-start;
+    margin: 0 0 0.9rem 1rem;
 }
 
-/*  Header Acerca de nosotros */
-.custom-header {
-    background-color: var(--azul-oscuro) !important;
-    padding-top: 0.8rem;
-    padding-bottom: 0.8rem;
+/* Misión y visión */
+.mision-vision {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: stretch;
 }
 
-.custom-brand {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: #ffffff !important;
-    letter-spacing: -0.5px;
-}
-
-.custom-header .nav-link {
-    color: #e2e8f0 !important;
-    font-size: 0.95rem;
-    font-weight: 400;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-    transition: color 0.2s ease-in-out;
-}
-
-.custom-header .nav-link:hover {
-    color: var(--naranja) !important;
-}
-
-.btn-explorar {
-    background: linear-gradient(135deg, #f5a638 0%, var(--naranja) 100%);
-    color: var(--azul-oscuro) !important;
-    font-weight: 600;
-    font-size: 0.95rem;
-    border: none;
-    padding: 0.55rem 1.25rem;
-    border-radius: 6px;
-    transition: all 0.2s ease-in-out;
-}
-
-.btn-explorar:hover {
-    background: linear-gradient(135deg, var(--naranja) 0%, #d8832a 100%);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 10px rgba(234, 153, 64, 0.3);
-}
-
-.custom-toggler {
-    border-color: rgba(255, 255, 255, 0.2) !important;
-}
-
-.custom-toggler .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-}
-
-.hero-section {
-    position: relative;
-    height: 80vh;
-    min-height: 400px;
-    width: 100%;
+.imagen-mision-vision {
+    border-radius: 18px;
     overflow: hidden;
+    min-height: 380px;
 }
 
-.hero-image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.imagen-mision-vision img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 1;
 }
 
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 2;
+.mision-vision-textos {
+    display: grid;
+    align-content: center;
 }
 
-.hero-section .container {
-    z-index: 3;
-    position: relative;
+.mision-vision-textos article {
+    display: grid;
+    gap: 0.6rem;
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
 }
-/* Contenedor principal de la tarjeta */
-.tarjeta-fade {
+
+.mision-vision-textos article + article {
+    border-top: 1px solid var(--linea);
+}
+
+.mision-vision-textos h3 {
+    font-size: 1.9rem;
+}
+
+/* Valores */
+.valores {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 3rem;
+}
+
+.valor {
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: 0.25rem 1.1rem;
+    align-items: start;
+}
+
+.valor img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    grid-row: span 2;
+}
+
+.valor h3 {
+    font-size: 1.4rem;
+    padding-top: 0.25rem;
+}
+
+.valor p {
+    color: var(--texto-suave);
+    font-size: 0.97rem;
+    line-height: 1.65;
+}
+
+/* Equipo: fichas sin caja, foto cuadrada con esquinas redondeadas */
+.fichas {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 2.75rem 1.75rem;
+}
+
+.ficha {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+}
+
+.ficha-foto {
     position: relative;
     width: 100%;
-    height: 280px;
-    background-color: var(--beige);
-    border-radius: 2rem;
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid var(--verde-azulado);
-    border-top: 5px solid var(--azul-petroleo);
-
+    background-color: var(--azul-petroleo);
+    margin-bottom: 1.1rem;
 }
 
-.nuestros-valores{
-    text-align: center;
-}
-
-.tarjeta-fade:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 18px rgba(18, 33, 46, 0.10);
-}
-
-
-/* valores cartas*/
-.contenido-frente,
-.contenido-atras {
-    position: absolute;
-    top: 0;
-    left: 0;
+.ficha-foto img {
     width: 100%;
     height: 100%;
-    padding: 1.5rem;
-    transition: opacity 1.3s ease;
+    object-fit: cover;
+    transition: transform 0.45s ease;
 }
 
-/* El frente */
-.contenido-frente {
-    opacity: 1;
-    z-index: 2;
+/* Marco interior: línea fina en reposo, naranja al pasar el ratón o al llegar con el teclado */
+.ficha-foto::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: inset 0 0 0 1px var(--linea);
+    transition: box-shadow 0.25s ease;
+    pointer-events: none;
 }
 
-/* La parte atras*/
-.contenido-atras {
-    opacity: 0;
-    z-index: 1;
+.ficha:hover .ficha-foto img,
+.ficha:focus-within .ficha-foto img {
+    transform: scale(1.05);
 }
 
-/* Al pasar el mouse, frente*/
-.tarjeta-fade:hover .contenido-frente {
-    opacity: 0;
-    z-index: 1;
+.ficha:hover .ficha-foto::after,
+.ficha:focus-within .ficha-foto::after {
+    box-shadow: inset 0 0 0 3px var(--naranja);
 }
 
-/* al pasar mouse atras*/
-.tarjeta-fade:hover .contenido-atras {
-    opacity: 1;
-    z-index: 2;
+.ficha-iniciales {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    color: var(--blanco);
+    font-family: var(--fuente-titulos);
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    font-weight: 600;
 }
 
-.icono-contenedor {
-    background-color: var(--beige);
-    padding: 15px;
-    border-radius: 12px;
+.ficha h3 {
+    font-family: var(--fuente-texto);
+    font-size: 1.06rem;
+    font-weight: 600;
+    line-height: 1.3;
 }
 
-.titulo-valor {
+.ficha-rol {
+    font-size: 0.9rem;
+    line-height: 1.45;
+    color: var(--texto-suave);
+    margin-top: 0.25rem;
+}
+
+.ficha-redes {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: auto;
+    padding-top: 1rem;
+}
+
+.ficha-redes a {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(18, 33, 46, 0.22);
+    border-radius: 10px;
     color: var(--azul-oscuro);
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-.contenido-atras p {
-    color: var(--azul-oscuro);
+.ficha-redes a:hover {
+    background-color: var(--azul-oscuro);
+    border-color: var(--azul-oscuro);
+    color: var(--beige);
 }
 
-.texto-valores {
-    font-size: 18px;
+.ficha-redes svg {
+    width: 17px;
+    height: 17px;
+    fill: currentColor;
+}
+
+@media (max-width: 1100px) {
+    .fichas {
+        gap: 2.5rem 1.25rem;
+    }
+}
+
+/* Tableta: tres fichas arriba y dos centradas abajo */
+@media (max-width: 860px) {
+    .agencia,
+    .mision-vision {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .imagen-mision-vision {
+        min-height: 260px;
+    }
+
+    .valores {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2rem;
+    }
+
+    .fichas {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+
+    .ficha {
+        grid-column: span 2;
+    }
+
+    .ficha:nth-child(4) {
+        grid-column: 2 / span 2;
+    }
+
+    .ficha:nth-child(5) {
+        grid-column: 4 / span 2;
+    }
+
+    .ficha-foto {
+        max-width: 220px;
+    }
+}
+
+/* Móvil: una persona por fila con la foto a la izquierda */
+@media (max-width: 640px) {
+    .fichas {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+    }
+
+    .ficha,
+    .ficha:nth-child(4),
+    .ficha:nth-child(5) {
+        grid-column: auto;
+    }
+
+    .ficha {
+        display: grid;
+        grid-template-columns: 96px minmax(0, 1fr);
+        column-gap: 1.1rem;
+        align-items: start;
+        padding-top: 1.1rem;
+        padding-bottom: 1.1rem;
+        border-bottom: 1px solid var(--linea);
+    }
+
+    .ficha:first-child {
+        padding-top: 0;
+    }
+
+    .ficha-foto {
+        width: 96px;
+        margin: 0;
+        grid-row: span 4;
+        border-radius: 14px;
+    }
+
+    .ficha-iniciales {
+        font-size: 1.9rem;
+    }
+
+    .ficha-redes {
+        padding-top: 0.6rem;
+    }
 }

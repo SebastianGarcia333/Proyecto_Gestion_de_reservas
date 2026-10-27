@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acerca de Nosotros</title>
+    <title>Acerca de nosotros</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/base.css">
     <link rel="stylesheet" href="../CSS/nosotros.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,69 +16,50 @@
 </head>
 
 <body>
-    <header class="custom-header sticky-top shadow-sm">
-        <nav class="navbar navbar-expand-lg navbar-dark p-0">
-            <div class="container-fluid px-lg-5"> 
-                <a class="navbar-brand custom-brand my-auto" href="../index.html">Pasion viajera</a>
+    <header class="custom-header sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark p-0" aria-label="Principal">
+            <div class="envoltura d-flex flex-wrap align-items-center">
+                <a class="navbar-brand custom-brand my-auto me-auto me-lg-4" href="../index.html">Pasión viajera</a>
 
-                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPasión" aria-controls="navbarPasión" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false">Menú</button>
 
-                <div class="collapse navbar-collapse" id="navbarPasión">
-                    <ul class="navbar-menu navbar-nav mx-auto mb-2 mb-lg-0 py-2 py-lg-0 text-center">
-                        <li class="nav-item">
-                            <a class="nav-link" href="../index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="servicios.html">Catalogo</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="acerca_de_nosotros.html">Acerca de Nosotros</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contactenos.html">Contactanos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login_registro.html">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="CRUD.html">Administrador</a>
-                        </li>
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="servicios.html">Catálogo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="acerca_de_nosotros.html" aria-current="page">Acerca de nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contactenos.html">Contáctanos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login_registro.html">Iniciar sesión</a></li>
+                        <li class="nav-item"><a class="nav-link" href="CRUD.html">Administrador</a></li>
                     </ul>
 
-                    <div class="d-flex justify-content-center pb-2 pb-lg-0">
-                        <a href="servicios.html" class="btn btn-explorar d-flex align-items-center gap-2">
-                            <span>Explorar viajes</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                            </svg>
-                        </a>
-                    </div>
+                    <a href="servicios.html" class="btn-explorar">
+                        <span>Explorar viajes</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                        </svg>
+                    </a>
                 </div>
             </div>
         </nav>
     </header>
 
-    <section class="hero-section text-white text-center d-flex align-items-center justify-content-center">
-        <img src="../Img/Paisaje.jpg" alt="Fondo de viajes" class="hero-image">
-        <div class="hero-overlay"></div>
+    <main>
+        <section class="hero-section">
+            <img src="../Img/Paisaje.jpg" alt="Bahía de aguas turquesa con montañas verdes al fondo y una palmera en primer plano" class="hero-image">
+            <div class="hero-overlay"></div>
+            <div class="envoltura">
+                <h1>Acerca de nosotros</h1>
+                <p>Conoce nuestra historia, misión y el equipo apasionado detrás de tus próximos viajes.</p>
+            </div>
+        </section>
 
-        <div class="head-nosotros container position-relative z-index-1">
-            <h1 class="display-3 fw-bold">Acerca de Nosotros</h1>
-            <p class="lead mb-4">Conoce nuestra historia, misión y el equipo apasionado detrás de tus próximos viajes.</p>
-        </div>
-    </section>
-
-    <main class="container my-5">
-
-        <div style="height: 50px; width: 100%;"></div>
-
-        <section class="nuestra_agencia row align-items-center mb-5">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-                <article class="tarjeta-info h-100">
+        <section class="seccion">
+            <div class="envoltura agencia">
+                <div class="agencia-texto">
                     <span class="etiqueta-nosotros">Nuestra agencia</span>
-                    <h2 class="titulo-nosotros mt-3">Nuestra Historia, Tu proximo Viaje</h2>
+                    <h2 class="titulo-seccion">Nuestra historia, tu próximo viaje</h2>
                     <p class="texto-general">
                         Creemos que cada aventura comienza mucho antes de hacer las maletas.
                         Nos apasiona conectarte con destinos inolvidables y experiencias únicas diseñadas a tu medida.
@@ -85,342 +67,189 @@
                         buscas, para que solo te preocupes por disfrutar y descubrir el mundo a tu manera.
                         Tu próxima gran historia está a solo un paso de hacerse realidad.
                     </p>
-                </article>
-            </div>
+                </div>
 
-            <!-- Carrusel de destinos -->
-            <div class="col-lg-6">
-                <div id="carouselDestinos" class="carousel slide shadow-sm rounded-4 overflow-hidden"
-                    data-bs-ride="carousel">
+                <!-- Carrusel de destinos -->
+                <div id="carouselDestinos" class="carousel slide carrusel" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselDestinos" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Foto 1 de 3"></button>
+                        <button type="button" data-bs-target="#carouselDestinos" data-bs-slide-to="1" aria-label="Foto 2 de 3"></button>
+                        <button type="button" data-bs-target="#carouselDestinos" data-bs-slide-to="2" aria-label="Foto 3 de 3"></button>
+                    </div>
                     <div class="carousel-inner">
-                        <!-- Imagen 1 -->
                         <div class="carousel-item active">
-                            <img src="../Img/rio.jpg" class="d-block w-100 object-fit-cover" style="height: 370px;"
-                                alt="Playa tropical">
+                            <img src="../Img/rio.jpg" class="d-block w-100" alt="Vista aérea de Río de Janeiro al atardecer con el Pan de Azúcar">
                         </div>
-                        <!-- Imagen 2 -->
                         <div class="carousel-item">
-                            <img src="../Img/Playa2.jpg" class="d-block w-100 object-fit-cover" style="height: 370px;"
-                                alt="Montañas y naturaleza">
+                            <img src="../Img/Playa2.jpg" class="d-block w-100" alt="Vista aérea de una playa de arena blanca con agua turquesa y botes">
                         </div>
-                        <!-- Imagen 3 -->
                         <div class="carousel-item">
-                            <img src="../Img/playa.jpg" class="d-block w-100 object-fit-cover" style="height: 370px;"
-                                alt="Calles de París">
+                            <img src="../Img/playa.jpg" class="d-block w-100" alt="Playa al atardecer con el cielo naranja y sombrillas en la arena">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="mision-vision row align-items-stretch g-4 mb-5">
-            <!-- Imagen -->
-            <div class="col-lg-6">
-                <div class="imagen-mision-vision shadow-sm rounded-4 overflow-hidden h-100">
-                    <img src="../Img/pareja.jpg" alt="Nuestra agencia de viajes" class="w-100 h-100 object-fit-cover"
-                        style="min-height: 350px;">
+        <section class="seccion">
+            <div class="envoltura mision-vision">
+                <div class="imagen-mision-vision">
+                    <img src="../Img/pareja.jpg" alt="Pareja sentada frente al mar mirando Río de Janeiro">
                 </div>
-            </div>
 
-            <!-- Mision y vision -->
-            <div class="col-lg-6 d-flex flex-column gap-4">
+                <div class="mision-vision-textos">
+                    <article>
+                        <h3>Misión</h3>
+                        <p class="texto-general">
+                            Transformar la manera de explorar el mundo mediante una asesoría cercana, innovadora y
+                            personalizada, guiando y acompañando a cada viajero en la creación de experiencias memorables
+                            que conecten profundamente con sus sueños, gustos y necesidades.
+                        </p>
+                    </article>
 
-                <article class="tarjeta-mision-vision flex-grow-1 p-4">
-                    <h2 class="titulo-nosotros">Misión</h2>
-                    <p class="texto-general">
-                        Transformar la manera de explorar el mundo mediante una asesoría cercana, innovadora y
-                        personalizada, guiando y acompañando a cada viajero en la creación de experiencias memorables
-                        que conecten profundamente con sus sueños, gustos y necesidades.
-                    </p>
-                </article>
-
-                <article class="tarjeta-mision-vision flex-grow-1 p-4">
-                    <h2 class="titulo-nosotros">Visión</h2>
-                    <p class="texto-general">
-                        Posicionarnos como la agencia de viajes líder a nivel regional e internacional, reconocida por
-                        revolucionar la forma en que las personas exploran el mundo mediante plataformas digitales
-                        innovadoras, experiencias hiperpersonalizadas y un firme compromiso con el turismo sostenible.
-                    </p>
-                </article>
+                    <article>
+                        <h3>Visión</h3>
+                        <p class="texto-general">
+                            Posicionarnos como la agencia de viajes líder a nivel regional e internacional, reconocida por
+                            revolucionar la forma en que las personas exploran el mundo mediante plataformas digitales
+                            innovadoras, experiencias hiperpersonalizadas y un firme compromiso con el turismo sostenible.
+                        </p>
+                    </article>
+                </div>
             </div>
         </section>
 
-        <div style="height: 60px; width: 100%;"></div>
+        <!-- Valores: el texto queda siempre visible para poder leerlo en el móvil y con teclado -->
+        <section class="seccion">
+            <div class="envoltura">
+                <div class="encabezado-seccion">
+                    <h2 class="titulo-seccion">Nuestra esencia</h2>
+                    <p class="texto-seccion">Lo que creemos, lo que sentimos y lo que entregamos en cada destino.</p>
+                </div>
 
+                <div class="valores">
+                    <article class="valor">
+                        <img src="../Img/icono_escudo_azul (1).png" alt="">
+                        <h3>Confianza y seguridad</h3>
+                        <p>Tu tranquilidad es nuestro destino. Nos encargamos de cada detalle, desde la documentación hasta el soporte 24/7 en tu viaje.</p>
+                    </article>
+                    <article class="valor">
+                        <img src="../Img/icono_llama_puno_azul (1).png" alt="">
+                        <h3>Búsqueda interior</h3>
+                        <p>Te inspiramos a explorar el mundo más allá de lo convencional con experiencias auténticas y memorables.</p>
+                    </article>
+                    <article class="valor">
+                        <img src="../Img/icono_engranaje_azul (1).png" alt="">
+                        <h3>Personalización</h3>
+                        <p>No vendemos paquetes masivos, creamos tu viaje ideal acompañándote de forma humana y cercana.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-        <!-- Valores -->
-        <section class="valores align-items-stretch g-4 mb-5">
-            <div class="d-flex flex-column gap-4">
-                <h2 class="titulo-nosotros nuestros-valores">Nuestra Esencia</h2>
-                <p class="esencia">Lo que creemos, lo que sentimos y lo que entregamos en cada destino.</p>
-                <div class="row row-cols-1 row-cols-md-3 g-4 text-start">
-                    <section class="container my-5">
-                        <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center text-center">
-                            <!-- Valor 1 -->
-                            <div class="col">
-                                <div
-                                    class="tarjeta-fade p-4 d-flex flex-column align-items-center justify-content-center">
-                                    <div
-                                        class="contenido-frente d-flex flex-column align-items-center justify-content-center">
-                                        <div class="icono-contenedor mb-3">
-                                            <img src="../Img/icono_escudo_azul (1).png" alt="Confianza"
-                                                class="img-fluid" style="width: 130px; height: 150px;">
-                                        </div>
-                                        <h3 class="card-title fw-bold titulo-valor">Confianza y Seguridad</h3>
-                                    </div>
-                                    <div
-                                        class="contenido-atras d-flex flex-column align-items-center justify-content-center">
-                                        <h4 class="h5 fw-bold titulo-valor mb-3">Confianza y Seguridad</h4>
-                                        <p class="texto-general">
-                                            Tu tranquilidad es nuestro destino. Nos encargamos de cada detalle,
-                                            desde la documentación hasta el soporte 24/7 en tu viaje.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+        <!-- Equipo -->
+        <section class="seccion">
+            <div class="envoltura">
+                <div class="encabezado-seccion">
+                    <h2 class="titulo-seccion">Quiénes hacen realidad tu viaje</h2>
+                    <p class="texto-seccion">Las mentes detrás de cada experiencia inolvidable.</p>
+                </div>
 
-                            <!-- Valor 2 -->
-                            <div class="col">
-                                <div
-                                    class="tarjeta-fade p-4 d-flex flex-column align-items-center justify-content-center">
-                                    <div
-                                        class="contenido-frente d-flex flex-column align-items-center justify-content-center">
-                                        <div class="icono-contenedor mb-3">
-                                            <img src="../Img/icono_llama_puno_azul (1).png" alt="Pasión"
-                                                class="img-fluid" style="width: 130px; height: 150px;">
-                                        </div>
-                                        <h3 class="card-title fw-bold titulo-valor">Búsqueda interior</h3>
-                                    </div>
-                                    <div
-                                        class="contenido-atras d-flex flex-column align-items-center justify-content-center">
-                                        <h4 class="h5 fw-bold titulo-valor mb-3">Búsqueda interior</h4>
-                                        <p class="texto-general">
-                                            Te inspiramos a explorar el mundo más allá de lo convencional con
-                                            experiencias auténticas y memorables.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                <!-- Iconos de Bootstrap Icons, definidos una vez y reutilizados en cada ficha -->
+                <svg width="0" height="0" class="position-absolute" aria-hidden="true">
+                    <symbol id="icono-github" viewBox="0 0 16 16">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                    </symbol>
+                    <symbol id="icono-linkedin" viewBox="0 0 16 16">
+                        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                    </symbol>
+                </svg>
 
-                            <!-- Valor 3 -->
-                            <div class="col">
-                                <div
-                                    class="tarjeta-fade p-4 d-flex flex-column align-items-center justify-content-center">
-                                    <div
-                                        class="contenido-frente d-flex flex-column align-items-center justify-content-center">
-                                        <div class="icono-contenedor mb-3">
-                                            <img src="../Img/icono_engranaje_azul (1).png" alt="Cercanía"
-                                                class="img-fluid" style="width: 160px; height: 160px;">
-                                        </div>
-                                        <h3 class="card-title fw-bold titulo-valor">Personalización</h3>
-                                    </div>
-                                    <div
-                                        class="contenido-atras d-flex flex-column align-items-center justify-content-center">
-                                        <h4 class="h5 fw-bold titulo-valor mb-3">Personalización</h4>
-                                        <p class="texto-general">
-                                            No vendemos paquetes masivos, creamos tu viaje ideal acompañándote de
-                                            forma humana y cercana.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
+                <div class="fichas">
+                    <!-- Miembro 1 -->
+                    <article class="ficha">
+                        <div class="ficha-foto"><img src="../Img/Foto_Stevan .png" alt="Luis Stevan Quijano Perilla"></div>
+                        <h3>Luis Stevan Quijano Perilla</h3>
+                        <p class="ficha-rol">Desarrollador Full Stack</p>
+                        <div class="ficha-redes">
+                            <a href="https://github.com/STEVAN1310" target="_blank" rel="noopener" aria-label="GitHub de Luis Stevan Quijano Perilla"><svg aria-hidden="true"><use href="#icono-github"></use></svg></a>
+                            <a href="https://www.linkedin.com/in/luis-stevan-quijano-perilla/" target="_blank" rel="noopener" aria-label="LinkedIn de Luis Stevan Quijano Perilla"><svg aria-hidden="true"><use href="#icono-linkedin"></use></svg></a>
                         </div>
-                    </section>
+                    </article>
+
+                    <!-- Miembro 2 -->
+                    <article class="ficha">
+                        <div class="ficha-foto"><img src="../Img/jonathan_lozano.png" alt="Jonathan Lozano"></div>
+                        <h3>Jonathan Lozano</h3>
+                        <p class="ficha-rol">Desarrollador Full Stack</p>
+                        <div class="ficha-redes">
+                            <a href="https://github.com/Jonathan-DLC" target="_blank" rel="noopener" aria-label="GitHub de Jonathan Lozano"><svg aria-hidden="true"><use href="#icono-github"></use></svg></a>
+                            <a href="https://www.linkedin.com/in/jonathan-david-lozano-calderon-developer-full-stack/" target="_blank" rel="noopener" aria-label="LinkedIn de Jonathan Lozano"><svg aria-hidden="true"><use href="#icono-linkedin"></use></svg></a>
+                        </div>
+                    </article>
+
+                    <!-- Miembro 3 -->
+                    <article class="ficha">
+                        <div class="ficha-foto"><img src="https://media.licdn.com/dms/image/v2/D4E03AQGDI0Wyj2Ei0Q/profile-displayphoto-scale_400_400/B4EaEdEW2GGwAg-/0/1791489046702?e=1794441600&v=beta&t=LPeeZdE7Q-Rx1q0JlryUeIwfP6tr2L_0TJ4TyHTxL7s" alt="Sebastian Garcia"></div>
+                        <h3>Sebastian Garcia</h3>
+                        <p class="ficha-rol">Systems Engineer | Full-stack developer</p>
+                        <div class="ficha-redes">
+                            <a href="https://github.com/SebastianGarcia333" target="_blank" rel="noopener" aria-label="GitHub de Sebastian Garcia"><svg aria-hidden="true"><use href="#icono-github"></use></svg></a>
+                            <a href="https://www.linkedin.com/in/juansebastiangg/" target="_blank" rel="noopener" aria-label="LinkedIn de Sebastian Garcia"><svg aria-hidden="true"><use href="#icono-linkedin"></use></svg></a>
+                        </div>
+                    </article>
+
+                    <!-- Miembro 4 -->
+                    <article class="ficha">
+                        <div class="ficha-foto"><img src="../Img/fotolink1.png" alt="Alexis Rodriguez"></div>
+                        <h3>Alexis Rodriguez</h3>
+                        <p class="ficha-rol">Desarrollador Full Stack</p>
+                        <div class="ficha-redes">
+                            <a href="https://github.com/AlexisRodB" target="_blank" rel="noopener" aria-label="GitHub de Alexis Rodriguez"><svg aria-hidden="true"><use href="#icono-github"></use></svg></a>
+                            <a href="https://www.linkedin.com/in/alexisrodriguez33221/" target="_blank" rel="noopener" aria-label="LinkedIn de Alexis Rodriguez"><svg aria-hidden="true"><use href="#icono-linkedin"></use></svg></a>
+                        </div>
+                    </article>
+
+                    <!-- Miembro 5: mientras no haya foto en Img/ se muestran sus iniciales -->
+                    <article class="ficha">
+                        <div class="ficha-foto"><span class="ficha-iniciales" aria-hidden="true">JP</span></div>
+                        <h3>Jimmy Peralta</h3>
+                        <p class="ficha-rol">Desarrollador Full Stack</p>
+                        <div class="ficha-redes">
+                            <a href="https://github.com/jipegor" target="_blank" rel="noopener" aria-label="GitHub de Jimmy Peralta"><svg aria-hidden="true"><use href="#icono-github"></use></svg></a>
+                            <a href="https://www.linkedin.com/in/jimmy-andres-peralta-gordillo-data-analyst/" target="_blank" rel="noopener" aria-label="LinkedIn de Jimmy Peralta"><svg aria-hidden="true"><use href="#icono-linkedin"></use></svg></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
     </main>
 
-
-    <div style="height: 10px; width: 100%;"></div>
-
-    <div class="row my-5 pt-4">
-        <div class="col-12">
-            <div class="seccion-equipo-header p-4 rounded-4 shadow-sm text-center mx-auto">
-                <h2 class="titulo-nosotros display-6 fw-bold mt-2 mb-2">Quienes Hacen Realidad Tu Viaje</h2>
-                <p class="texto equipo">Las mentes detrás de cada experiencia inolvidable.</p>
-            </div>
-        </div>
-    </div>
-
-    <section class="container text-center my-5">
-        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-4 justify-content-center mb-4">
-            <!-- Miembro 1 -->
-            <div class="col">
-                <div class="card h-100 tarjetas-personales">
-                    <div class="card-body d-flex flex-column p-3">
-                        <div class="mb-3">
-                            <img src="../Img/Foto_Stevan .png" alt="Stevan Quijano"
-                                class="rounded-circle shadow-sm border border-2 border-white object-fit-cover"
-                                style="width: 140px; height: 140px;">
-                        </div>
-                        <h5 class="card-title fw-bold fs-6">Luis Stevan Quijano Perilla</h5>
-                        <p class="text-muted small">Desarrollador Full Stack</p>
-                        <div class="mt-auto pt-3 border-top d-flex justify-content-center gap-2 flex-wrap">
-                            <a href="https://github.com/STEVAN1310" target="_blank"
-                                class="btn btn-outline-dark btn-sm d-flex align-items-center gap-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
-                                    class="bi bi-github" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                                </svg>
-                            </a>
-                            <a href="https://www.linkedin.com/in/luis-stevan-quijano-perilla/" target="_blank"
-                                class="btn btn-outline-primary btn-sm d-flex align-items-center gap-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
-                                    class="bi bi-linkedin" viewBox="0 0 16 16">
-                                    <path
-                                        d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
+    <footer class="footer-azul">
+        <div class="envoltura">
+            <div class="footer-columnas">
+                <div>
+                    <p class="footer-marca">Pasión viajera</p>
+                    <p>Viajes a la medida, planeados contigo.</p>
+                </div>
+                <div>
+                    <h2>Explora</h2>
+                    <ul>
+                        <li><a href="servicios.html">Catálogo</a></li>
+                        <li><a href="acerca_de_nosotros.html">Acerca de nosotros</a></li>
+                        <li><a href="contactenos.html">Contáctanos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Contacto</h2>
+                    <ul>
+                        <li>correo@pasionviajera.com</li>
+                        <li>+57 300 000 0000</li>
+                        <li>Lunes a viernes, 9:00 – 18:00</li>
+                    </ul>
                 </div>
             </div>
-
-            <!-- Miembro 2 -->
-            <div class="col">
-                <div class="card h-100 tarjetas-personales">
-                    <div class="card-body d-flex flex-column p-3">
-                        <div class="mb-3">
-                            <img src="../Img/jonathan_lozano.png" alt="Jonathan Lozano"
-                                class="rounded-circle shadow-sm border border-2 border-white object-fit-cover"
-                                style="width: 140px; height: 140px;">
-                        </div>
-                        <h5 class="card-title fw-bold fs-6">Jonathan Lozano</h5>
-                        <p class="text-muted small">Desarrollador Full Stack</p>
-
-                        <div class="mt-auto pt-3 border-top d-flex justify-content-center gap-2 flex-wrap">
-                            <a href="https://github.com/Jonathan-DLC" target="_blank"
-                                class="btn btn-outline-dark btn-sm d-flex align-items-center gap-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
-                                    class="bi bi-github" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                                </svg>
-                            </a>
-                            <a href="https://www.linkedin.com/in/jonathan-david-lozano-calderon-developer-full-stack/" target="_blank"
-                                class="btn btn-outline-primary btn-sm d-flex align-items-center gap-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
-                                    class="bi bi-linkedin" viewBox="0 0 16 16">
-                                    <path
-                                        d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Miembro 3 -->
-            <div class="col">
-                <div class="card h-100 tarjetas-personales">
-                    <div class="card-body d-flex flex-column p-3">
-                        <div class="mb-3">
-                            <img src="https://media.licdn.com/dms/image/v2/D4E03AQGDI0Wyj2Ei0Q/profile-displayphoto-scale_400_400/B4EaEdEW2GGwAg-/0/1791489046702?e=1794441600&v=beta&t=LPeeZdE7Q-Rx1q0JlryUeIwfP6tr2L_0TJ4TyHTxL7s"
-                                alt="Foto del integrante"
-                                class="rounded-circle shadow-sm border border-2 border-white object-fit-cover"
-                                style="width: 140px; height: 140px;">
-                        </div>
-                        <h5 class="card-title fw-bold fs-6">Sebastian Garcia</h5>
-                        <p class="text-muted small">Systems Engineer | Full-stack developer</p>
-
-                        <div class="mt-auto pt-3 border-top d-flex justify-content-center gap-2 flex-wrap">
-                            <a href="https://github.com/SebastianGarcia333" target="_blank"
-                                class="btn btn-outline-dark btn-sm d-flex align-items-center gap-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
-                                    class="bi bi-github" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                                </svg>
-                            </a>
-                            <a href="https://www.linkedin.com/in/juansebastiangg/" target="_blank"
-                                class="btn btn-outline-primary btn-sm d-flex align-items-center gap-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
-                                    class="bi bi-linkedin" viewBox="0 0 16 16">
-                                    <path
-                                        d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Miembro 4 -->
-            <div class="col">
-                <div class="card h-100 tarjetas-personales">
-                    <div class="card-body d-flex flex-column p-3">
-                        <div class="mb-3">
-                            <img src="../Img/fotolink1.png" alt="Foto del integrante"
-                                class="rounded-circle shadow-sm border border-2 border-white object-fit-cover"
-                                style="width: 140px; height: 140px;">
-                        </div>
-                        <h5 class="card-title fw-bold fs-6">Alexis Rodriguez</h5>
-                        <p class="text-muted small">Desarrollador Full Stack</p>
-
-                        <div class="mt-auto pt-3 border-top d-flex justify-content-center gap-2 flex-wrap">
-                            <a href="https://github.com/AlexisRodB" target="_blank"
-                                class="btn btn-outline-dark btn-sm d-flex align-items-center gap-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
-                                    class="bi bi-github" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                                </svg>
-                            </a>
-                            <a href="https://www.linkedin.com/in/alexisrodriguez33221/" target="_blank"
-                                class="btn btn-outline-primary btn-sm d-flex align-items-center gap-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
-                                    class="bi bi-linkedin" viewBox="0 0 16 16">
-                                    <path
-                                        d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Miembro 5 -->
-            <div class="col">
-                <div class="card h-100 tarjetas-personales">
-                    <div class="card-body d-flex flex-column p-3">
-                        <div class="mb-3">
-                            <img src="Foto" alt="Foto del integrante"
-                                class="rounded-circle shadow-sm border border-2 border-white object-fit-cover"
-                                style="width: 140px; height: 140px;">
-                        </div>
-                        <h5 class="card-title fw-bold fs-6">Jimmy Peralta</h5>
-                        <p class="text-muted small">Desarrollador Full Stack</p>
-
-                        <div class="mt-auto pt-3 border-top d-flex justify-content-center gap-2 flex-wrap">
-                            <a href="https://github.com/jipegor" target="_blank"
-                                class="btn btn-outline-dark btn-sm d-flex align-items-center gap-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
-                                    class="bi bi-github" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                                </svg>
-                            </a>
-                            <a href="https://www.linkedin.com/in/jimmy-andres-peralta-gordillo-data-analyst/" target="_blank"
-                                class="btn btn-outline-primary btn-sm d-flex align-items-center gap-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
-                                    class="bi bi-linkedin" viewBox="0 0 16 16">
-                                    <path
-                                        d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-    </main>
-
-
-    <footer class="footer-azul text-white text-center py-3 mt-5">
-        <div class="container">
-            <p class="mb-0">&copy; footer.</p>
+            <p class="footer-base">&copy; 2026 Pasión viajera</p>
         </div>
     </footer>
 
