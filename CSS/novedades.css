@@ -1,0 +1,133 @@
+.novedades-section {
+    padding: 65px 0;
+    background-color: var(--beige);
+}
+
+/* ENCABEZADO */
+
+.novedades-encabezado {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.novedades-encabezado span {
+    color: var(--naranja);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.novedades-encabezado h2 {
+    font-family: var(--fuente-titulos);
+    color: var(--azul-oscuro);
+    font-size: 36px;
+    margin: 12px 0;
+}
+
+.novedades-encabezado p {
+    color: var(--texto-suave);
+    font-family: var(--fuente-texto);
+}
+
+/* CONTENEDOR DE TARJETAS */
+
+.novedades-section .container {
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.novedades-section .row {
+    justify-content: center;
+}
+
+/* TARJETAS */
+
+.producto-card {
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--linea);
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: var(--blanco);
+    box-shadow: 0 4px 15px rgba(18, 33, 46, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 22px rgba(18, 33, 46, 0.14);
+}
+
+/* IMÁGENES */
+
+.producto-img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    display: block;
+}
+
+/* INFORMACIÓN */
+
+.producto-card .card-body {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.producto-card .card-title {
+    font-family: var(--fuente-texto);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--azul-oscuro);
+    min-height: 42px;
+}
+
+.producto-precio {
+    color: var(--azul-petroleo);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+/* ESTRELLAS */
+
+.producto-estrellas {
+    color: var(--naranja);
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.btn-producto {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    border: 1px solid var(--azul-oscuro);
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-producto:hover {
+    background-color: var(--naranja);
+    border-color: var(--naranja);
+    color: var(--azul-oscuro);
+}
+
+/* CELULARES */
+
+@media (max-width: 576px) {
+    .novedades-section {
+        padding: 45px 0;
+    }
+
+    .novedades-encabezado h2 {
+        font-size: 28px;
+    }
+
+    .producto-img {
+        height: 200px;
+    }
+}
