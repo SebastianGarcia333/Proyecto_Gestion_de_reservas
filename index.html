@@ -1,1 +1,96 @@
-<a href="HTML/acerca_de_nosotros.html"><h1>Acerca de Nosotros</h1></a>
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de nosotros</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/base.css">
+    <link rel="stylesheet" href="../CSS/nosotros.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="custom-header sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark p-0" aria-label="Principal">
+            <div class="envoltura d-flex flex-wrap align-items-center">
+                <a class="navbar-brand custom-brand my-auto me-auto me-lg-4" href="../index.html">Pasión viajera</a>
+
+                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false">Menú</button>
+
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="servicios.html">Catálogo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../HTML/acerca_de_nosotros.html" aria-current="page">Acerca de nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../HTML/contactenos.html">Contáctanos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login_registro.html">Iniciar sesión</a></li>
+                        <li class="nav-item"><a class="nav-link" href="CRUD.html">Administrador</a></li>
+                    </ul>
+
+                    <a href="servicios.html" class="btn-explorar">
+                        <span>Explorar viajes</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <img src="../Img/Paisaje.jpg" alt="Bahía de aguas turquesa con montañas verdes al fondo y una palmera en primer plano" class="hero-image">
+            <div class="hero-overlay"></div>
+            <div class="envoltura">
+                <h1>Acerca de nosotros</h1>
+                <p>Conoce nuestra historia, misión y el equipo apasionado detrás de tus próximos viajes.</p>
+            </div>
+        </section>
+
+
+        </section>
+
+    </main>
+
+    <footer class="footer-azul">
+        <div class="envoltura">
+            <div class="footer-columnas">
+                <div>
+                    <p class="footer-marca">Pasión viajera</p>
+                    <p>Viajes a la medida, planeados contigo.</p>
+                </div>
+                <div>
+                    <h2>Explora</h2>
+                    <ul>
+                        <li><a href="servicios.html">Catálogo</a></li>
+                        <li><a href="acerca_de_nosotros.html">Acerca de nosotros</a></li>
+                        <li><a href="contactenos.html">Contáctanos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Contacto</h2>
+                    <ul>
+                        <li>correo@pasionviajera.com</li>
+                        <li>+57 300 000 0000</li>
+                        <li>Lunes a viernes, 9:00 – 18:00</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="footer-base">&copy; 2026 Pasión viajera</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
