@@ -4,43 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <meta name="description"
+        content="Pasión viajera: agencia de viajes a la medida. Reserva destinos en Colombia con abono inicial y pagos flexibles.">
+    <title>Inicio | Pasión viajera</title>
+
+    <!-- Rutas relativas a la raíz del proyecto (sin "../") para que funcionen igual en Live Server y GitHub Pages -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/base.css">
-    <link rel="stylesheet" href="../CSS/nosotros.css">
-    <link rel="stylesheet" href="CSS/filtroCatalogo.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap"
         rel="stylesheet">
-
-
+    <!-- base.css: estilos compartidos (paleta, header, hero, footer) | inicio.css: estilos propios de la Home -->
+    <link rel="stylesheet" href="CSS/base.css">
+    <link rel="stylesheet" href="CSS/inicio.css">
 </head>
 
-
-
 <body>
+    <!-- ==================== HEADER / NAVEGACIÓN ==================== -->
     <header class="custom-header sticky-top">
         <nav class="navbar navbar-expand-lg navbar-dark p-0" aria-label="Principal">
             <div class="envoltura d-flex flex-wrap align-items-center">
-                <a class="navbar-brand custom-brand my-auto me-auto me-lg-4" href="../index.html">Pasión viajera</a>
+                <a class="navbar-brand custom-brand my-auto me-auto me-lg-4" href="index.html">Pasión viajera</a>
 
                 <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false">Menú</button>
+                    data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false"
+                    aria-label="Abrir menú de navegación">Menú</button>
 
                 <div class="collapse navbar-collapse" id="menuPrincipal">
                     <ul class="navbar-nav mx-auto">
-                        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="servicios.html">Catálogo</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../HTML/acerca_de_nosotros.html"
-                                aria-current="page">Acerca de nosotros</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../HTML/contactenos.html">Contáctanos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="login_registro.html">Iniciar sesión</a></li>
-                        <li class="nav-item"><a class="nav-link" href="CRUD.html">Administrador</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html" aria-current="page">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="HTML/servicios.html">Catálogo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="HTML/acerca_de_nosotros.html">Acerca de
+                                nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="HTML/contactenos.html">Contáctanos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="HTML/login_registro.html">Iniciar sesión</a></li>
+                        <li class="nav-item"><a class="nav-link" href="HTML/CRUD.html">Administrador</a></li>
                     </ul>
 
-                    <a href="servicios.html" class="btn-explorar">
+                    <a href="HTML/servicios.html" class="btn-explorar">
                         <span>Explorar viajes</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             viewBox="0 0 16 16" aria-hidden="true">
@@ -54,8 +56,9 @@
     </header>
 
     <main>
-        <section class="hero-section">
-            <img src="../Img/Paisaje.jpg"
+        <!-- ==================== BLOQUE 1: HERO + BUSCADOR DE VIAJES ==================== -->
+        <section class="hero-section" id="inicio">
+            <img src="Img/Paisaje.jpg"
                 alt="Bahía de aguas turquesa con montañas verdes al fondo y una palmera en primer plano"
                 class="hero-image">
             <div class="hero-overlay"></div>
@@ -66,9 +69,10 @@
             </div>
         </section>
 
-        <!-- filtro de catalogo -->
-        <section class="filtroCatalogo" aria-label="Explora viajes">
+        <!-- Buscador: destino, fecha y número de viajeros (lógica en JS/inicio.js) -->
+        <section class="filtroCatalogo" aria-label="Busca tu próximo viaje">
             <div class="filtroCatalogo-barra">
+                <!-- Campo 1: destino -->
                 <div class="filtroCatalogo-campo">
                     <button class="filtroCatalogo-opcion" id="destinoToggle" type="button" aria-expanded="false"
                         aria-controls="destinoMenu">
@@ -87,26 +91,26 @@
                         </svg>
                     </button>
                     <div class="filtroCatalogo-menu filtroCatalogo-menu-destinos" id="destinoMenu" hidden>
-                        <button class="filtroCatalogo-destino" type="button" data-destino="Paraíso en San Andrés">
-                            <img src="Img/Playa2.jpg" alt="">
+                        <button class="filtroCatalogo-destino" type="button" data-destino="San Andrés">
+                            <img src="Img/Playa2.jpg" alt="" width="68" height="52" loading="lazy">
                             <span>Paraíso en San Andrés</span>
                         </button>
-                        <button class="filtroCatalogo-destino" type="button"
-                            data-destino="Aventura en la naturaleza La Guajira">
-                            <img src="Img/Paisaje.jpg" alt="">
+                        <button class="filtroCatalogo-destino" type="button" data-destino="La Guajira">
+                            <img src="Img/Paisaje.jpg" alt="" width="68" height="52" loading="lazy">
                             <span>Aventura en la naturaleza La Guajira</span>
                         </button>
-                        <button class="filtroCatalogo-destino" type="button" data-destino="Experiencia Santa Marta">
-                            <img src="Img/playa.jpg" alt="">
+                        <button class="filtroCatalogo-destino" type="button" data-destino="Santa Marta">
+                            <img src="Img/playa.jpg" alt="" width="68" height="52" loading="lazy">
                             <span>Experiencia Santa Marta</span>
                         </button>
-                        <button class="filtroCatalogo-destino" type="button" data-destino="Escapada a Cartagena">
-                            <img src="Img/rio.jpg" alt="">
+                        <button class="filtroCatalogo-destino" type="button" data-destino="Cartagena">
+                            <img src="Img/rio.jpg" alt="" width="68" height="52" loading="lazy">
                             <span>Escapada a Cartagena</span>
                         </button>
                     </div>
                 </div>
 
+                <!-- Campo 2: fecha -->
                 <div class="filtroCatalogo-campo">
                     <button class="filtroCatalogo-opcion" id="fechaToggle" type="button" aria-expanded="false"
                         aria-controls="fechaMenu">
@@ -116,8 +120,8 @@
                                 d="M3 0a.5.5 0 0 1 .5.5V1h9V.5a.5.5 0 0 1 1 0V1H15a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h1.5V.5A.5.5 0 0 1 3 0ZM1 5v10h14V5H1Zm1-3v2h12V2H2Z" />
                         </svg>
                         <span class="filtroCatalogo-textos">
-                            <span class="filtroCatalogo-etiqueta">¿Cuándo nos vamos?</span>
-                            <span class="filtroCatalogo-valor" id="fechaValor">Elige una fecha</span>
+                            <span class="filtroCatalogo-etiqueta">¿Cuándo viajas? (ida y regreso)</span>
+                            <span class="filtroCatalogo-valor" id="fechaValor">Elige tus fechas</span>
                         </span>
                         <svg class="filtroCatalogo-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"
                             aria-hidden="true">
@@ -125,11 +129,14 @@
                         </svg>
                     </button>
                     <div class="filtroCatalogo-menu filtroCatalogo-menu-fecha" id="fechaMenu" hidden>
-                        <label class="filtroCatalogo-etiqueta-fecha" for="fechaViaje">Fecha del viaje</label>
+                        <label class="filtroCatalogo-etiqueta-fecha" for="fechaViaje">Fecha de ida</label>
                         <input class="filtroCatalogo-input-fecha" id="fechaViaje" type="date">
+                        <label class="filtroCatalogo-etiqueta-fecha filtroCatalogo-etiqueta-regreso" for="fechaRegreso">Fecha de regreso</label>
+                        <input class="filtroCatalogo-input-fecha" id="fechaRegreso" type="date">
                     </div>
                 </div>
 
+                <!-- Campo 3: viajeros -->
                 <div class="filtroCatalogo-campo">
                     <button class="filtroCatalogo-opcion" id="viajerosToggle" type="button" aria-expanded="false"
                         aria-controls="viajerosMenu">
@@ -179,8 +186,9 @@
                     </div>
                 </div>
 
-                <button class="filtroCatalogo-boton" type="button">
-                    <span>Explorar viajes</span>
+                <!-- Botón de búsqueda: filtra las tarjetas de "Destinos populares" y baja hasta ellas -->
+                <button class="filtroCatalogo-boton" id="botonBuscar" type="button">
+                    <span>Buscar disponibilidad</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true">
                         <path
                             d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
@@ -188,81 +196,181 @@
                 </button>
             </div>
         </section>
-        <!-- Novedades -->
-        <section class="novedades-section">
-            <div class="container">
 
-                <div class="novedades-encabezado">
-                    <span>EXPERIENCIAS DESTACADAS</span>
-                    <h2>Viajes que te encantarán</h2>
-                    <p>Descubre nuestras experiencias favoritas</p>
+        <!-- ==================== BLOQUE 2: BENEFICIOS DE RESERVAR AQUÍ ==================== -->
+        <section class="seccion beneficios" id="beneficios" aria-labelledby="titulo-beneficios">
+            <div class="envoltura">
+                <div class="encabezado-seccion">
+                    <span class="etiqueta-seccion">Reserva con tranquilidad</span>
+                    <h2 class="titulo-seccion" id="titulo-beneficios">¿Por qué reservar con nosotros?</h2>
+                    <p class="texto-seccion">Todo lo que necesitas para planear tu viaje sin sorpresas.</p>
                 </div>
 
-                <div class="row g-4">
-
-                    <!-- San Andrés -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="card producto-card h-100">
-                            <img src="https://images.unsplash.com/photo-1592782985575-a96c6e647155?q=80&w=928&auto=format&fit=crop"
-                                class="card-img-top producto-img" alt="San Andrés">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">Paraíso en San Andrés</h5>
-                                <p class="producto-precio">$950.000</p>
-                                <div class="producto-estrellas">★★★★★</div>
-                                <a href="HTML/contactenos.html" class="btn btn-producto mt-auto">RESERVAR AHORA</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- La Guajira -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="card producto-card h-100">
-                            <img src="https://plus.unsplash.com/premium_photo-1673306773569-4d864b99c96c?q=80&w=1470&auto=format&fit=crop"
-                                class="card-img-top producto-img" alt="La Guajira">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">Aventura en La Guajira</h5>
-                                <p class="producto-precio">$750.000</p>
-                                <div class="producto-estrellas">★★★★★</div>
-                                <a href="HTML/contactenos.html" class="btn btn-producto mt-auto">RESERVAR AHORA</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Santa Marta -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="card producto-card h-100">
-                            <img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=600"
-                                class="card-img-top producto-img" alt="Santa Marta">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">Experiencia Santa Marta</h5>
-                                <p class="producto-precio">$950.000</p>
-                                <div class="producto-estrellas">★★★★★</div>
-                                <a href="HTML/contactenos.html" class="btn btn-producto mt-auto">RESERVAR AHORA</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Cartagena -->
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="card producto-card h-100">
-                            <img src="https://images.unsplash.com/photo-1714686495394-73e2bb1bbd39?q=80&w=1472&auto=format&fit=crop"
-                                class="card-img-top producto-img" alt="Cartagena">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">Escapada a Cartagena</h5>
-                                <p class="producto-precio">$850.000</p>
-                                <div class="producto-estrellas">★★★★★</div>
-                                <a href="HTML/contactenos.html" class="btn btn-producto mt-auto">RESERVAR AHORA</a>
-                            </div>
-                        </div>
-                    </div>
-
+                <div class="beneficios-grid">
+                    <article class="beneficio">
+                        <span class="beneficio-icono" aria-hidden="true">
+                            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="8" cy="8" r="6.5" />
+                                <path d="m5.2 8.2 2 2 3.6-4" />
+                            </svg>
+                        </span>
+                        <h3>Confirmación inmediata</h3>
+                        <p>Recibes la confirmación de tu reserva en el mismo momento en que pagas tu abono.</p>
+                    </article>
+                    <article class="beneficio">
+                        <span class="beneficio-icono" aria-hidden="true">
+                            <svg viewBox="0 0 16 16" fill="currentColor">
+                                <path
+                                    d="M8 0 1 2.5v5c0 4.3 2.9 7.4 7 8.5 4.1-1.1 7-4.2 7-8.5v-5L8 0Zm0 2.07 5 1.78v3.65c0 3.2-2 5.57-5 6.5-3-.93-5-3.3-5-6.5V3.85l5-1.78Z" />
+                            </svg>
+                        </span>
+                        <h3>Pagos flexibles</h3>
+                        <p>Abono inicial y el saldo en pagos quincenales o mensuales, sin comisiones ocultas.</p>
+                    </article>
+                    <article class="beneficio">
+                        <span class="beneficio-icono" aria-hidden="true">
+                            <svg viewBox="0 0 16 16" fill="currentColor">
+                                <path
+                                    d="M3 0a.5.5 0 0 1 .5.5V1h9V.5a.5.5 0 0 1 1 0V1H15a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h1.5V.5A.5.5 0 0 1 3 0ZM1 5v10h14V5H1Z" />
+                            </svg>
+                        </span>
+                        <h3>Cambios de fecha</h3>
+                        <p>Puedes reprogramar tu viaje según la disponibilidad de cupos y las condiciones del paquete.
+                        </p>
+                    </article>
+                    <article class="beneficio">
+                        <span class="beneficio-icono" aria-hidden="true">
+                            <svg viewBox="0 0 16 16" fill="currentColor">
+                                <path
+                                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.5 7a5.5 5.5 0 0 1 11 0h-1a4.5 4.5 0 0 0-9 0h-1Z" />
+                            </svg>
+                        </span>
+                        <h3>Soporte humano</h3>
+                        <p>Un equipo cercano te acompaña antes, durante y después de tu viaje.</p>
+                    </article>
                 </div>
             </div>
-            <!-- Preguntas frecuentes -->
-            <section class="container py-5">
-                <h2 class="mb-4">Preguntas frecuentes</h2>
-                <div class="accordion" id="faq">
+        </section>
 
+        <!-- ==================== BLOQUE 3: DESTINOS POPULARES ==================== -->
+        <section class="seccion destinos" id="destinos" aria-labelledby="titulo-destinos">
+            <div class="envoltura">
+                <div class="encabezado-seccion">
+                    <span class="etiqueta-seccion">Experiencias destacadas</span>
+                    <h2 class="titulo-seccion" id="titulo-destinos">Viajes que te encantarán</h2>
+                    <p class="texto-seccion">Descubre nuestras experiencias favoritas diseñadas a tu medida.</p>
+                    <!-- Mensaje del filtro (lo llena JS/inicio.js cuando se busca un destino) -->
+                    <p class="destinos-filtro" id="destinosFiltro" role="status" hidden>
+                        <span id="destinosFiltroTexto"></span>
+                        <button class="destinos-filtro-limpiar" id="destinosFiltroLimpiar" type="button">Ver todos
+                            los destinos</button>
+                    </p>
+                </div>
+
+                <div class="destinos-grid" id="destinosGrid">
+                    <article class="destino-card" data-destino="San Andrés">
+                        <img class="destino-img"
+                            src="https://images.unsplash.com/photo-1592782985575-a96c6e647155?q=80&w=928&auto=format&fit=crop"
+                            alt="Mar de siete colores en San Andrés" width="928" height="620" loading="lazy">
+                        <div class="destino-cuerpo">
+                            <h3>Paraíso en San Andrés</h3>
+                            <p class="destino-detalle">5 días · Caribe colombiano</p>
+                            <p class="destino-precio"><small>Desde</small> $950.000</p>
+                            <p class="destino-estrellas" aria-label="Calificación: 5 de 5 estrellas">★★★★★</p>
+                            <a href="HTML/contactenos.html" class="btn-destino">Reservar por $950.000</a>
+                        </div>
+                    </article>
+
+                    <article class="destino-card" data-destino="La Guajira">
+                        <img class="destino-img"
+                            src="https://plus.unsplash.com/premium_photo-1673306773569-4d864b99c96c?q=80&w=1470&auto=format&fit=crop"
+                            alt="Paisaje desértico de La Guajira junto al mar" width="1470" height="980"
+                            loading="lazy">
+                        <div class="destino-cuerpo">
+                            <h3>Aventura en La Guajira</h3>
+                            <p class="destino-detalle">4 días · Desierto y mar</p>
+                            <p class="destino-precio"><small>Desde</small> $750.000</p>
+                            <p class="destino-estrellas" aria-label="Calificación: 5 de 5 estrellas">★★★★★</p>
+                            <a href="HTML/contactenos.html" class="btn-destino">Reservar por $750.000</a>
+                        </div>
+                    </article>
+
+                    <article class="destino-card" data-destino="Santa Marta">
+                        <img class="destino-img"
+                            src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=600"
+                            alt="Playa de Santa Marta con montañas al fondo" width="600" height="400"
+                            loading="lazy">
+                        <div class="destino-cuerpo">
+                            <h3>Experiencia Santa Marta</h3>
+                            <p class="destino-detalle">4 días · Playa y Sierra Nevada</p>
+                            <p class="destino-precio"><small>Desde</small> $950.000</p>
+                            <p class="destino-estrellas" aria-label="Calificación: 5 de 5 estrellas">★★★★★</p>
+                            <a href="HTML/contactenos.html" class="btn-destino">Reservar por $950.000</a>
+                        </div>
+                    </article>
+
+                    <article class="destino-card" data-destino="Cartagena">
+                        <img class="destino-img"
+                            src="https://images.unsplash.com/photo-1714686495394-73e2bb1bbd39?q=80&w=1472&auto=format&fit=crop"
+                            alt="Calles coloridas de la ciudad amurallada de Cartagena" width="1472" height="980"
+                            loading="lazy">
+                        <div class="destino-cuerpo">
+                            <h3>Escapada a Cartagena</h3>
+                            <p class="destino-detalle">3 días · Ciudad amurallada</p>
+                            <p class="destino-precio"><small>Desde</small> $850.000</p>
+                            <p class="destino-estrellas" aria-label="Calificación: 5 de 5 estrellas">★★★★★</p>
+                            <a href="HTML/contactenos.html" class="btn-destino">Reservar por $850.000</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== BLOQUE 4: ¿CÓMO FUNCIONA? EN 3 PASOS ==================== -->
+        <section class="seccion pasos" id="como-funciona" aria-labelledby="titulo-pasos">
+            <div class="envoltura">
+                <div class="encabezado-seccion">
+                    <span class="etiqueta-seccion">Así de fácil</span>
+                    <h2 class="titulo-seccion" id="titulo-pasos">¿Cómo funciona?</h2>
+                    <p class="texto-seccion">Reservar tu próximo viaje toma solo tres pasos sencillos.</p>
+                </div>
+
+                <ol class="pasos-lista">
+                    <li class="paso">
+                        <span class="paso-numero" aria-hidden="true">1</span>
+                        <div class="paso-texto">
+                            <h3>Elige tu destino y fecha</h3>
+                            <p>Usa el buscador o explora los destinos populares y escoge cuándo quieres viajar.</p>
+                        </div>
+                    </li>
+                    <li class="paso">
+                        <span class="paso-numero" aria-hidden="true">2</span>
+                        <div class="paso-texto">
+                            <h3>Personaliza tu plan</h3>
+                            <p>Indica cuántas personas viajan y cuéntanos qué tipo de experiencia buscas.</p>
+                        </div>
+                    </li>
+                    <li class="paso">
+                        <span class="paso-numero" aria-hidden="true">3</span>
+                        <div class="paso-texto">
+                            <h3>Recibe tu confirmación</h3>
+                            <p>Paga tu abono inicial y recibe la confirmación de tu reserva al instante.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ==================== BLOQUE 5: PREGUNTAS FRECUENTES (FAQ) ==================== -->
+        <section class="seccion faq" id="preguntas-frecuentes" aria-labelledby="titulo-faq">
+            <div class="envoltura faq-layout">
+                <div class="encabezado-seccion faq-encabezado">
+                    <span class="etiqueta-seccion">Resolvemos tus dudas</span>
+                    <h2 class="titulo-seccion" id="titulo-faq">Preguntas frecuentes</h2>
+                    <p class="texto-seccion">Respuestas claras sobre reservas, pagos, cambios de fecha y cupos disponibles.</p>
+                </div>
+
+                <div class="accordion faq-acordeon" id="faq">
                     <div class="accordion-item">
                         <h3 class="accordion-header">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
@@ -272,8 +380,7 @@
                         </h3>
                         <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faq">
                             <div class="accordion-body">Eliges el destino y la fecha, pagas el abono inicial y recibes
-                                la
-                                confirmación.</div>
+                                la confirmación.</div>
                         </div>
                     </div>
 
@@ -286,8 +393,7 @@
                         </h3>
                         <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faq">
                             <div class="accordion-body">Pagas un abono inicial y el saldo en pagos quincenales o
-                                mensuales.
-                            </div>
+                                mensuales.</div>
                         </div>
                     </div>
 
@@ -299,8 +405,8 @@
                             </button>
                         </h3>
                         <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faq">
-                            <div class="accordion-body">Puedes pagar el saldo hasta 15 días antes de la fecha del viaje.
-                            </div>
+                            <div class="accordion-body">Puedes pagar el saldo hasta 15 días antes de la fecha del
+                                viaje.</div>
                         </div>
                     </div>
 
@@ -313,8 +419,7 @@
                         </h3>
                         <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faq">
                             <div class="accordion-body">Sí, según la disponibilidad de cupos y las condiciones del
-                                paquete.
-                            </div>
+                                paquete.</div>
                         </div>
                     </div>
 
@@ -327,8 +432,7 @@
                         </h3>
                         <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faq">
                             <div class="accordion-body">Revisa la política de cancelación de cada paquete. El abono
-                                puede no
-                                ser reembolsable.</div>
+                                puede no ser reembolsable.</div>
                         </div>
                     </div>
 
@@ -340,16 +444,29 @@
                             </button>
                         </h3>
                         <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faq">
-                            <div class="accordion-body">Al elegir la fecha, el sistema muestra los cupos libres para ese
-                                día.</div>
+                            <div class="accordion-body">Al elegir la fecha, el sistema muestra los cupos libres para
+                                ese día.</div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#faq7" aria-expanded="false" aria-controls="faq7">
+                                ¿Cuáles son los métodos de pago aceptados?
+                            </button>
+                        </h3>
+                        <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faq">
+                            <div class="accordion-body">Aceptamos pagos por PSE, tarjetas de crédito y débito (Visa y
+                                Mastercard), Nequi, Daviplata y transferencia bancaria.</div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </section>
-
     </main>
 
+    <!-- ==================== BLOQUE 6: FOOTER CON SOPORTE DIRECTO ==================== -->
     <footer class="footer-azul">
         <div class="envoltura">
             <div class="footer-columnas">
@@ -360,16 +477,20 @@
                 <div>
                     <h2>Explora</h2>
                     <ul>
-                        <li><a href="servicios.html">Catálogo</a></li>
-                        <li><a href="acerca_de_nosotros.html">Acerca de nosotros</a></li>
-                        <li><a href="contactenos.html">Contáctanos</a></li>
+                        <li><a href="HTML/servicios.html">Catálogo</a></li>
+                        <li><a href="HTML/acerca_de_nosotros.html">Acerca de nosotros</a></li>
+                        <li><a href="HTML/contactenos.html">Contáctanos</a></li>
                     </ul>
                 </div>
                 <div>
                     <h2>Contacto</h2>
                     <ul>
-                        <li>correo@pasionviajera.com</li>
-                        <li>+57 300 000 0000</li>
+                        <li><a href="mailto:correo@pasionviajera.com">correo@pasionviajera.com</a></li>
+                        <li><a href="https://wa.me/573000000000" target="_blank" rel="noopener">WhatsApp: +57 300 000
+                                0000</a></li>
+                        <li><a href="HTML/contactenos.html">Chat de ayuda en línea</a></li>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=Bogot%C3%A1%2C+Colombia"
+                                target="_blank" rel="noopener">Bogotá, Colombia · Ver en el mapa</a></li>
                         <li>Lunes a viernes, 9:00 – 18:00</li>
                     </ul>
                 </div>
@@ -378,8 +499,18 @@
         </div>
     </footer>
 
+    <!-- Botón flotante de soporte directo (Opción A) -->
+    <a href="https://wa.me/573000000000" class="boton-chat-ayuda" target="_blank" rel="noopener"
+        aria-label="Abrir chat de ayuda por WhatsApp">
+        <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true">
+            <path
+                d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105" />
+        </svg>
+        <span>Chat de ayuda</span>
+    </a>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="filtroCatalogo.js" defer></script>
+    <script src="JS/inicio.js" defer></script>
 </body>
 
 </html>
