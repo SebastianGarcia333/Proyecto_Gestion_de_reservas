@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/base.css">
+    <link rel="stylesheet" href="../CSS/crud.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="custom-header sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark p-0" aria-label="Principal">
+            <div class="envoltura d-flex flex-wrap align-items-center">
+                <a class="navbar-brand custom-brand my-auto me-auto me-lg-4" href="../index.html">Pasión viajera</a>
+
+                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false">Menú</button>
+
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="servicios.html">Catálogo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="acerca_de_nosotros.html">Acerca de nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contactenos.html">Contáctanos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login_registro.html">Iniciar sesión</a></li>
+                        <li class="nav-item"><a class="nav-link" href="CRUD.html" aria-current="page">Administrador</a></li>
+                    </ul>
+
+                    <a href="servicios.html" class="btn-explorar">
+                        <span>Explorar viajes</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="admin-cabecera">
+            <div class="envoltura">
+                <h1>Gestor de destinos</h1>
+                <p class="admin-resumen" id="resumen" aria-live="polite"></p>
+            </div>
+        </section>
+
+        <section class="seccion admin">
+            <div class="envoltura admin-grid">
+
+                <!-- Formulario para crear y actualizar -->
+                <form class="tarjeta-destino" id="formDestino" novalidate>
+                    <h2 id="tituloForm">Nuevo destino</h2>
+                    <input type="hidden" id="idEditando">
+
+                    <div class="formulario-input">
+                        <label for="nombre">Nombre del destino</label>
+                        <input type="text" id="nombre" placeholder="Ej: San Andrés" aria-describedby="error-nombre">
+                        <span class="mensaje-error" id="error-nombre"></span>
+                    </div>
+
+                    <div class="campos">
+                        <div class="formulario-input">
+                            <label for="categoria">Categoría</label>
+                            <select id="categoria" aria-describedby="error-categoria">
+                                <option value="">Elige una</option>
+                                <option>Playa</option>
+                                <option>Ciudad</option>
+                                <option>Montaña</option>
+                                <option>Naturaleza</option>
+                                <option>Cultura</option>
+                            </select>
+                            <span class="mensaje-error" id="error-categoria"></span>
+                        </div>
+
+                        <div class="formulario-input">
+                            <label for="duracion">Duración (días)</label>
+                            <input type="number" id="duracion" min="1" placeholder="Ej: 5" aria-describedby="error-duracion">
+                            <span class="mensaje-error" id="error-duracion"></span>
+                        </div>
+                    </div>
+
+                    <div class="formulario-input">
+                        <label for="precio">Precio base (COP)</label>
+                        <input type="number" id="precio" min="0" step="1000" placeholder="Ej: 1800000" aria-describedby="error-precio">
+                        <span class="mensaje-error" id="error-precio"></span>
+                    </div>
+
+                    <div class="formulario-input">
+                        <label for="descripcion">Descripción breve</label>
+                        <textarea id="descripcion" rows="3" placeholder="Qué hace especial a este destino" aria-describedby="error-descripcion"></textarea>
+                        <span class="mensaje-error" id="error-descripcion"></span>
+                    </div>
+
+                    <div class="formulario-input">
+                        <label for="imagen">Imagen</label>
+                        <div class="subida">
+                            <div class="subida-vista" id="vistaImagen" aria-hidden="true"></div>
+                            <input type="file" id="imagen" accept="image/*">
+                        </div>
+                        <span class="mensaje-error" id="error-imagen"></span>
+                    </div>
+
+                    <div class="acciones-form">
+                        <button type="submit" class="boton-principal" id="botonGuardar">Guardar destino</button>
+                        <button type="button" class="boton-texto" id="botonCancelar" hidden>Cancelar edición</button>
+                    </div>
+                </form>
+
+                <!-- Lista -->
+                <div class="lista-destinos">
+                    <div class="barra-filtros">
+                        <label class="visually-hidden" for="buscar">Buscar por nombre o ID</label>
+                        <input type="search" id="buscar" placeholder="Buscar por nombre o ID">
+                        <label class="visually-hidden" for="filtroCategoria">Filtrar por categoría</label>
+                        <select id="filtroCategoria">
+                            <option value="">Todas las categorías</option>
+                            <option>Playa</option>
+                            <option>Ciudad</option>
+                            <option>Montaña</option>
+                            <option>Naturaleza</option>
+                            <option>Cultura</option>
+                        </select>
+                    </div>
+
+                    <div class="tabla-envoltura">
+                        <table class="tabla-destinos">
+                            <thead>
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Destino</th>
+                                    <th scope="col">Precio base</th>
+                                    <th scope="col">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cuerpoTabla"></tbody>
+                        </table>
+                    </div>
+                    <p class="vacio" id="vacio" hidden>No hay destinos que coincidan. Cambia el filtro o agrega uno nuevo desde el formulario.</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Detalle -->
+    <div class="modal fade" id="modalDetalle" tabindex="-1" aria-labelledby="detalleTitulo" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content detalle">
+                <div class="detalle-foto" id="detalleFoto"></div>
+                <div class="detalle-cuerpo">
+                    <h2 id="detalleTitulo"></h2>
+                    <p class="detalle-meta" id="detalleMeta"></p>
+                    <p id="detalleDescripcion"></p>
+                    <button type="button" class="boton-texto" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmar laEliminación -->
+    <div class="modal fade" id="modalEliminar" tabindex="-1" aria-labelledby="eliminarTitulo" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content detalle">
+                <div class="detalle-cuerpo">
+                    <h2 id="eliminarTitulo">¿Eliminar este destino?</h2>
+                    <p id="eliminarTexto"></p>
+                    <div class="acciones-form">
+                        <button type="button" class="boton-peligro" id="confirmarEliminar">Eliminar destino</button>
+                        <button type="button" class="boton-texto" data-bs-dismiss="modal">Conservarlo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-azul">
+        <div class="envoltura">
+            <div class="footer-columnas">
+                <div>
+                    <p class="footer-marca">Pasión viajera</p>
+                    <p>Viajes a la medida, planeados contigo.</p>
+                </div>
+                <div>
+                    <h2>Explora</h2>
+                    <ul>
+                        <li><a href="servicios.html">Catálogo</a></li>
+                        <li><a href="acerca_de_nosotros.html">Acerca de nosotros</a></li>
+                        <li><a href="contactenos.html">Contáctanos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Contacto</h2>
+                    <ul>
+                        <li>correo@pasionviajera.com</li>
+                        <li>+57 300 000 0000</li>
+                        <li>Lunes a viernes, 9:00 – 18:00</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="footer-base">&copy; 2026 Pasión viajera</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../JS/crud.js"></script>
+</body>
+
+</html>
