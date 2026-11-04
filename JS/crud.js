@@ -143,6 +143,7 @@ function editar(id) {
     obtener("vistaImagen").style.backgroundImage = d.imagen ? "url(" + d.imagen + ")" : "";
 }
 
+
 function verDetalle(id) {
     let d = buscarPorId(id);
     obtener("detalleTitulo").textContent = d.nombre;
