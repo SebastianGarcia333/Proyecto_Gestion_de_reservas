@@ -388,10 +388,6 @@
     background-position: center;
 }
 
-.detalle-foto:empty {
-    display: none;
-}
-
 .detalle-foto img {
     width: 100%;
     height: 100%;
@@ -451,4 +447,18 @@
         padding-top: 2.25rem;
         padding-bottom: 2rem;
     }
+}
+
+.celda-destino {
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: 0.9rem;
+    align-items: center;
+}
+
+.miniatura {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    background: var(--azul-petroleo) center / cover no-repeat;
 }
