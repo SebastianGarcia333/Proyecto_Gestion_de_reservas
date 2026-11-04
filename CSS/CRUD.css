@@ -1,0 +1,454 @@
+
+/*
+   CABECERA DEL PANEL (sin foto: banda azul oscuro como el header)
+ */
+.admin-cabecera {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+}
+
+.admin-cabecera .envoltura {
+    display: grid;
+    gap: 0.5rem;
+    padding-top: 3rem;
+    padding-bottom: 2.75rem;
+}
+
+.admin-cabecera h1 {
+    font-size: clamp(2.2rem, 5vw, 3.25rem);
+    letter-spacing: -0.5px;
+}
+
+.admin-resumen {
+    color: rgba(236, 231, 220, 0.8);
+    font-size: 1rem;
+}
+
+.admin-resumen:empty {
+    display: none;
+}
+
+/* 
+   DISTRIBUCIÓN: formulario a la izquierda, lista a la derecha
+ */
+.admin {
+    padding-top: 3.5rem;
+    padding-bottom: 5rem;
+}
+
+.admin-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.6fr);
+    gap: clamp(1.5rem, 4vw, 3rem);
+    align-items: start;
+}
+
+/* 
+   FORMULARIO (misma tarjeta que el formulario de Contáctanos)
+ */
+.tarjeta-destino {
+    display: grid;
+    gap: 1.1rem;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    background-color: var(--papel);
+    border: 1px solid var(--linea);
+    border-radius: 20px;
+    box-shadow: 0 14px 34px rgba(18, 33, 46, 0.1);
+    position: sticky;
+    top: 90px;
+}
+
+.tarjeta-destino h2 {
+    font-size: 1.6rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--naranja);
+}
+
+.campos {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 1rem;
+}
+
+.formulario-input {
+    display: grid;
+    gap: 0.4rem;
+    align-content: start;
+}
+
+.formulario-input label {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.formulario-input input,
+.formulario-input select,
+.formulario-input textarea {
+    width: 100%;
+    background-color: var(--blanco);
+    border: 1px solid rgba(18, 33, 46, 0.22);
+    border-radius: 8px;
+    padding: 0.65rem 0.8rem;
+    font: inherit;
+    font-size: 0.95rem;
+    color: var(--azul-oscuro);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.formulario-input textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+.formulario-input input::placeholder,
+.formulario-input textarea::placeholder {
+    color: rgba(18, 33, 46, 0.5);
+}
+
+/* Foco naranja de la marca en lugar del azul de Bootstrap */
+.formulario-input input:focus,
+.formulario-input select:focus,
+.formulario-input textarea:focus,
+.barra-filtros input:focus,
+.barra-filtros select:focus {
+    outline: none;
+    border-color: var(--naranja);
+    box-shadow: 0 0 0 3px rgba(234, 153, 64, 0.25);
+}
+
+.formulario-input [aria-invalid="true"] {
+    border-color: var(--error);
+}
+
+.mensaje-error {
+    font-size: 0.85rem;
+    color: var(--error);
+}
+
+.mensaje-error:empty {
+    display: none;
+}
+
+/* Subida de imagen con vista previa */
+.subida {
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 0.9rem;
+    align-items: center;
+}
+
+.subida-vista {
+    width: 72px;
+    height: 72px;
+    border-radius: 12px;
+    border: 1px dashed rgba(18, 33, 46, 0.3);
+    background-color: var(--beige);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.subida-vista img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.subida input[type="file"] {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.subida input[type="file"]::file-selector-button {
+    margin-right: 0.75rem;
+    padding: 0.4rem 0.8rem;
+    border: 0;
+    border-radius: 6px;
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Botones del formulario y de los modales */
+.acciones-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    padding-top: 0.25rem;
+}
+
+.acciones-form .boton-principal {
+    flex: 1;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+}
+
+.boton-texto {
+    padding: 0.65rem 0.5rem;
+    border: 0;
+    background: transparent;
+    color: var(--azul-oscuro);
+    font: inherit;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+
+.boton-texto:hover {
+    color: var(--naranja-hover);
+}
+
+.boton-texto[hidden] {
+    display: none;
+}
+
+.boton-peligro {
+    padding: 0.7rem 1.25rem;
+    border: 0;
+    border-radius: 6px;
+    background-color: var(--error);
+    color: var(--blanco);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.boton-peligro:hover {
+    background-color: #7d2318;
+}
+
+/* 
+   LISTA: buscador, filtro y tabla
+ */
+.lista-destinos {
+    display: grid;
+    gap: 1.25rem;
+    min-width: 0;
+}
+
+.barra-filtros {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: 0.75rem;
+}
+
+.barra-filtros input,
+.barra-filtros select {
+    width: 100%;
+    min-height: 44px;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid rgba(18, 33, 46, 0.22);
+    border-radius: 8px;
+    background-color: var(--blanco);
+    color: var(--azul-oscuro);
+    font: inherit;
+    font-size: 0.95rem;
+}
+
+/* Contenedor con scroll horizontal para que la tabla no se corte en celular */
+.tabla-envoltura {
+    overflow-x: auto;
+    background-color: var(--papel);
+    border: 1px solid var(--linea);
+    border-radius: 16px;
+    box-shadow: 0 10px 28px rgba(18, 33, 46, 0.06);
+}
+
+.tabla-destinos {
+    width: 100%;
+    min-width: 560px;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.tabla-destinos thead th {
+    padding: 0.9rem 1rem;
+    background-color: var(--azul-oscuro);
+    color: var(--beige);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-align: left;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.tabla-destinos tbody td {
+    padding: 0.85rem 1rem;
+    border-top: 1px solid var(--linea);
+    vertical-align: middle;
+}
+
+.tabla-destinos tbody tr {
+    transition: background-color 0.15s ease;
+}
+
+.tabla-destinos tbody tr:hover {
+    background-color: rgba(234, 153, 64, 0.08);
+}
+
+/* Columna ID en gris suave y precio destacado en azul oscuro */
+.tabla-destinos tbody td:first-child {
+    color: var(--texto-suave);
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.tabla-destinos tbody td:nth-child(2) {
+    font-weight: 600;
+}
+
+.tabla-destinos tbody td:nth-child(3) {
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* Botones de acción de cada fila (los genera crud.js).
+   Sirve tanto con <button> sueltos como con las clases .boton-accion y .boton-accion-peligro */
+.tabla-destinos tbody td:last-child {
+    white-space: nowrap;
+}
+
+.tabla-destinos tbody td:last-child button + button,
+.boton-accion + .boton-accion {
+    margin-left: 0.35rem;
+}
+
+.tabla-destinos tbody td:last-child button,
+.boton-accion {
+    padding: 0.4rem 0.75rem;
+    border: 1px solid rgba(18, 33, 46, 0.22);
+    border-radius: 6px;
+    background-color: var(--blanco);
+    color: var(--azul-oscuro);
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.tabla-destinos tbody td:last-child button:hover,
+.boton-accion:hover {
+    background-color: var(--azul-oscuro);
+    border-color: var(--azul-oscuro);
+    color: var(--blanco);
+}
+
+/* Eliminar siempre en rojo para no confundirlo con Editar */
+.tabla-destinos tbody td:last-child button[data-accion="eliminar"],
+.boton-accion-peligro {
+    border-color: rgba(155, 44, 31, 0.4);
+    color: var(--error);
+}
+
+.tabla-destinos tbody td:last-child button[data-accion="eliminar"]:hover,
+.boton-accion-peligro:hover {
+    background-color: var(--error);
+    border-color: var(--error);
+    color: var(--blanco);
+}
+
+/* Mensaje cuando no hay resultados */
+.vacio {
+    padding: 2rem 1.5rem;
+    border: 1px dashed rgba(18, 33, 46, 0.25);
+    border-radius: 16px;
+    color: var(--texto-suave);
+    text-align: center;
+}
+
+.vacio[hidden] {
+    display: none;
+}
+
+/* 
+   MODALES (detalle y confirmar eliminación) con la paleta del proyecto
+ */
+.modal-content.detalle {
+    overflow: hidden;
+    background-color: var(--beige);
+    border: 1px solid var(--linea);
+    border-radius: 20px;
+    color: var(--azul-oscuro);
+}
+
+.detalle-foto {
+    aspect-ratio: 16 / 9;
+    background-color: var(--azul-oscuro);
+    background-size: cover;
+    background-position: center;
+}
+
+.detalle-foto:empty {
+    display: none;
+}
+
+.detalle-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.detalle-cuerpo {
+    display: grid;
+    gap: 0.75rem;
+    padding: 1.75rem;
+}
+
+.detalle-cuerpo h2 {
+    font-size: 1.75rem;
+}
+
+.detalle-meta {
+    color: var(--naranja-hover);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.detalle-cuerpo p {
+    color: var(--texto-suave);
+    line-height: 1.65;
+}
+
+.detalle-cuerpo .boton-texto {
+    justify-self: start;
+    padding-left: 0;
+}
+
+/* 
+   RESPONSIVE (tablet y celular)
+ */
+@media (max-width: 991.98px) {
+    .admin-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .tarjeta-destino {
+        position: static;
+    }
+}
+
+@media (max-width: 560px) {
+    .campos,
+    .barra-filtros {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .admin {
+        padding-top: 2.5rem;
+    }
+
+    .admin-cabecera .envoltura {
+        padding-top: 2.25rem;
+        padding-bottom: 2rem;
+    }
+}
