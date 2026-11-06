@@ -1,0 +1,380 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explora nuestro catálogo de destinos y reserva tu próxima aventura con Pasión Viajera.">
+
+    <title>Catálogo | Pasión Viajera</title>
+
+    <link rel="icon" type="image/png" href="../Img/favicon.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos compartidos -->
+    <link rel="stylesheet" href="../CSS/base.css">
+    <!-- cambiar por servicios.css -->
+    <link rel="stylesheet" href="../CSS/inicio.css">
+
+</head>
+
+<body>
+
+    <!-- ================= HEADER / NAVEGACIÓN ================= -->
+
+    <header class="custom-header sticky-top">
+
+        <nav class="navbar navbar-expand-lg navbar-dark p-0" aria-label="Principal">
+
+            <div class="envoltura d-flex flex-wrap align-items-center">
+
+                <a class="navbar-brand custom-brand my-auto me-auto me-lg-4" href="../index.html">
+                    Pasión viajera
+                </a>
+
+                <button class="navbar-toggler custom-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal" aria-expanded="false"
+                    aria-label="Abrir menú de navegación">
+                    Menú
+                </button>
+
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+
+                    <ul class="navbar-nav mx-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Inicio</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="servicios.html" aria-current="page">Catálogo</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="acerca_de_nosotros.html">
+                                Acerca de nosotros
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="contactenos.html">Contáctanos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="login_registro.html">Iniciar sesión</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="CRUD.html">Administrador</a>
+                        </li>
+
+                    </ul>
+
+                    <a href="contactenos.html" class="btn-explorar">
+                        <span>Explorar viajes</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= CATÁLOGO DE VIAJES ================= -->
+
+    <main>
+
+        <section class="seccion destinos" id="catalogo">
+
+            <div class="envoltura">
+
+                <div class="encabezado-seccion">
+
+                    <span class="etiqueta-seccion">Explora Colombia</span>
+
+                    <h1 class="titulo-seccion">Nuestro catálogo de viajes</h1>
+
+                    <p class="texto-seccion">
+                        Descubre destinos increíbles y encuentra tu próxima aventura.
+                    </p>
+
+                </div>
+
+
+                <div class="destinos-grid" id="destinosGrid">
+
+                    <!-- SAN ANDRÉS -->
+
+                    <article class="destino-card" data-destino="San Andrés">
+
+                        <img class="destino-img"
+                            src="https://images.unsplash.com/photo-1592782985575-a96c6e647155?q=80&w=928&auto=format&fit=crop"
+                            alt="Mar de siete colores en San Andrés"
+                            loading="lazy">
+
+                        <div class="destino-cuerpo">
+
+                            <h3>Paraíso en San Andrés</h3>
+
+                            <p class="destino-detalle">5 días · Caribe colombiano</p>
+
+                            <p class="destino-precio">
+                                <small>Desde</small> $950.000
+                            </p>
+
+                            <p class="destino-estrellas" aria-label="Calificación: 5 de 5 estrellas">
+                                ★★★★★
+                            </p>
+
+                            <a href="contactenos.html" class="btn-destino">
+                                Reservar por $950.000
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- LA GUAJIRA -->
+
+                    <article class="destino-card" data-destino="La Guajira">
+
+                        <img class="destino-img"
+                            src="https://plus.unsplash.com/premium_photo-1673306773569-4d864b99c96c?q=80&w=1470&auto=format&fit=crop"
+                            alt="Paisaje desértico de La Guajira"
+                            loading="lazy">
+
+                        <div class="destino-cuerpo">
+
+                            <h3>Aventura en La Guajira</h3>
+
+                            <p class="destino-detalle">4 días · Desierto y mar</p>
+
+                            <p class="destino-precio">
+                                <small>Desde</small> $750.000
+                            </p>
+
+                            <p class="destino-estrellas" aria-label="Calificación: 5 de 5 estrellas">
+                                ★★★★★
+                            </p>
+
+                            <a href="contactenos.html" class="btn-destino">
+                                Reservar por $750.000
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- SANTA MARTA -->
+
+                    <article class="destino-card" data-destino="Santa Marta">
+
+                        <img class="destino-img"
+                            src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=600"
+                            alt="Playa de Santa Marta"
+                            loading="lazy">
+
+                        <div class="destino-cuerpo">
+
+                            <h3>Experiencia Santa Marta</h3>
+
+                            <p class="destino-detalle">4 días · Playa y Sierra Nevada</p>
+
+                            <p class="destino-precio">
+                                <small>Desde</small> $950.000
+                            </p>
+
+                            <p class="destino-estrellas" aria-label="Calificación: 5 de 5 estrellas">
+                                ★★★★★
+                            </p>
+
+                            <a href="contactenos.html" class="btn-destino">
+                                Reservar por $950.000
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- CARTAGENA -->
+
+                    <article class="destino-card" data-destino="Cartagena">
+
+                        <img class="destino-img"
+                            src="https://images.unsplash.com/photo-1714686495394-73e2bb1bbd39?q=80&w=1472&auto=format&fit=crop"
+                            alt="Calles coloridas de Cartagena"
+                            loading="lazy">
+
+                        <div class="destino-cuerpo">
+
+                            <h3>Escapada a Cartagena</h3>
+
+                            <p class="destino-detalle">3 días · Ciudad amurallada</p>
+
+                            <p class="destino-precio">
+                                <small>Desde</small> $850.000
+                            </p>
+
+                            <p class="destino-estrellas" aria-label="Calificación: 5 de 5 estrellas">
+                                ★★★★★
+                            </p>
+
+                            <a href="contactenos.html" class="btn-destino">
+                                Reservar por $850.000
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- EJE CAFETERO -->
+
+                    <article class="destino-card" data-destino="Eje Cafetero">
+
+                        <img class="destino-img"
+                            src="../Img/Paisaje.jpg"
+                            alt="Paisaje natural del Eje Cafetero"
+                            loading="lazy">
+
+                        <div class="destino-cuerpo">
+
+                            <h3>Aventura en el Eje Cafetero</h3>
+
+                            <p class="destino-detalle">4 días · Naturaleza y cultura cafetera</p>
+
+                            <p class="destino-precio">
+                                <small>Desde</small> $780.000
+                            </p>
+
+                            <p class="destino-estrellas" aria-label="Calificación: 5 de 5 estrellas">
+                                ★★★★★
+                            </p>
+
+                            <a href="contactenos.html" class="btn-destino">
+                                Reservar por $780.000
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer-azul">
+
+        <div class="envoltura">
+
+            <div class="footer-columnas">
+
+                <div>
+
+                    <p class="footer-marca">Pasión viajera</p>
+
+                    <p>Viajes a la medida, planeados contigo.</p>
+
+                </div>
+
+
+                <div>
+
+                    <h2>Explora</h2>
+
+                    <ul>
+
+                        <li><a href="servicios.html">Catálogo</a></li>
+
+                        <li><a href="acerca_de_nosotros.html">Acerca de nosotros</a></li>
+
+                        <li><a href="contactenos.html">Contáctanos</a></li>
+
+                    </ul>
+
+                </div>
+
+
+                <div>
+
+                    <h2>Contacto</h2>
+
+                    <ul>
+
+                        <li>
+                            <a href="mailto:correo@pasionviajera.com">
+                                correo@pasionviajera.com
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://wa.me/573000000000" target="_blank" rel="noopener">
+                                WhatsApp: +57 300 000 0000
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="contactenos.html">Chat de ayuda en línea</a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Bogot%C3%A1%2C+Colombia"
+                                target="_blank" rel="noopener">
+                                Bogotá, Colombia · Ver en el mapa
+                            </a>
+                        </li>
+
+                        <li>Lunes a viernes, 9:00 – 18:00</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <p class="footer-base">&copy; 2026 Pasión viajera</p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- BOTÓN DE WHATSAPP -->
+
+    <a href="https://wa.me/573000000000"
+        class="boton-chat-ayuda"
+        target="_blank"
+        rel="noopener"
+        aria-label="Abrir chat de ayuda por WhatsApp">
+
+        <span>Chat de ayuda</span>
+
+    </a>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
