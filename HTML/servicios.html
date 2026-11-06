@@ -20,14 +20,14 @@
 
     <!-- Estilos compartidos -->
     <link rel="stylesheet" href="../CSS/base.css">
-    <!-- cambiar por servicios.css -->
     <link rel="stylesheet" href="../CSS/inicio.css">
+    <link rel="stylesheet" href="../CSS/servicios.css">
 
 </head>
 
 <body>
 
-    <!-- ================= HEADER / NAVEGACIÓN ================= -->
+    <!--  HEADER / NAVEGACIÓN  -->
 
     <header class="custom-header sticky-top">
 
@@ -91,7 +91,7 @@
     </header>
 
 
-    <!-- ================= CATÁLOGO DE VIAJES ================= -->
+    <!--  CATÁLOGO DE VIAJES  -->
 
     <main>
 
@@ -103,12 +103,19 @@
 
                     <span class="etiqueta-seccion">Explora Colombia</span>
 
-                    <h1 class="titulo-seccion">Nuestro catálogo de viajes</h1>
+                    <h1 class="titulo-seccion">Viajes que se quedan contigo.</h1>
 
                     <p class="texto-seccion">
                         Descubre destinos increíbles y encuentra tu próxima aventura.
                     </p>
 
+                </div>
+<!-- filtro de catalogos -->
+                <div class="filtros-destinos">
+                    <button class="filtro-btn activo" data-filtro="todos">Todos</button>
+                    <button class="filtro-btn" data-filtro="caribe">Caribe</button>
+                    <button class="filtro-btn" data-filtro="desierto">Desierto</button>
+                    <button class="filtro-btn" data-filtro="naturaleza">Naturaleza</button>
                 </div>
 
 
@@ -116,7 +123,7 @@
 
                     <!-- SAN ANDRÉS -->
 
-                    <article class="destino-card" data-destino="San Andrés">
+                    <article class="destino-card" data-destino="San Andrés" data-categoria="caribe">
 
                         <img class="destino-img"
                             src="https://images.unsplash.com/photo-1592782985575-a96c6e647155?q=80&w=928&auto=format&fit=crop"
@@ -148,7 +155,7 @@
 
                     <!-- LA GUAJIRA -->
 
-                    <article class="destino-card" data-destino="La Guajira">
+                    <article class="destino-card" data-destino="La Guajira" data-categoria="naturaleza">
 
                         <img class="destino-img"
                             src="https://plus.unsplash.com/premium_photo-1673306773569-4d864b99c96c?q=80&w=1470&auto=format&fit=crop"
@@ -180,7 +187,7 @@
 
                     <!-- SANTA MARTA -->
 
-                    <article class="destino-card" data-destino="Santa Marta">
+                    <article class="destino-card" data-destino="Santa Marta" data-categoria="caribe">
 
                         <img class="destino-img"
                             src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=600"
@@ -212,7 +219,7 @@
 
                     <!-- CARTAGENA -->
 
-                    <article class="destino-card" data-destino="Cartagena">
+                    <article class="destino-card" data-destino="Cartagena" data-categoria="caribe">
 
                         <img class="destino-img"
                             src="https://images.unsplash.com/photo-1714686495394-73e2bb1bbd39?q=80&w=1472&auto=format&fit=crop"
@@ -244,7 +251,7 @@
 
                     <!-- EJE CAFETERO -->
 
-                    <article class="destino-card" data-destino="Eje Cafetero">
+                    <article class="destino-card" data-destino="Eje Cafetero" data-categoria="naturaleza">
 
                         <img class="destino-img"
                             src="../Img/Paisaje.jpg"
@@ -282,7 +289,7 @@
     </main>
 
 
-    <!-- ================= FOOTER ================= -->
+    <!--  FOOTER  -->
 
     <footer class="footer-azul">
 
