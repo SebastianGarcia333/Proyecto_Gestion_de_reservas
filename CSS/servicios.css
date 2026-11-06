@@ -1,0 +1,46 @@
+#catalogo {
+    padding-bottom: 6rem;
+}
+
+.destino-cuerpo h3 {
+    overflow-wrap: anywhere;
+}
+
+.destino-precio {
+    margin-top: auto;
+}
+
+.catalogo-vacio {
+    grid-column: 1 / -1;
+    padding: 2rem 0;
+    text-align: center;
+    color: var(--texto-suave);
+}
+
+.filtros-destinos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+}
+
+.filtro-btn {
+    padding: 0.5rem 1.1rem;
+    border: 1px solid var(--azul-oscuro);
+    border-radius: 999px;
+    background-color: transparent;
+    color: var(--azul-oscuro);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.filtro-btn:hover {
+    background-color: var(--beige);
+}
+
+.filtro-btn.activo {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+}
