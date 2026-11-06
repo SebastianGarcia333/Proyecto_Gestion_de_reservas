@@ -11,4 +11,5 @@ Luis Stevan Quijano Perilla
 Jimmy Andrés Peralta Gordillo
 
 ## Deploy
-https://sebastiangarcia333.github.io/Proyecto_Gestion_de_reservas/
+- **Sitio web (público):** https://sebastiangarcia333.github.io/Proyecto_Gestion_de_reservas/
+- **Panel Administrador (CRUD):** https://sebastiangarcia333.github.io/Proyecto_Gestion_de_reservas/HTML/CRUD.html

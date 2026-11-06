@@ -40,6 +40,48 @@
     font-weight: 600;
 }
 
+/* Foto de apoyo bajo los datos de contacto para que la sección no se vea plana */
+.contacto-foto {
+    position: relative;
+    margin: 0.75rem 0 0;
+    border-radius: 18px;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    background-color: var(--azul-oscuro);
+    box-shadow: 0 14px 34px rgba(18, 33, 46, 0.14);
+}
+
+.contacto-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contacto-foto figcaption {
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    display: grid;
+    gap: 0.15rem;
+    padding: 0.9rem 1.1rem;
+    border-left: 4px solid var(--naranja);
+    border-radius: 10px;
+    background-color: rgba(18, 33, 46, 0.86);
+    color: var(--beige);
+}
+
+.contacto-foto figcaption strong {
+    font-family: var(--fuente-titulos);
+    font-size: 1.2rem;
+    color: var(--blanco);
+}
+
+.contacto-foto figcaption span {
+    font-size: 0.9rem;
+    color: rgba(236, 231, 220, 0.85);
+}
+
 /* Formulario: conserva la sombra pero ya no se mueve al pasar el ratón */
 .tarjeta-escribenos {
     display: grid;

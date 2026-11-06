@@ -135,26 +135,28 @@
     aspect-ratio: 1 / 1;
     border-radius: 16px;
     overflow: hidden;
-    background-color: var(--azul-petroleo);
+    border: 4px solid var(--blanco);
+    background-color: var(--blanco);
     margin-bottom: 1.1rem;
+    box-shadow: 0 10px 26px rgba(18, 33, 46, 0.14);
+    transition: border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .ficha-foto img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center top;
+    border-radius: 12px;
     transition: transform 0.45s ease;
 }
 
-/* Marco interior: línea fina en reposo, naranja al pasar el ratón o al llegar con el teclado */
-.ficha-foto::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    box-shadow: inset 0 0 0 1px var(--linea);
-    transition: box-shadow 0.25s ease;
-    pointer-events: none;
+.ficha:hover .ficha-foto,
+.ficha:focus-within .ficha-foto {
+    border-color: var(--naranja);
+    background-color: var(--naranja);
+    box-shadow: 0 14px 30px rgba(18, 33, 46, 0.2);
 }
 
 .ficha:hover .ficha-foto img,
@@ -162,16 +164,12 @@
     transform: scale(1.05);
 }
 
-.ficha:hover .ficha-foto::after,
-.ficha:focus-within .ficha-foto::after {
-    box-shadow: inset 0 0 0 3px var(--naranja);
-}
-
 .ficha-iniciales {
     position: absolute;
     inset: 0;
     display: grid;
     place-items: center;
+    background-color: var(--azul-oscuro);
     color: var(--blanco);
     font-family: var(--fuente-titulos);
     font-size: clamp(2.25rem, 4vw, 3.25rem);
@@ -179,17 +177,18 @@
 }
 
 .ficha h3 {
-    font-family: var(--fuente-texto);
-    font-size: 1.06rem;
-    font-weight: 600;
-    line-height: 1.3;
+    font-family: var(--fuente-titulos);
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.25;
 }
 
 .ficha-rol {
-    font-size: 0.9rem;
+    font-size: 0.92rem;
+    font-weight: 500;
     line-height: 1.45;
-    color: var(--texto-suave);
-    margin-top: 0.25rem;
+    color: var(--naranja-hover);
+    margin-top: 0.4rem;
 }
 
 .ficha-redes {
@@ -199,26 +198,30 @@
     padding-top: 1rem;
 }
 
+/* Íconos de redes con la identidad del proyecto: círculo azul oscuro, naranja al pasar el ratón */
 .ficha-redes a {
-    width: 38px;
-    height: 38px;
+    width: 42px;
+    height: 42px;
     display: grid;
     place-items: center;
-    border: 1px solid rgba(18, 33, 46, 0.22);
-    border-radius: 10px;
-    color: var(--azul-oscuro);
-    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    border: 2px solid var(--azul-oscuro);
+    border-radius: 50%;
+    background-color: var(--azul-oscuro);
+    color: var(--beige);
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
-.ficha-redes a:hover {
-    background-color: var(--azul-oscuro);
-    border-color: var(--azul-oscuro);
-    color: var(--beige);
+.ficha-redes a:hover,
+.ficha-redes a:focus-visible {
+    background-color: var(--naranja);
+    border-color: var(--naranja);
+    color: var(--azul-oscuro);
+    transform: translateY(-2px);
 }
 
 .ficha-redes svg {
-    width: 17px;
-    height: 17px;
+    width: 19px;
+    height: 19px;
     fill: currentColor;
 }
 

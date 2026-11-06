@@ -17,11 +17,13 @@
     --fuente-texto: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
+/* overflow-x: clip (y no hidden) para que el header sticky siga fijo al hacer scroll:
+   "hidden" en html y body convertía al body en contenedor de scroll y anulaba el sticky-top */
 html,
 body {
     width: 100%;
     max-width: 100%;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 body {
@@ -58,9 +60,13 @@ p {
     padding-right: 1.25rem;
 }
 
-/* HEADER / BARRA DE NAVEGACIÓN SUPERIOR */
+/* HEADER / BARRA DE NAVEGACIÓN SUPERIOR: fija arriba durante toda la navegación */
 .custom-header {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
     background-color: var(--azul-oscuro);
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.18);
 }
 
 .custom-header .navbar {
@@ -68,11 +74,22 @@ p {
 }
 
 .custom-brand {
-    font-family: var(--fuente-titulos);
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: var(--blanco) !important;
-    letter-spacing: -0.3px;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+/* Logo (Img/logo.png): emblema + nombre de la agencia */
+.logo-marca {
+    display: block;
+    width: auto;
+    height: 48px;
+}
+
+@media (max-width: 400px) {
+    .logo-marca {
+        height: 40px;
+    }
 }
 
 .custom-header .nav-link {
@@ -251,11 +268,13 @@ p {
 }
 
 .footer-marca {
-    font-family: var(--fuente-titulos);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--blanco);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.logo-footer {
+    display: block;
+    width: auto;
+    height: 52px;
 }
 
 .footer-azul h2 {
