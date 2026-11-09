@@ -11,7 +11,7 @@
 
 .filtroCatalogo-barra {
     width: 100%;
-    max-width: 1110px;
+    max-width: 1140px;
     min-height: 72px;
     margin: 0 auto;
     padding: 0.8rem 1.1rem;
@@ -19,7 +19,7 @@
     grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
     align-items: center;
     gap: 1.25rem;
-    border-radius: 6px;
+    border-radius: 12px;
     background-color: var(--azul-oscuro);
     color: var(--blanco);
     box-shadow: 0 8px 20px rgba(18, 33, 46, 0.14);
@@ -32,7 +32,7 @@
 
 .filtroCatalogo-opcion {
     width: 100%;
-    min-height: 32px;
+    min-height: 48px;
     display: flex;
     align-items: center;
     gap: 0.7rem;
@@ -47,7 +47,7 @@
 
 .filtroCatalogo-campo + .filtroCatalogo-campo {
     padding-left: 1.25rem;
-    border-left: 1px solid rgba(236, 231, 220, 0.55);
+    border-left: 1px solid rgba(236, 231, 220, 0.25);
 }
 
 .filtroCatalogo-icono {
@@ -64,18 +64,15 @@
 }
 
 .filtroCatalogo-etiqueta {
-    overflow: hidden;
-    font-size: 0.65rem;
+    font-size: 0.85rem;
     font-weight: 500;
-    text-overflow: ellipsis;
-    text-transform: uppercase;
-    white-space: nowrap;
+    color: var(--beige);
 }
 
 .filtroCatalogo-valor {
-    color: rgba(255, 255, 255, 0.78);
-    font-size: 0.85rem;
-    white-space: nowrap;
+    color: var(--blanco);
+    font-size: 1rem;
+    overflow-wrap: anywhere;
 }
 
 .filtroCatalogo-chevron {
@@ -86,20 +83,33 @@
 }
 
 .filtroCatalogo-boton {
-    min-height: 42px;
+    min-height: 48px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.65rem;
     padding: 0.6rem 1.15rem;
     border: 0;
-    border-radius: 4px;
+    border-radius: 8px;
     background-color: var(--naranja);
     color: var(--azul-oscuro);
     font: inherit;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     font-weight: 600;
     white-space: nowrap;
+    transition: background-color 0.2s ease;
+}
+
+.filtroCatalogo-boton:hover,
+.filtroCatalogo-boton:focus-visible {
+    background-color: var(--naranja-hover);
+}
+
+.filtroCatalogo-ayuda {
+    max-width: 1140px;
+    margin: 0.85rem auto 0;
+    color: var(--texto-suave);
+    font-size: 0.9rem;
 }
 
 .filtroCatalogo-boton svg {
@@ -169,7 +179,7 @@
 
 .filtroCatalogo-input-fecha {
     width: 100%;
-    min-height: 42px;
+    min-height: 44px;
     padding: 0.5rem;
     border: 1px solid var(--linea);
     border-radius: 6px;
@@ -203,7 +213,7 @@
 
 .filtroCatalogo-contador-texto small {
     color: var(--texto-suave);
-    font-size: 0.72rem;
+    font-size: 0.85rem;
 }
 
 .filtroCatalogo-controles {
@@ -219,8 +229,8 @@
 }
 
 .filtroCatalogo-control {
-    width: 32px;
-    height: 32px;
+    width: 44px;
+    height: 44px;
     display: grid;
     place-items: center;
     border: 1px solid var(--azul-oscuro);
@@ -244,10 +254,10 @@
     border-radius: 6px;
     background-color: #fff3e0;
     color: #7a3d00;
-    font-size: 0.78rem;
+    font-size: 0.85rem;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 991.98px) {
     .filtroCatalogo-barra {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 0.9rem;
@@ -259,18 +269,17 @@
         border-left: 0;
     }
 
-    .filtroCatalogo-campo:nth-child(3) {
-        grid-column: 1 / -1;
-        padding-top: 0.75rem;
-        border-top: 1px solid rgba(236, 231, 220, 0.3);
+    .filtroCatalogo-menu-fecha {
+        right: 0;
+        left: auto;
     }
 
-    .filtroCatalogo-boton {
-        grid-column: 1 / -1;
+    .filtroCatalogo-menu-viajeros {
+        width: min(340px, calc(100vw - 4rem));
     }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 575.98px) {
     .filtroCatalogo {
         padding-right: 0.75rem;
         padding-left: 0.75rem;
@@ -280,9 +289,17 @@
         grid-template-columns: minmax(0, 1fr);
     }
 
-    .filtroCatalogo-campo:nth-child(3),
-    .filtroCatalogo-boton {
-        grid-column: auto;
+    .filtroCatalogo-campo + .filtroCatalogo-campo {
+        padding-top: 0.75rem;
+        border-top: 1px solid rgba(236, 231, 220, 0.25);
+    }
+
+    .filtroCatalogo-menu,
+    .filtroCatalogo-menu-fecha,
+    .filtroCatalogo-menu-viajeros {
+        left: 0;
+        right: auto;
+        width: 100%;
     }
 }
 
@@ -293,7 +310,7 @@
 .etiqueta-seccion {
     font-size: 0.95rem;
     font-weight: 600;
-    color: var(--naranja-hover);
+    color: var(--azul-petroleo);
 }
 
 .filtroCatalogo-etiqueta-regreso {
@@ -352,90 +369,35 @@
     gap: 1.5rem;
 }
 
-.destino-card {
+#destinos {
+    scroll-margin-top: 90px;
+}
+
+.destinos-acciones {
     display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    background-color: var(--papel);
-    border: 1px solid var(--linea);
-    border-radius: 16px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    justify-content: center;
+    margin-top: 2rem;
 }
 
-.destino-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 26px rgba(18, 33, 46, 0.1);
-}
-
-.destino-card[hidden] {
-    display: none;
-}
-
-.destino-img {
-    width: 100%;
-    height: 190px;
-    display: block;
-    object-fit: cover;
-}
-
-.destino-cuerpo {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 1.25rem;
-}
-
-.destino-cuerpo h3 {
-    font-family: var(--fuente-titulos);
-    font-size: 1.25rem;
-    font-weight: 700;
-    line-height: 1.25;
-}
-
-.destino-detalle {
-    margin-top: 0.35rem;
-    color: var(--texto-suave);
-    font-size: 0.9rem;
-}
-
-.destino-precio {
-    margin-top: 0.75rem;
-    color: var(--azul-oscuro);
-    font-size: 1.3rem;
-    font-weight: 700;
-}
-
-.destino-precio small {
-    margin-right: 0.25rem;
-    color: var(--texto-suave);
-    font-size: 0.8rem;
-    font-weight: 500;
-}
-
-.destino-estrellas {
-    margin: 0.2rem 0 1.1rem;
-    color: var(--naranja);
-    font-size: 1rem;
-    letter-spacing: 2px;
-}
-
-.btn-destino {
-    margin-top: auto;
-    padding: 0.7rem 1rem;
+.enlace-catalogo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    min-height: 46px;
+    padding: 0.8rem 1.25rem;
     border: 1px solid var(--azul-oscuro);
     border-radius: 8px;
-    background-color: var(--azul-oscuro);
-    color: var(--blanco);
-    font-size: 0.9rem;
+    color: var(--azul-oscuro);
     font-weight: 600;
-    text-align: center;
     text-decoration: none;
-    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
-.btn-destino:hover {
-    border-color: var(--naranja);
+.enlace-catalogo:hover,
+.enlace-catalogo:focus-visible {
     background-color: var(--naranja);
+    border-color: var(--naranja);
     color: var(--azul-oscuro);
 }
 
@@ -459,13 +421,14 @@
 }
 
 .destinos-filtro-limpiar {
+    min-height: 44px;
     padding: 0.25rem 0.75rem;
     border: 0;
     border-radius: 999px;
     background-color: var(--naranja);
     color: var(--azul-oscuro);
     font: inherit;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
 }
@@ -568,44 +531,6 @@
 }
 
 /* ============================================================
-   BOTÓN FLOTANTE DE CHAT DE AYUDA (Opción A)
-   ============================================================ */
-.boton-chat-ayuda {
-    position: fixed;
-    right: 1.5rem;
-    bottom: 1.5rem;
-    z-index: 1030;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.55rem;
-    padding: 0.7rem 1.15rem;
-    border-radius: 999px;
-    background-color: var(--azul-oscuro);
-    color: var(--blanco);
-    border: 1px solid rgba(236, 231, 220, 0.22);
-    box-shadow: 0 10px 24px rgba(18, 33, 46, 0.22);
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-}
-
-.boton-chat-ayuda svg {
-    color: var(--naranja);
-    transition: color 0.2s ease;
-}
-
-.boton-chat-ayuda:hover {
-    background-color: var(--naranja);
-    color: var(--azul-oscuro);
-    transform: translateY(-2px);
-}
-
-.boton-chat-ayuda:hover svg {
-    color: var(--azul-oscuro);
-}
-
-/* ============================================================
    RESPONSIVE (tablet y celular)
    ============================================================ */
 @media (max-width: 1100px) {
@@ -632,16 +557,5 @@
 @media (max-width: 576px) {
     .destinos-grid {
         grid-template-columns: minmax(0, 1fr);
-    }
-
-    .destino-img {
-        height: 200px;
-    }
-
-    .boton-chat-ayuda {
-        right: 1rem;
-        bottom: 1rem;
-        padding: 0.65rem 1rem;
-        font-size: 0.85rem;
     }
 }
