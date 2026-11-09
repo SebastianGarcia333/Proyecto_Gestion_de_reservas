@@ -50,6 +50,7 @@
             <div class="envoltura">
                 <h1>Gestor de destinos</h1>
                 <p class="admin-resumen" id="resumen" aria-live="polite"></p>
+                <p class="admin-aviso" id="mensajeGuardado" role="status">Aquí administras los destinos nuevos. Los cinco del catálogo son fijos.</p>
             </div>
         </section>
 
@@ -104,8 +105,9 @@
                         <label for="imagen">Imagen</label>
                         <div class="subida">
                             <div class="subida-vista" id="vistaImagen" aria-hidden="true"></div>
-                            <input type="file" id="imagen" accept="image/*">
+                            <input type="file" id="imagen" accept="image/jpeg,image/png,image/webp" aria-describedby="ayuda-imagen error-imagen">
                         </div>
+                        <span class="ayuda-imagen" id="ayuda-imagen">Opcional. JPG, PNG o WebP de hasta 500 KB.</span>
                         <span class="mensaje-error" id="error-imagen"></span>
                     </div>
 

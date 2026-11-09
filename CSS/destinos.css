@@ -47,6 +47,7 @@
 }
 
 .destinos .destino-detalle {
+    overflow-wrap: anywhere;
     margin-top: 0.65rem;
     margin-bottom: 1.5rem;
     font-size: 0.9rem;
