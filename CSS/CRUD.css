@@ -27,6 +27,21 @@
     display: none;
 }
 
+.admin-aviso {
+    max-width: 70ch;
+    color: var(--beige);
+    font-size: 0.9rem;
+}
+
+.admin-aviso[data-error="true"] {
+    color: #ffd1c7;
+}
+
+.ayuda-imagen {
+    font-size: 0.85rem;
+    color: var(--texto-suave);
+}
+
 /* 
    DISTRIBUCIÓN: formulario a la izquierda, lista a la derecha
  */

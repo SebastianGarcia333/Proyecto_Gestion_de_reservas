@@ -14,8 +14,10 @@ Jimmy Andrés Peralta Gordillo
 - **Sitio web (público):** https://sebastiangarcia333.github.io/Proyecto_Gestion_de_reservas/
 - **Panel Administrador (CRUD):** https://sebastiangarcia333.github.io/Proyecto_Gestion_de_reservas/HTML/CRUD.html
 
-## Fotografías de destinos
+## Destinos del administrador
 
-- `Img/guajira.jpg`: Cabo de la Vela, La Guajira. Foto de [Juan Pablo Jou-Valencia en Unsplash](https://unsplash.com/photos/ufy7_XhWdM4).
-- `Img/eje-cafetero.jpg`: Valle del Cocora, Quindío. Foto de [David Restrepo en Unsplash](https://unsplash.com/photos/omJtNsCi5gk).
-- Ambas imágenes se usan bajo la [licencia Unsplash](https://unsplash.com/license).
+- Las cinco cards escritas en `HTML/servicios.html` permanecen fijas.
+- Los destinos nuevos se guardan desde `JS/crud.js` en la clave `pasionViajera.destinos` de `localStorage`.
+- `JS/catalogo.js` lee esa misma clave y añade sus cards, sin duplicar las originales. También refleja las ediciones y eliminaciones.
+- Las imágenes son opcionales: JPG, PNG o WebP de hasta 500 KB. Se guardan como texto con `FileReader` para conservarlas al recargar.
+- Usa un servidor local o GitHub Pages y abre ambas vistas en el mismo navegador y origen. Los datos pertenecen a ese navegador; no se comparten entre dispositivos ni entre el sitio local y el publicado.
