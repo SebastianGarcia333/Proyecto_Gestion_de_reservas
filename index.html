@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Pasión viajera: agencia de viajes a la medida. Reserva destinos en Colombia con abono inicial y pagos flexibles.">
+        content="Pasión Viajera: explora destinos en Colombia y consulta una propuesta de viaje a tu medida.">
     <title>Inicio | Pasión viajera</title>
     <link rel="icon" type="image/png" href="Img/favicon.png">
 
@@ -18,6 +18,7 @@
         rel="stylesheet">
     <!-- base.css: estilos compartidos (paleta, header, hero, footer) | inicio.css: estilos propios de la Home -->
     <link rel="stylesheet" href="CSS/base.css">
+    <link rel="stylesheet" href="CSS/destinos.css">
     <link rel="stylesheet" href="CSS/inicio.css">
 </head>
 
@@ -63,7 +64,7 @@
                 class="hero-image" fetchpriority="high" decoding="async">
             <div class="hero-overlay"></div>
             <div class="envoltura">
-                <h1>Hay Viajes que se quedan contigo</h1>
+                <h1>Hay viajes que se quedan contigo</h1>
                 <p>Lugares que emocionan. Personas que te abren puertas. Viajes a medida para vivir el mundo sin prisa.
                 </p>
             </div>
@@ -82,7 +83,7 @@
                                 d="M8 15s6-5.686 6-9A6 6 0 0 0 2 6c0 3.314 6 9 6 9Zm0-7.5A1.5 1.5 0 1 1 8 4.5a1.5 1.5 0 0 1 0 3Z" />
                         </svg>
                         <span class="filtroCatalogo-textos">
-                            <span class="filtroCatalogo-etiqueta">¿A dónde te llevamos?</span>
+                            <span class="filtroCatalogo-etiqueta">Destino</span>
                             <span class="filtroCatalogo-valor" id="destinoValor">Elige tu destino</span>
                         </span>
                         <svg class="filtroCatalogo-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"
@@ -96,8 +97,8 @@
                             <span>Paraíso en San Andrés</span>
                         </button>
                         <button class="filtroCatalogo-destino" type="button" data-destino="La Guajira">
-                            <img src="Img/Paisaje.jpg" alt="" width="68" height="52" loading="lazy">
-                            <span>Aventura en la naturaleza La Guajira</span>
+                            <img src="Img/guajira.jpg" alt="" width="68" height="52" loading="lazy">
+                            <span>Aventura en La Guajira</span>
                         </button>
                         <button class="filtroCatalogo-destino" type="button" data-destino="Santa Marta">
                             <img src="Img/playa.jpg" alt="" width="68" height="52" loading="lazy">
@@ -120,7 +121,7 @@
                                 d="M3 0a.5.5 0 0 1 .5.5V1h9V.5a.5.5 0 0 1 1 0V1H15a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h1.5V.5A.5.5 0 0 1 3 0ZM1 5v10h14V5H1Zm1-3v2h12V2H2Z" />
                         </svg>
                         <span class="filtroCatalogo-textos">
-                            <span class="filtroCatalogo-etiqueta">¿Cuándo viajas? (ida y regreso)</span>
+                            <span class="filtroCatalogo-etiqueta">Fechas del viaje</span>
                             <span class="filtroCatalogo-valor" id="fechaValor">Elige tus fechas</span>
                         </span>
                         <svg class="filtroCatalogo-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"
@@ -146,7 +147,7 @@
                                 d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.5 7a5.5 5.5 0 0 1 11 0h-1a4.5 4.5 0 0 0-9 0h-1Zm9.7-8.2a2.5 2.5 0 1 0-1.6-4.4 4 4 0 0 1 0 4.4c.5.1 1.1.1 1.6 0Zm.1 2.1a4.5 4.5 0 0 1 2.7 4.1h-1a3.5 3.5 0 0 0-2.4-3.3c.3-.2.5-.5.7-.8Z" />
                         </svg>
                         <span class="filtroCatalogo-textos">
-                            <span class="filtroCatalogo-etiqueta">¿Con quién viajas?</span>
+                            <span class="filtroCatalogo-etiqueta">Viajeros</span>
                             <span class="filtroCatalogo-valor" id="viajerosValor">1 viajero</span>
                         </span>
                         <svg class="filtroCatalogo-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"
@@ -188,21 +189,22 @@
 
                 <!-- Botón de búsqueda: filtra las tarjetas de "Destinos populares" y baja hasta ellas -->
                 <button class="filtroCatalogo-boton" id="botonBuscar" type="button">
-                    <span>Buscar disponibilidad</span>
+                    <span>Explorar destinos</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true">
                         <path
                             d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                     </svg>
                 </button>
             </div>
+            <p class="filtroCatalogo-ayuda">Explora por destino. Consulta con un asesor los cupos para tus fechas y viajeros.</p>
         </section>
 
         <!-- ==================== BLOQUE 2: BENEFICIOS DE RESERVAR AQUÍ ==================== -->
         <section class="seccion beneficios" id="beneficios" aria-labelledby="titulo-beneficios">
             <div class="envoltura">
                 <div class="encabezado-seccion">
-                    <span class="etiqueta-seccion">Reserva con tranquilidad</span>
-                    <h2 class="titulo-seccion" id="titulo-beneficios">¿Por qué reservar con nosotros?</h2>
+                    <span class="etiqueta-seccion">Viaja a tu manera</span>
+                    <h2 class="titulo-seccion" id="titulo-beneficios">Planeamos contigo cada detalle</h2>
                     <p class="texto-seccion">Todo lo que necesitas para planear tu viaje sin sorpresas.</p>
                 </div>
 
@@ -214,8 +216,8 @@
                                 <path d="m5.2 8.2 2 2 3.6-4" />
                             </svg>
                         </span>
-                        <h3>Confirmación inmediata</h3>
-                        <p>Recibes la confirmación de tu reserva en el mismo momento en que pagas tu abono.</p>
+                        <h3>Planes a tu medida</h3>
+                        <p>Cuéntanos qué te gustaría vivir y solicita una propuesta según tus intereses.</p>
                     </article>
                     <article class="beneficio">
                         <span class="beneficio-icono" aria-hidden="true">
@@ -224,8 +226,8 @@
                                     d="M8 0 1 2.5v5c0 4.3 2.9 7.4 7 8.5 4.1-1.1 7-4.2 7-8.5v-5L8 0Zm0 2.07 5 1.78v3.65c0 3.2-2 5.57-5 6.5-3-.93-5-3.3-5-6.5V3.85l5-1.78Z" />
                             </svg>
                         </span>
-                        <h3>Pagos flexibles</h3>
-                        <p>Abono inicial y el saldo en pagos quincenales o mensuales, sin comisiones ocultas.</p>
+                        <h3>Información clara</h3>
+                        <p>Explora los precios de referencia y consulta qué incluye cada experiencia.</p>
                     </article>
                     <article class="beneficio">
                         <span class="beneficio-icono" aria-hidden="true">
@@ -234,8 +236,8 @@
                                     d="M3 0a.5.5 0 0 1 .5.5V1h9V.5a.5.5 0 0 1 1 0V1H15a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h1.5V.5A.5.5 0 0 1 3 0ZM1 5v10h14V5H1Z" />
                             </svg>
                         </span>
-                        <h3>Cambios de fecha</h3>
-                        <p>Puedes reprogramar tu viaje según la disponibilidad de cupos y las condiciones del paquete.
+                        <h3>Elige tus fechas</h3>
+                        <p>Comparte cuándo quieres viajar para consultar las opciones disponibles.
                         </p>
                     </article>
                     <article class="beneficio">
@@ -245,8 +247,8 @@
                                     d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.5 7a5.5 5.5 0 0 1 11 0h-1a4.5 4.5 0 0 0-9 0h-1Z" />
                             </svg>
                         </span>
-                        <h3>Soporte humano</h3>
-                        <p>Un equipo cercano te acompaña antes, durante y después de tu viaje.</p>
+                        <h3>Atención cercana</h3>
+                        <p>Habla con un asesor para resolver tus dudas y darle forma a tu próximo viaje.</p>
                     </article>
                 </div>
             </div>
@@ -258,7 +260,7 @@
                 <div class="encabezado-seccion">
                     <span class="etiqueta-seccion">Experiencias destacadas</span>
                     <h2 class="titulo-seccion" id="titulo-destinos">Viajes que te encantarán</h2>
-                    <p class="texto-seccion">Descubre nuestras experiencias favoritas diseñadas a tu medida.</p>
+                    <p class="texto-seccion">Cuatro experiencias para empezar a imaginar tu próximo viaje.</p>
                     <!-- Mensaje del filtro (lo llena JS/inicio.js cuando se busca un destino) -->
                     <p class="destinos-filtro" id="destinosFiltro" role="status" hidden>
                         <span id="destinosFiltroTexto"></span>
@@ -273,25 +275,25 @@
                             src="https://images.unsplash.com/photo-1592782985575-a96c6e647155?q=80&w=928&auto=format&fit=crop"
                             alt="Mar de siete colores en San Andrés" width="928" height="620" loading="lazy">
                         <div class="destino-cuerpo">
+                            <p class="destino-categoria">Playa</p>
                             <h3>Paraíso en San Andrés</h3>
                             <p class="destino-detalle">5 días · Caribe colombiano</p>
                             <p class="destino-precio"><small>Desde</small> $950.000</p>
-                            <p class="destino-estrellas" aria-label="Calificación: 5 de 5 estrellas">★★★★★</p>
-                            <a href="HTML/contactenos.html" class="btn-destino">Reservar por $950.000</a>
+                            <a href="HTML/contactenos.html" class="btn-destino">Consultar viaje <span aria-hidden="true">→</span></a>
                         </div>
                     </article>
 
                     <article class="destino-card" data-destino="La Guajira">
                         <img class="destino-img"
-                            src="https://plus.unsplash.com/premium_photo-1673306773569-4d864b99c96c?q=80&w=1470&auto=format&fit=crop"
-                            alt="Paisaje desértico de La Guajira junto al mar" width="1470" height="980"
+                            src="Img/guajira.jpg"
+                            alt="Paisaje rocoso del Cabo de la Vela, en La Guajira" width="960" height="601"
                             loading="lazy">
                         <div class="destino-cuerpo">
+                            <p class="destino-categoria">Naturaleza</p>
                             <h3>Aventura en La Guajira</h3>
                             <p class="destino-detalle">4 días · Desierto y mar</p>
                             <p class="destino-precio"><small>Desde</small> $750.000</p>
-                            <p class="destino-estrellas" aria-label="Calificación: 5 de 5 estrellas">★★★★★</p>
-                            <a href="HTML/contactenos.html" class="btn-destino">Reservar por $750.000</a>
+                            <a href="HTML/contactenos.html" class="btn-destino">Consultar viaje <span aria-hidden="true">→</span></a>
                         </div>
                     </article>
 
@@ -301,11 +303,11 @@
                             alt="Playa de Santa Marta con montañas al fondo" width="600" height="400"
                             loading="lazy">
                         <div class="destino-cuerpo">
+                            <p class="destino-categoria">Playa</p>
                             <h3>Experiencia Santa Marta</h3>
                             <p class="destino-detalle">4 días · Playa y Sierra Nevada</p>
                             <p class="destino-precio"><small>Desde</small> $950.000</p>
-                            <p class="destino-estrellas" aria-label="Calificación: 5 de 5 estrellas">★★★★★</p>
-                            <a href="HTML/contactenos.html" class="btn-destino">Reservar por $950.000</a>
+                            <a href="HTML/contactenos.html" class="btn-destino">Consultar viaje <span aria-hidden="true">→</span></a>
                         </div>
                     </article>
 
@@ -315,13 +317,16 @@
                             alt="Calles coloridas de la ciudad amurallada de Cartagena" width="1472" height="980"
                             loading="lazy">
                         <div class="destino-cuerpo">
+                            <p class="destino-categoria">Cultura</p>
                             <h3>Escapada a Cartagena</h3>
                             <p class="destino-detalle">3 días · Ciudad amurallada</p>
                             <p class="destino-precio"><small>Desde</small> $850.000</p>
-                            <p class="destino-estrellas" aria-label="Calificación: 5 de 5 estrellas">★★★★★</p>
-                            <a href="HTML/contactenos.html" class="btn-destino">Reservar por $850.000</a>
+                            <a href="HTML/contactenos.html" class="btn-destino">Consultar viaje <span aria-hidden="true">→</span></a>
                         </div>
                     </article>
+                </div>
+                <div class="destinos-acciones">
+                    <a href="HTML/servicios.html" class="enlace-catalogo">Ver catálogo completo <span aria-hidden="true">→</span></a>
                 </div>
             </div>
         </section>
@@ -332,7 +337,7 @@
                 <div class="encabezado-seccion">
                     <span class="etiqueta-seccion">Así de fácil</span>
                     <h2 class="titulo-seccion" id="titulo-pasos">¿Cómo funciona?</h2>
-                    <p class="texto-seccion">Reservar tu próximo viaje toma solo tres pasos sencillos.</p>
+                    <p class="texto-seccion">De una idea a una propuesta pensada para ti.</p>
                 </div>
 
                 <ol class="pasos-lista">
@@ -353,8 +358,8 @@
                     <li class="paso">
                         <span class="paso-numero" aria-hidden="true">3</span>
                         <div class="paso-texto">
-                            <h3>Recibe tu confirmación</h3>
-                            <p>Paga tu abono inicial y recibe la confirmación de tu reserva al instante.</p>
+                            <h3>Consulta tu propuesta</h3>
+                            <p>Envía tu consulta. Un asesor te ayudará a revisar cupos, servicios y condiciones.</p>
                         </div>
                     </li>
                 </ol>
@@ -367,7 +372,7 @@
                 <div class="encabezado-seccion faq-encabezado">
                     <span class="etiqueta-seccion">Resolvemos tus dudas</span>
                     <h2 class="titulo-seccion" id="titulo-faq">Preguntas frecuentes</h2>
-                    <p class="texto-seccion">Respuestas claras sobre reservas, pagos, cambios de fecha y cupos disponibles.</p>
+                    <p class="texto-seccion">Lo que necesitas saber para empezar a planear tu viaje.</p>
                 </div>
 
                 <div class="accordion faq-acordeon" id="faq">
@@ -375,12 +380,12 @@
                         <h3 class="accordion-header">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
-                                ¿Cómo reservo un paquete?
+                                ¿Cómo consulto un viaje?
                             </button>
                         </h3>
                         <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faq">
-                            <div class="accordion-body">Eliges el destino y la fecha, pagas el abono inicial y recibes
-                                la confirmación.</div>
+                            <div class="accordion-body">Explora el catálogo, elige una experiencia y pulsa «Consultar viaje».
+                                Desde el formulario de contacto puedes contarle a un asesor lo que buscas.</div>
                         </div>
                     </div>
 
@@ -388,12 +393,12 @@
                         <h3 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
-                                ¿Cuánto debo pagar para reservar?
+                                ¿Los precios del catálogo son definitivos?
                             </button>
                         </h3>
                         <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faq">
-                            <div class="accordion-body">Pagas un abono inicial y el saldo en pagos quincenales o
-                                mensuales.</div>
+                            <div class="accordion-body">Son precios de referencia «desde». Consulta el valor final
+                                según las fechas, el número de viajeros y los servicios de tu plan.</div>
                         </div>
                     </div>
 
@@ -401,12 +406,12 @@
                         <h3 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
-                                ¿Hasta cuándo puedo pagar el saldo?
+                                ¿Puedo consultar un viaje con niños?
                             </button>
                         </h3>
                         <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faq">
-                            <div class="accordion-body">Puedes pagar el saldo hasta 15 días antes de la fecha del
-                                viaje.</div>
+                            <div class="accordion-body">Indica cuántos adultos y niños viajarían, junto con las edades
+                                de los menores, para que un asesor pueda revisar las opciones para tu grupo.</div>
                         </div>
                     </div>
 
@@ -418,8 +423,8 @@
                             </button>
                         </h3>
                         <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faq">
-                            <div class="accordion-body">Sí, según la disponibilidad de cupos y las condiciones del
-                                paquete.</div>
+                            <div class="accordion-body">Comparte las fechas que prefieres y consulta las alternativas
+                                con un asesor. Los cambios dependen de la disponibilidad y las condiciones del plan.</div>
                         </div>
                     </div>
 
@@ -427,12 +432,12 @@
                         <h3 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
-                                ¿Qué pasa si cancelo mi reserva?
+                                ¿Puedo personalizar mi recorrido?
                             </button>
                         </h3>
                         <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faq">
-                            <div class="accordion-body">Revisa la política de cancelación de cada paquete. El abono
-                                puede no ser reembolsable.</div>
+                            <div class="accordion-body">Cuéntanos tus intereses, cuántos días tienes y qué lugares
+                                te gustaría conocer para solicitar una propuesta a tu medida.</div>
                         </div>
                     </div>
 
@@ -444,8 +449,8 @@
                             </button>
                         </h3>
                         <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faq">
-                            <div class="accordion-body">Al elegir la fecha, el sistema muestra los cupos libres para
-                                ese día.</div>
+                            <div class="accordion-body">Envía el destino, las fechas y el número de viajeros desde
+                                el formulario de contacto. Un asesor te confirmará los cupos disponibles.</div>
                         </div>
                     </div>
 
@@ -453,12 +458,12 @@
                         <h3 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#faq7" aria-expanded="false" aria-controls="faq7">
-                                ¿Cuáles son los métodos de pago aceptados?
+                                ¿Cómo conozco las condiciones de pago?
                             </button>
                         </h3>
                         <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faq">
-                            <div class="accordion-body">Aceptamos pagos por PSE, tarjetas de crédito y débito (Visa y
-                                Mastercard), Nequi, Daviplata y transferencia bancaria.</div>
+                            <div class="accordion-body">Solicita a un asesor los métodos de pago, los plazos y las
+                                condiciones de cancelación antes de confirmar tu viaje.</div>
                         </div>
                     </div>
                 </div>

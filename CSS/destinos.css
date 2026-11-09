@@ -1,0 +1,104 @@
+/* Cards compartidas por Inicio y Catálogo: una sola fuente para su apariencia. */
+.destinos .destino-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    background-color: var(--papel);
+    border: 1px solid var(--linea);
+    border-radius: 18px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.destinos .destino-card:hover,
+.destinos .destino-card:focus-within {
+    border-color: var(--verde-azulado);
+    box-shadow: 0 10px 26px rgba(18, 33, 46, 0.1);
+}
+
+.destinos .destino-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    background-color: var(--verde-azulado);
+}
+
+.destinos .destino-cuerpo {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+}
+
+.destinos .destino-categoria {
+    margin-bottom: 0.6rem;
+    color: var(--azul-petroleo);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.destinos .destino-cuerpo :is(h2, h3) {
+    font-size: 1.5rem;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+
+.destinos .destino-detalle {
+    margin-top: 0.65rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--texto-suave);
+}
+
+.destinos .destino-precio {
+    margin-top: auto;
+    margin-bottom: 1rem;
+    color: var(--azul-oscuro);
+    font-size: 1.45rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+.destinos .destino-precio small {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--texto-suave);
+}
+
+.destinos .btn-destino {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    width: 100%;
+    min-height: 46px;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--azul-oscuro);
+    border-radius: 8px;
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.destinos .btn-destino:hover,
+.destinos .btn-destino:focus-visible {
+    background-color: var(--naranja);
+    border-color: var(--naranja);
+    color: var(--azul-oscuro);
+}
+
+.destinos .destino-card[hidden] {
+    display: none;
+}
+
+@media (max-width: 575.98px) {
+    .destinos .destino-cuerpo {
+        padding: 1.25rem;
+    }
+}

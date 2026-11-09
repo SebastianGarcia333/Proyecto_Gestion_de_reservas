@@ -191,7 +191,8 @@ if (botonBuscar) {
         cerrarMenus();
         mostrarDestinos(destinoElegido);
         if (seccionDestinos) {
-            seccionDestinos.scrollIntoView({ behavior: "smooth", block: "start" });
+            const reducirMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            seccionDestinos.scrollIntoView({ behavior: reducirMovimiento ? "instant" : "smooth", block: "start" });
         }
     });
 }

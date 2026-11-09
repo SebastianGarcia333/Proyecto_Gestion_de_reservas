@@ -323,3 +323,50 @@ p {
         animation: none !important;
     }
 }
+
+/* Soporte: mismo botón en Inicio y Catálogo. */
+.boton-chat-ayuda {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    z-index: 1020;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.7rem 1.15rem;
+    border-radius: 999px;
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    border: 1px solid rgba(236, 231, 220, 0.22);
+    box-shadow: 0 10px 24px rgba(18, 33, 46, 0.22);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.boton-chat-ayuda svg {
+    color: var(--naranja);
+    transition: color 0.2s ease;
+}
+
+.boton-chat-ayuda:hover,
+.boton-chat-ayuda:focus-visible {
+    background-color: var(--naranja);
+    color: var(--azul-oscuro);
+}
+
+.boton-chat-ayuda:hover svg,
+.boton-chat-ayuda:focus-visible svg {
+    color: var(--azul-oscuro);
+}
+
+
+@media (max-width: 576px) {
+    .boton-chat-ayuda {
+        right: 1rem;
+        bottom: 1rem;
+        padding: 0.65rem 1rem;
+        font-size: 0.85rem;
+    }
+}
