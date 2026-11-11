@@ -20,14 +20,17 @@
     <link rel="stylesheet" href="CSS/base.css">
     <link rel="stylesheet" href="CSS/destinos.css">
     <link rel="stylesheet" href="CSS/inicio.css">
+    <link rel="stylesheet" href="../CSS/carrito.css">
 </head>
+
 
 <body>
     <!-- ==================== HEADER / NAVEGACIÓN ==================== -->
     <header class="custom-header sticky-top">
         <nav class="navbar navbar-expand-lg navbar-dark p-0" aria-label="Principal">
             <div class="envoltura d-flex flex-wrap align-items-center">
-                <a class="navbar-brand custom-brand my-auto me-auto me-lg-4" href="index.html"><img src="Img/logo.png" alt="Pasión Viajera, agencia de viajes" class="logo-marca" width="200" height="50"></a>
+                <a class="navbar-brand custom-brand my-auto me-auto me-lg-4" href="index.html"><img src="Img/logo.png"
+                        alt="Pasión Viajera, agencia de viajes" class="logo-marca" width="200" height="50"></a>
 
                 <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false"
@@ -52,6 +55,18 @@
                         </svg>
                     </a>
                 </div>
+
+                <!-- Boton carrito de compras-->
+                <button class="boton-viaje" type="button" data-bs-toggle="offcanvas" data-bs-target="#panelViaje"
+                    aria-controls="panelViaje" aria-label="Abrir mi viaje">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        viewBox="0 0 16 16" aria-hidden="true">
+                        <path
+                            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                    </svg>
+                    <span class="boton-viaje-texto">Mi viaje</span>
+                    <span class="boton-viaje-contador" id="contadorViaje">2</span>
+                </button>
             </div>
         </nav>
     </header>
@@ -132,7 +147,8 @@
                     <div class="filtroCatalogo-menu filtroCatalogo-menu-fecha" id="fechaMenu" hidden>
                         <label class="filtroCatalogo-etiqueta-fecha" for="fechaViaje">Fecha de ida</label>
                         <input class="filtroCatalogo-input-fecha" id="fechaViaje" type="date">
-                        <label class="filtroCatalogo-etiqueta-fecha filtroCatalogo-etiqueta-regreso" for="fechaRegreso">Fecha de regreso</label>
+                        <label class="filtroCatalogo-etiqueta-fecha filtroCatalogo-etiqueta-regreso"
+                            for="fechaRegreso">Fecha de regreso</label>
                         <input class="filtroCatalogo-input-fecha" id="fechaRegreso" type="date">
                     </div>
                 </div>
@@ -196,7 +212,8 @@
                     </svg>
                 </button>
             </div>
-            <p class="filtroCatalogo-ayuda">Explora por destino. Consulta con un asesor los cupos para tus fechas y viajeros.</p>
+            <p class="filtroCatalogo-ayuda">Explora por destino. Consulta con un asesor los cupos para tus fechas y
+                viajeros.</p>
         </section>
 
         <!-- ==================== BLOQUE 2: BENEFICIOS DE RESERVAR AQUÍ ==================== -->
@@ -211,7 +228,8 @@
                 <div class="beneficios-grid">
                     <article class="beneficio">
                         <span class="beneficio-icono" aria-hidden="true">
-                            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"
+                                stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="8" cy="8" r="6.5" />
                                 <path d="m5.2 8.2 2 2 3.6-4" />
                             </svg>
@@ -267,6 +285,7 @@
                         <button class="destinos-filtro-limpiar" id="destinosFiltroLimpiar" type="button">Ver todos
                             los destinos</button>
                     </p>
+
                 </div>
 
                 <div class="destinos-grid" id="destinosGrid">
@@ -279,13 +298,19 @@
                             <h3>Paraíso en San Andrés</h3>
                             <p class="destino-detalle">5 días · Caribe colombiano</p>
                             <p class="destino-precio"><small>Desde</small> $950.000</p>
-                            <a href="HTML/contactenos.html" class="btn-destino">Consultar viaje <span aria-hidden="true">→</span></a>
+                            <a href="HTML/contactenos.html" class="btn-destino">Consultar viaje <span
+                                    aria-hidden="true">→</span></a>
+
+                            <button type="button" class="btn-agregar" data-id="san-andres"
+                                data-nombre="Paraíso en San Andrés" data-precio="950000" data-dias="5">
+                                Agregar a mi viaje <span aria-hidden="true">+</span>
+                            </button>
+
                         </div>
                     </article>
 
                     <article class="destino-card" data-destino="La Guajira">
-                        <img class="destino-img"
-                            src="Img/guajira.jpg"
+                        <img class="destino-img" src="Img/guajira.jpg"
                             alt="Paisaje rocoso del Cabo de la Vela, en La Guajira" width="960" height="601"
                             loading="lazy">
                         <div class="destino-cuerpo">
@@ -293,21 +318,32 @@
                             <h3>Aventura en La Guajira</h3>
                             <p class="destino-detalle">4 días · Desierto y mar</p>
                             <p class="destino-precio"><small>Desde</small> $750.000</p>
-                            <a href="HTML/contactenos.html" class="btn-destino">Consultar viaje <span aria-hidden="true">→</span></a>
+                            <a href="HTML/contactenos.html" class="btn-destino">Consultar viaje <span
+                                    aria-hidden="true">→</span></a>
+                            <button type="button" class="btn-agregar" data-id="san-andres"
+                                data-nombre="Paraíso en San Andrés" data-precio="950000" data-dias="5">
+                                Agregar a mi viaje <span aria-hidden="true">+</span>
+                            </button>
+
                         </div>
                     </article>
 
                     <article class="destino-card" data-destino="Santa Marta">
                         <img class="destino-img"
                             src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=600"
-                            alt="Playa de Santa Marta con montañas al fondo" width="600" height="400"
-                            loading="lazy">
+                            alt="Playa de Santa Marta con montañas al fondo" width="600" height="400" loading="lazy">
                         <div class="destino-cuerpo">
                             <p class="destino-categoria">Playa</p>
                             <h3>Experiencia Santa Marta</h3>
                             <p class="destino-detalle">4 días · Playa y Sierra Nevada</p>
                             <p class="destino-precio"><small>Desde</small> $950.000</p>
-                            <a href="HTML/contactenos.html" class="btn-destino">Consultar viaje <span aria-hidden="true">→</span></a>
+                            <a href="HTML/contactenos.html" class="btn-destino">Consultar viaje <span
+                                    aria-hidden="true">→</span></a>
+                            <button type="button" class="btn-agregar" data-id="san-andres"
+                                data-nombre="Paraíso en San Andrés" data-precio="950000" data-dias="5">
+                                Agregar a mi viaje <span aria-hidden="true">+</span>
+                            </button>
+
                         </div>
                     </article>
 
@@ -321,12 +357,19 @@
                             <h3>Escapada a Cartagena</h3>
                             <p class="destino-detalle">3 días · Ciudad amurallada</p>
                             <p class="destino-precio"><small>Desde</small> $850.000</p>
-                            <a href="HTML/contactenos.html" class="btn-destino">Consultar viaje <span aria-hidden="true">→</span></a>
+                            <a href="HTML/contactenos.html" class="btn-destino">Consultar viaje <span
+                                    aria-hidden="true">→</span></a>
+                            <button type="button" class="btn-agregar" data-id="san-andres"
+                                data-nombre="Paraíso en San Andrés" data-precio="950000" data-dias="5">
+                                Agregar a mi viaje <span aria-hidden="true">+</span>
+                            </button>
+
                         </div>
                     </article>
                 </div>
                 <div class="destinos-acciones">
-                    <a href="HTML/servicios.html" class="enlace-catalogo">Ver catálogo completo <span aria-hidden="true">→</span></a>
+                    <a href="HTML/servicios.html" class="enlace-catalogo">Ver catálogo completo <span
+                            aria-hidden="true">→</span></a>
                 </div>
             </div>
         </section>
@@ -384,7 +427,8 @@
                             </button>
                         </h3>
                         <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faq">
-                            <div class="accordion-body">Explora el catálogo, elige una experiencia y pulsa «Consultar viaje».
+                            <div class="accordion-body">Explora el catálogo, elige una experiencia y pulsa «Consultar
+                                viaje».
                                 Desde el formulario de contacto puedes contarle a un asesor lo que buscas.</div>
                         </div>
                     </div>
@@ -424,7 +468,8 @@
                         </h3>
                         <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faq">
                             <div class="accordion-body">Comparte las fechas que prefieres y consulta las alternativas
-                                con un asesor. Los cambios dependen de la disponibilidad y las condiciones del plan.</div>
+                                con un asesor. Los cambios dependen de la disponibilidad y las condiciones del plan.
+                            </div>
                         </div>
                     </div>
 
@@ -471,12 +516,122 @@
         </section>
     </main>
 
+    <!-- Barra lateral carrito de compras -->
+
+    <aside class="offcanvas offcanvas-end panel-viaje" tabindex="-1" id="panelViaje" aria-labelledby="tituloPanelViaje">
+
+        <div class="panel-viaje-cabecera">
+            <h2 id="tituloPanelViaje">Resumen de tu viaje</h2>
+            <button type="button" class="panel-viaje-cerrar" data-bs-dismiss="offcanvas"
+                aria-label="Cerrar">&times;</button>
+        </div>
+
+        <div class="panel-viaje-cuerpo">
+
+            <!-- Estado vacío -->
+            <div class="viaje-vacio" id="viajeVacio" hidden>
+                <p>Aún no has agregado destinos a tu viaje.</p>
+                <a href="servicios.html" class="boton-principal">Explorar el catálogo</a>
+            </div>
+
+            <!-- Lista de servicios seleccionados -->
+            <ul class="viaje-lista" id="listaViaje">
+
+                <li class="viaje-item" data-id="san-andres">
+                    <div class="viaje-item-cabecera">
+                        <div>
+                            <h3>Paraíso en San Andrés</h3>
+                            <p class="viaje-item-meta">2 personas × $ 950.000</p>
+                        </div>
+                        <p class="viaje-item-subtotal">$ 1.900.000</p>
+                    </div>
+
+                    <div class="viaje-item-controles">
+                        <div class="campo-viaje">
+                            <span class="campo-viaje-etiqueta" id="personas-san-andres">Personas</span>
+                            <div class="selector-cantidad" role="group" aria-labelledby="personas-san-andres">
+                                <button type="button" data-accion="restar" aria-label="Quitar una persona">−</button>
+                                <output>2</output>
+                                <button type="button" data-accion="sumar" aria-label="Agregar una persona">+</button>
+                            </div>
+                        </div>
+
+                        <div class="campo-viaje">
+                            <label class="campo-viaje-etiqueta" for="fecha-san-andres">Fecha de salida</label>
+                            <input type="date" id="fecha-san-andres" class="campo-viaje-fecha" value="2026-12-20">
+                        </div>
+                    </div>
+
+                    <p class="viaje-item-aviso" hidden>Temporada alta: +15 % sobre el precio base.</p>
+
+                    <button type="button" class="viaje-item-quitar" data-accion="eliminar">Quitar del viaje</button>
+                </li>
+
+                <li class="viaje-item" data-id="cartagena">
+                    <div class="viaje-item-cabecera">
+                        <div>
+                            <h3>Escapada a Cartagena</h3>
+                            <p class="viaje-item-meta">1 persona × $ 850.000</p>
+                        </div>
+                        <p class="viaje-item-subtotal">$ 850.000</p>
+                    </div>
+
+                    <div class="viaje-item-controles">
+                        <div class="campo-viaje">
+                            <span class="campo-viaje-etiqueta" id="personas-cartagena">Personas</span>
+                            <div class="selector-cantidad" role="group" aria-labelledby="personas-cartagena">
+                                <button type="button" data-accion="restar" aria-label="Quitar una persona"
+                                    disabled>−</button>
+                                <output>1</output>
+                                <button type="button" data-accion="sumar" aria-label="Agregar una persona">+</button>
+                            </div>
+                        </div>
+
+                        <div class="campo-viaje">
+                            <label class="campo-viaje-etiqueta" for="fecha-cartagena">Fecha de salida</label>
+                            <input type="date" id="fecha-cartagena" class="campo-viaje-fecha" value="">
+                        </div>
+                    </div>
+
+                    <p class="viaje-item-aviso" hidden>Temporada alta: +15 % sobre el precio base.</p>
+
+                    <button type="button" class="viaje-item-quitar" data-accion="eliminar">Quitar del viaje</button>
+                </li>
+
+            </ul>
+        </div>
+
+        <!-- Totales -->
+        <div class="panel-viaje-pie">
+            <dl class="viaje-totales">
+                <div class="viaje-total-fila">
+                    <dt>Subtotal</dt>
+                    <dd id="viajeSubtotal">$ 2.750.000</dd>
+                </div>
+                <div class="viaje-total-fila">
+                    <dt>Tarifa de gestión</dt>
+                    <dd id="viajeTarifa">$ 25.000</dd>
+                </div>
+                <div class="viaje-total-fila viaje-total-final">
+                    <dt>Total</dt>
+                    <dd id="viajeTotal">$ 2.775.000</dd>
+                </div>
+            </dl>
+
+            <a href="contactenos.html" class="viaje-continuar">Continuar con mis datos</a>
+            <button type="button" class="boton-texto viaje-vaciar" id="vaciarViaje">Vaciar mi viaje</button>
+        </div>
+
+    </aside>
+
+
     <!-- ==================== BLOQUE 6: FOOTER CON SOPORTE DIRECTO ==================== -->
     <footer class="footer-azul">
         <div class="envoltura">
             <div class="footer-columnas">
                 <div>
-                    <p class="footer-marca"><img src="Img/logo.png" alt="Pasión Viajera, agencia de viajes" class="logo-footer" width="220" height="55" loading="lazy"></p>
+                    <p class="footer-marca"><img src="Img/logo.png" alt="Pasión Viajera, agencia de viajes"
+                            class="logo-footer" width="220" height="55" loading="lazy"></p>
                     <p>Viajes a la medida, planeados contigo.</p>
                 </div>
                 <div>

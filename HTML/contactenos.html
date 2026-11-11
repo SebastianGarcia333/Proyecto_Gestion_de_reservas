@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/base.css">
     <link rel="stylesheet" href="../CSS/contactenos.css">
+    <link rel="stylesheet" href="../CSS/carrito.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -20,7 +21,9 @@
     <header class="custom-header sticky-top">
         <nav class="navbar navbar-expand-lg navbar-dark p-0" aria-label="Principal">
             <div class="envoltura d-flex flex-wrap align-items-center">
-                <a class="navbar-brand custom-brand my-auto me-auto me-lg-4" href="../index.html"><img src="../Img/logo.png" alt="Pasión Viajera, agencia de viajes" class="logo-marca" width="200" height="50"></a>
+                <a class="navbar-brand custom-brand my-auto me-auto me-lg-4" href="../index.html"><img
+                        src="../Img/logo.png" alt="Pasión Viajera, agencia de viajes" class="logo-marca" width="200"
+                        height="50"></a>
 
                 <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false">Menú</button>
@@ -29,25 +32,41 @@
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="servicios.html">Catálogo</a></li>
-                        <li class="nav-item"><a class="nav-link" href="acerca_de_nosotros.html">Acerca de nosotros</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contactenos.html" aria-current="page">Contáctanos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="acerca_de_nosotros.html">Acerca de nosotros</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="contactenos.html"
+                                aria-current="page">Contáctanos</a></li>
                         <li class="nav-item"><a class="nav-link" href="login_registro.html">Iniciar sesión</a></li>
                     </ul>
 
                     <a href="servicios.html" class="btn-explorar">
                         <span>Explorar viajes</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            viewBox="0 0 16 16" aria-hidden="true">
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                         </svg>
                     </a>
                 </div>
+                <!-- Boton carrito de compras-->
+                <button class="boton-viaje" type="button" data-bs-toggle="offcanvas" data-bs-target="#panelViaje"
+                    aria-controls="panelViaje" aria-label="Abrir mi viaje">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        viewBox="0 0 16 16" aria-hidden="true">
+                        <path
+                            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                    </svg>
+                    <span class="boton-viaje-texto">Mi viaje</span>
+                    <span class="boton-viaje-contador" id="contadorViaje">2</span>
+                </button>
             </div>
         </nav>
     </header>
 
     <main>
         <section class="hero-section">
-            <img src="../Img/Contactanos.jpg" alt="Persona con mochila mirando un valle con un río al atardecer" class="hero-image" fetchpriority="high" decoding="async">
+            <img src="../Img/Contactanos.jpg" alt="Persona con mochila mirando un valle con un río al atardecer"
+                class="hero-image" fetchpriority="high" decoding="async">
             <div class="hero-overlay"></div>
             <div class="envoltura">
                 <h1>Contáctanos</h1>
@@ -82,7 +101,9 @@
                     </dl>
 
                     <figure class="contacto-foto">
-                        <img src="../Img/playa.jpg" alt="Playa al atardecer con el cielo naranja y sombrillas en la arena" loading="lazy" decoding="async">
+                        <img src="../Img/playa.jpg"
+                            alt="Playa al atardecer con el cielo naranja y sombrillas en la arena" loading="lazy"
+                            decoding="async">
                         <figcaption>
                             <strong>Te respondemos en menos de 24 horas</strong>
                             <span>Un asesor real revisa tu mensaje y arma tu propuesta.</span>
@@ -105,25 +126,29 @@
                     <div class="campos">
                         <div class="formulario-input campo-ancho">
                             <label for="nombre">Nombre completo</label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Ej: Mariana Rojas" autocomplete="name" aria-describedby="error-nombre">
+                            <input type="text" id="nombre" name="nombre" placeholder="Ej: Mariana Rojas"
+                                autocomplete="name" aria-describedby="error-nombre">
                             <span class="mensaje-error" id="error-nombre"></span>
                         </div>
 
                         <div class="formulario-input">
                             <label for="correo">Correo electrónico</label>
-                            <input type="email" id="correo" name="correo" placeholder="Ej: mariana@hotmail.com" autocomplete="email" aria-describedby="error-correo">
+                            <input type="email" id="correo" name="correo" placeholder="Ej: mariana@hotmail.com"
+                                autocomplete="email" aria-describedby="error-correo">
                             <span class="mensaje-error" id="error-correo"></span>
                         </div>
 
                         <div class="formulario-input">
                             <label for="telefono">Teléfono</label>
-                            <input type="tel" id="telefono" name="telefono" placeholder="Ej: 3001234567" autocomplete="tel" inputmode="numeric" aria-describedby="error-telefono">
+                            <input type="tel" id="telefono" name="telefono" placeholder="Ej: 3001234567"
+                                autocomplete="tel" inputmode="numeric" aria-describedby="error-telefono">
                             <span class="mensaje-error" id="error-telefono"></span>
                         </div>
 
                         <div class="formulario-input campo-ancho">
                             <label for="mensaje">Mensaje</label>
-                            <textarea id="mensaje" name="mensaje" rows="4" placeholder="..." aria-describedby="error-mensaje"></textarea>
+                            <textarea id="mensaje" name="mensaje" rows="4" placeholder="..."
+                                aria-describedby="error-mensaje"></textarea>
                             <span class="mensaje-error" id="error-mensaje"></span>
                         </div>
                     </div>
@@ -134,12 +159,120 @@
             </div>
         </section>
     </main>
+    <!-- Barra lateral carrito de compras -->
+
+    <aside class="offcanvas offcanvas-end panel-viaje" tabindex="-1" id="panelViaje" aria-labelledby="tituloPanelViaje">
+
+        <div class="panel-viaje-cabecera">
+            <h2 id="tituloPanelViaje">Resumen de tu viaje</h2>
+            <button type="button" class="panel-viaje-cerrar" data-bs-dismiss="offcanvas"
+                aria-label="Cerrar">&times;</button>
+        </div>
+
+        <div class="panel-viaje-cuerpo">
+
+            <!-- Estado vacío-->
+            <div class="viaje-vacio" id="viajeVacio" hidden>
+                <p>Aún no has agregado destinos a tu viaje.</p>
+                <a href="servicios.html" class="boton-principal">Explorar el catálogo</a>
+            </div>
+
+            <!-- Lista de servicios seleccionados -->
+            <ul class="viaje-lista" id="listaViaje">
+
+                <li class="viaje-item" data-id="san-andres">
+                    <div class="viaje-item-cabecera">
+                        <div>
+                            <h3>Paraíso en San Andrés</h3>
+                            <p class="viaje-item-meta">2 personas × $ 950.000</p>
+                        </div>
+                        <p class="viaje-item-subtotal">$ 1.900.000</p>
+                    </div>
+
+                    <div class="viaje-item-controles">
+                        <div class="campo-viaje">
+                            <span class="campo-viaje-etiqueta" id="personas-san-andres">Personas</span>
+                            <div class="selector-cantidad" role="group" aria-labelledby="personas-san-andres">
+                                <button type="button" data-accion="restar" aria-label="Quitar una persona">−</button>
+                                <output>2</output>
+                                <button type="button" data-accion="sumar" aria-label="Agregar una persona">+</button>
+                            </div>
+                        </div>
+
+                        <div class="campo-viaje">
+                            <label class="campo-viaje-etiqueta" for="fecha-san-andres">Fecha de salida</label>
+                            <input type="date" id="fecha-san-andres" class="campo-viaje-fecha" value="2026-12-20">
+                        </div>
+                    </div>
+
+                    <p class="viaje-item-aviso" hidden>Temporada alta: +15 % sobre el precio base.</p>
+
+                    <button type="button" class="viaje-item-quitar" data-accion="eliminar">Quitar del viaje</button>
+                </li>
+
+                <li class="viaje-item" data-id="cartagena">
+                    <div class="viaje-item-cabecera">
+                        <div>
+                            <h3>Escapada a Cartagena</h3>
+                            <p class="viaje-item-meta">1 persona × $ 850.000</p>
+                        </div>
+                        <p class="viaje-item-subtotal">$ 850.000</p>
+                    </div>
+
+                    <div class="viaje-item-controles">
+                        <div class="campo-viaje">
+                            <span class="campo-viaje-etiqueta" id="personas-cartagena">Personas</span>
+                            <div class="selector-cantidad" role="group" aria-labelledby="personas-cartagena">
+                                <button type="button" data-accion="restar" aria-label="Quitar una persona"
+                                    disabled>−</button>
+                                <output>1</output>
+                                <button type="button" data-accion="sumar" aria-label="Agregar una persona">+</button>
+                            </div>
+                        </div>
+
+                        <div class="campo-viaje">
+                            <label class="campo-viaje-etiqueta" for="fecha-cartagena">Fecha de salida</label>
+                            <input type="date" id="fecha-cartagena" class="campo-viaje-fecha" value="">
+                        </div>
+                    </div>
+
+                    <p class="viaje-item-aviso" hidden>Temporada alta: +15 % sobre el precio base.</p>
+
+                    <button type="button" class="viaje-item-quitar" data-accion="eliminar">Quitar del viaje</button>
+                </li>
+
+            </ul>
+        </div>
+
+        <!-- Totales -->
+        <div class="panel-viaje-pie">
+            <dl class="viaje-totales">
+                <div class="viaje-total-fila">
+                    <dt>Subtotal</dt>
+                    <dd id="viajeSubtotal">$ 2.750.000</dd>
+                </div>
+                <div class="viaje-total-fila">
+                    <dt>Tarifa de gestión</dt>
+                    <dd id="viajeTarifa">$ 25.000</dd>
+                </div>
+                <div class="viaje-total-fila viaje-total-final">
+                    <dt>Total</dt>
+                    <dd id="viajeTotal">$ 2.775.000</dd>
+                </div>
+            </dl>
+
+            <a href="contactenos.html" class="viaje-continuar">Continuar con mis datos</a>
+            <button type="button" class="boton-texto viaje-vaciar" id="vaciarViaje">Vaciar mi viaje</button>
+        </div>
+
+    </aside>
 
     <footer class="footer-azul">
         <div class="envoltura">
             <div class="footer-columnas">
                 <div>
-                    <p class="footer-marca"><img src="../Img/logo.png" alt="Pasión Viajera, agencia de viajes" class="logo-footer" width="220" height="55" loading="lazy"></p>
+                    <p class="footer-marca"><img src="../Img/logo.png" alt="Pasión Viajera, agencia de viajes"
+                            class="logo-footer" width="220" height="55" loading="lazy"></p>
                     <p>Viajes a la medida, planeados contigo.</p>
                 </div>
                 <div>

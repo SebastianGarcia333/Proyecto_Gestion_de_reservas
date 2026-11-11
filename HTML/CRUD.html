@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/base.css">
     <link rel="stylesheet" href="../CSS/CRUD.css">
+    <link rel="stylesheet" href="../CSS/carrito.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -19,7 +20,9 @@
     <header class="custom-header sticky-top">
         <nav class="navbar navbar-expand-lg navbar-dark p-0" aria-label="Principal">
             <div class="envoltura d-flex flex-wrap align-items-center">
-                <a class="navbar-brand custom-brand my-auto me-auto me-lg-4" href="../index.html"><img src="../Img/logo.png" alt="Pasión Viajera, agencia de viajes" class="logo-marca" width="200" height="50"></a>
+                <a class="navbar-brand custom-brand my-auto me-auto me-lg-4" href="../index.html"><img
+                        src="../Img/logo.png" alt="Pasión Viajera, agencia de viajes" class="logo-marca" width="200"
+                        height="50"></a>
 
                 <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false">Menú</button>
@@ -28,19 +31,35 @@
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="servicios.html">Catálogo</a></li>
-                        <li class="nav-item"><a class="nav-link" href="acerca_de_nosotros.html">Acerca de nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="acerca_de_nosotros.html">Acerca de nosotros</a>
+                        </li>
                         <li class="nav-item"><a class="nav-link" href="contactenos.html">Contáctanos</a></li>
                         <li class="nav-item"><a class="nav-link" href="login_registro.html">Iniciar sesión</a></li>
-                        <li class="nav-item"><a class="nav-link" href="CRUD.html" aria-current="page">Administrador</a></li>
+                        <li class="nav-item"><a class="nav-link" href="CRUD.html" aria-current="page">Administrador</a>
+                        </li>
                     </ul>
 
                     <a href="servicios.html" class="btn-explorar">
                         <span>Explorar viajes</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            viewBox="0 0 16 16" aria-hidden="true">
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                         </svg>
                     </a>
                 </div>
+
+                <!-- Boton carrito de compras-->
+                <button class="boton-viaje" type="button" data-bs-toggle="offcanvas" data-bs-target="#panelViaje"
+                    aria-controls="panelViaje" aria-label="Abrir mi viaje">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        viewBox="0 0 16 16" aria-hidden="true">
+                        <path
+                            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                    </svg>
+                    <span class="boton-viaje-texto">Mi viaje</span>
+                    <span class="boton-viaje-contador" id="contadorViaje">2</span>
+                </button>
             </div>
         </nav>
     </header>
@@ -50,7 +69,8 @@
             <div class="envoltura">
                 <h1>Gestor de destinos</h1>
                 <p class="admin-resumen" id="resumen" aria-live="polite"></p>
-                <p class="admin-aviso" id="mensajeGuardado" role="status">Aquí administras los destinos nuevos. Los cinco del catálogo son fijos.</p>
+                <p class="admin-aviso" id="mensajeGuardado" role="status">Aquí administras los destinos nuevos. Los
+                    cinco del catálogo son fijos.</p>
             </div>
         </section>
 
@@ -84,20 +104,23 @@
 
                         <div class="formulario-input">
                             <label for="duracion">Duración (días)</label>
-                            <input type="number" id="duracion" min="1" placeholder="Ej: 5" aria-describedby="error-duracion">
+                            <input type="number" id="duracion" min="1" placeholder="Ej: 5"
+                                aria-describedby="error-duracion">
                             <span class="mensaje-error" id="error-duracion"></span>
                         </div>
                     </div>
 
                     <div class="formulario-input">
                         <label for="precio">Precio base (COP)</label>
-                        <input type="number" id="precio" min="0" step="1000" placeholder="Ej: 1800000" aria-describedby="error-precio">
+                        <input type="number" id="precio" min="0" step="1000" placeholder="Ej: 1800000"
+                            aria-describedby="error-precio">
                         <span class="mensaje-error" id="error-precio"></span>
                     </div>
 
                     <div class="formulario-input">
                         <label for="descripcion">Descripción breve</label>
-                        <textarea id="descripcion" rows="3" placeholder="Qué hace especial a este destino" aria-describedby="error-descripcion"></textarea>
+                        <textarea id="descripcion" rows="3" placeholder="Qué hace especial a este destino"
+                            aria-describedby="error-descripcion"></textarea>
                         <span class="mensaje-error" id="error-descripcion"></span>
                     </div>
 
@@ -105,7 +128,8 @@
                         <label for="imagen">Imagen</label>
                         <div class="subida">
                             <div class="subida-vista" id="vistaImagen" aria-hidden="true"></div>
-                            <input type="file" id="imagen" accept="image/jpeg,image/png,image/webp" aria-describedby="ayuda-imagen error-imagen">
+                            <input type="file" id="imagen" accept="image/jpeg,image/png,image/webp"
+                                aria-describedby="ayuda-imagen error-imagen">
                         </div>
                         <span class="ayuda-imagen" id="ayuda-imagen">Opcional. JPG, PNG o WebP de hasta 500 KB.</span>
                         <span class="mensaje-error" id="error-imagen"></span>
@@ -146,7 +170,8 @@
                             <tbody id="cuerpoTabla"></tbody>
                         </table>
                     </div>
-                    <p class="vacio" id="vacio" hidden>No hay destinos que coincidan. Cambia el filtro o agrega uno nuevo desde el formulario.</p>
+                    <p class="vacio" id="vacio" hidden>No hay destinos que coincidan. Cambia el filtro o agrega uno
+                        nuevo desde el formulario.</p>
                 </div>
 
             </div>
@@ -188,7 +213,8 @@
         <div class="envoltura">
             <div class="footer-columnas">
                 <div>
-                    <p class="footer-marca"><img src="../Img/logo.png" alt="Pasión Viajera, agencia de viajes" class="logo-footer" width="220" height="55" loading="lazy"></p>
+                    <p class="footer-marca"><img src="../Img/logo.png" alt="Pasión Viajera, agencia de viajes"
+                            class="logo-footer" width="220" height="55" loading="lazy"></p>
                     <p>Viajes a la medida, planeados contigo.</p>
                 </div>
                 <div>
