@@ -1,0 +1,443 @@
+/* ============================================================
+   MI VIAJE (carrito de reservas): botón del header + panel lateral
+   Cárgalo después de base.css:
+   <link rel="stylesheet" href="../CSS/carrito.css">
+   Usa las variables de base.css (--azul-oscuro, --naranja, etc.)
+   ============================================================ */
+
+/* ---------- Botón del header (a la derecha) ---------- */
+.boton-viaje {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    min-height: 44px;
+    margin-left: 0.75rem;
+    padding: 0.5rem 0.95rem;
+    border: 1px solid rgba(236, 231, 220, 0.3);
+    border-radius: 8px;
+    background-color: transparent;
+    color: var(--beige);
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.boton-viaje:hover,
+.boton-viaje:focus-visible {
+    background-color: var(--naranja);
+    border-color: var(--naranja);
+    color: var(--azul-oscuro);
+}
+
+/* Globo con la cantidad de destinos */
+.boton-viaje-contador {
+    min-width: 22px;
+    height: 22px;
+    padding: 0 0.35rem;
+    display: grid;
+    place-items: center;
+    border-radius: 999px;
+    background-color: var(--naranja);
+    color: var(--azul-oscuro);
+    font-size: 0.78rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+.boton-viaje:hover .boton-viaje-contador,
+.boton-viaje:focus-visible .boton-viaje-contador {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+}
+
+/* Si no hay destinos, JS pone hidden en el contador */
+.boton-viaje-contador[hidden] {
+    display: none;
+}
+
+/* En celular: botón antes del "Menú", solo el ícono + contador */
+@media (max-width: 991.98px) {
+    .boton-viaje {
+        order: 1;
+        margin-left: 0;
+        margin-right: 0.6rem;
+    }
+
+    .custom-header .navbar-toggler {
+        order: 2;
+    }
+
+    .custom-header .navbar-collapse {
+        order: 3;
+    }
+}
+
+@media (max-width: 420px) {
+    .boton-viaje-texto {
+        display: none;
+    }
+}
+
+
+/* ---------- Panel lateral (Offcanvas de Bootstrap) ---------- */
+.panel-viaje {
+    --bs-offcanvas-width: 440px;
+    --bs-offcanvas-bg: var(--beige);
+    --bs-offcanvas-color: var(--azul-oscuro);
+    --bs-offcanvas-border-width: 0;
+    --bs-offcanvas-padding-x: 0;
+    --bs-offcanvas-padding-y: 0;
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -14px 0 40px rgba(18, 33, 46, 0.22);
+}
+
+.panel-viaje-cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.4rem 1.5rem 1.1rem;
+    border-bottom: 2px solid var(--naranja);
+}
+
+.panel-viaje-cabecera h2 {
+    font-size: 1.6rem;
+}
+
+.panel-viaje-cerrar {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--linea);
+    border-radius: 50%;
+    background-color: var(--blanco);
+    color: var(--azul-oscuro);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.panel-viaje-cerrar:hover {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+}
+
+.panel-viaje-cuerpo {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.25rem 1.5rem;
+}
+
+
+/* ---------- Lista de reservas ---------- */
+.viaje-lista {
+    display: grid;
+    gap: 0.9rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.viaje-lista:empty {
+    display: none;
+}
+
+.viaje-item {
+    display: grid;
+    gap: 0.9rem;
+    padding: 1.1rem 1.15rem;
+    border-radius: 12px;
+    background-color: rgba(108, 163, 162, 0.2);
+}
+
+.viaje-item-cabecera {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.viaje-item h3 {
+    font-family: var(--fuente-texto);
+    font-size: 1.02rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.viaje-item-meta {
+    margin-top: 0.2rem;
+    color: var(--texto-suave);
+    font-size: 0.88rem;
+}
+
+.viaje-item-subtotal {
+    flex: 0 0 auto;
+    font-size: 1.15rem;
+    font-weight: 700;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Personas + fecha */
+.viaje-item-controles {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 1rem;
+    align-items: end;
+}
+
+.campo-viaje {
+    display: grid;
+    gap: 0.35rem;
+}
+
+.campo-viaje-etiqueta {
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.selector-cantidad {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+}
+
+.selector-cantidad output {
+    min-width: 2ch;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+.selector-cantidad button {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--azul-oscuro);
+    border-radius: 50%;
+    background-color: var(--blanco);
+    color: var(--azul-oscuro);
+    font: inherit;
+    font-size: 1.15rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.selector-cantidad button:hover:not(:disabled) {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+}
+
+.selector-cantidad button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.campo-viaje-fecha {
+    width: 100%;
+    min-height: 44px;
+    padding: 0.5rem 0.7rem;
+    border: 1px solid rgba(18, 33, 46, 0.22);
+    border-radius: 8px;
+    background-color: var(--blanco);
+    color: var(--azul-oscuro);
+    font: inherit;
+    font-size: 0.92rem;
+}
+
+.campo-viaje-fecha:focus {
+    outline: none;
+    border-color: var(--naranja);
+    box-shadow: 0 0 0 3px rgba(234, 153, 64, 0.25);
+}
+
+/* Aviso de recargo por fecha (JS le quita hidden cuando aplica) */
+.viaje-item-aviso {
+    padding: 0.5rem 0.7rem;
+    border-radius: 6px;
+    background-color: #fff3e0;
+    color: #7a3d00;
+    font-size: 0.85rem;
+}
+
+.viaje-item-aviso[hidden] {
+    display: none;
+}
+
+.viaje-item-quitar {
+    justify-self: start;
+    padding: 0.25rem 0;
+    border: 0;
+    background: transparent;
+    color: var(--error);
+    font: inherit;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+
+.viaje-item-quitar:hover {
+    color: #ff1e00;
+}
+
+
+/* ---------- Estado vacío ---------- */
+.viaje-vacio {
+    display: grid;
+    justify-items: center;
+    gap: 1.25rem;
+    padding: 2.5rem 1.5rem;
+    border: 1px dashed rgba(18, 33, 46, 0.25);
+    border-radius: 16px;
+    color: var(--texto-suave);
+    text-align: center;
+}
+
+.viaje-vacio[hidden] {
+    display: none;
+}
+
+
+/* ---------- Totales y botón final ---------- */
+.panel-viaje-pie {
+    display: grid;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem 1.5rem;
+    border-top: 1px solid var(--linea);
+    background-color: var(--beige);
+}
+
+.viaje-totales {
+    display: grid;
+    gap: 0.5rem;
+    margin: 0;
+}
+
+.viaje-total-fila {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.viaje-total-fila dt {
+    font-weight: 400;
+    color: var(--texto-suave);
+    font-size: 0.92rem;
+}
+
+.viaje-total-fila dd {
+    margin: 0;
+    font-size: 0.95rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.viaje-total-final {
+    padding-top: 0.75rem;
+    margin-top: 0.25rem;
+    border-top: 1px solid var(--linea);
+}
+
+.viaje-total-final dt {
+    color: var(--azul-oscuro);
+    font-size: 1.05rem;
+}
+
+.viaje-total-final dd {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.viaje-continuar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    font-size: 1.02rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.viaje-continuar:hover,
+.viaje-continuar:focus-visible {
+    background-color: var(--naranja);
+    color: var(--azul-oscuro);
+}
+
+/* Si el viaje está vacío, JS agrega aria-disabled="true" */
+.viaje-continuar[aria-disabled="true"] {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.viaje-vaciar {
+    justify-self: center;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.88rem;
+}
+
+
+/* ---------- Botón "Agregar a mi viaje" en las cards ---------- */
+.destinos .btn-agregar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    width: 100%;
+    min-height: 46px;
+    margin-top: 0.6rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--azul-oscuro);
+    border-radius: 8px;
+    background-color: transparent;
+    color: var(--azul-oscuro);
+    font: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.destinos .btn-agregar:hover,
+.destinos .btn-agregar:focus-visible {
+    background-color: var(--naranja);
+    border-color: var(--naranja);
+}
+
+/* JS le pone esta clase unos segundos tras agregar */
+.destinos .btn-agregar.agregado {
+    background-color: var(--verde-azulado);
+    border-color: var(--verde-azulado);
+}
+
+
+/* ---------- Celular ---------- */
+@media (max-width: 480px) {
+    .viaje-item-controles {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .panel-viaje-cabecera,
+    .panel-viaje-cuerpo,
+    .panel-viaje-pie {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
