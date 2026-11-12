@@ -2,6 +2,7 @@ const formulario = document.getElementById("formRegistro");
 const CLAVE_USUARIOS = "pasionViajera_usuarios";
 
 //validaciones
+// Cada regla recibe el valor del campo y, como segundo dato, todo el formulario
 const reglas = [
     {
         id: "nombre",
@@ -25,11 +26,16 @@ const reglas = [
         id: "contrasena",
         valido: (valor) => valor.length >= 8,
         mensaje: "La contraseña debe tener al menos 8 caracteres."
+    },
+    {
+        id: "confirmarContrasena",
+        valido: (valor, usuario) => valor !== "" && valor === usuario.contrasena,
+        mensaje: "Las contraseñas no coinciden."
     }
 ];
 
 function obtenerUsuarios() {
-    // crear usu
+    // crear usuario
     const datos = localStorage.getItem(CLAVE_USUARIOS);
     if (datos === null) return [];
 
@@ -63,7 +69,8 @@ function obtenerDatosFormulario() {
         nombre: document.getElementById("nombre").value.trim().replace(/\s+/g, " "),
         telefono: document.getElementById("telefono").value.trim(),
         correo: document.getElementById("correo").value.trim().toLowerCase(),
-        contrasena: document.getElementById("contrasena").value
+        contrasena: document.getElementById("contrasena").value,
+        confirmarContrasena: document.getElementById("confirmarContrasena").value
     };
 }
 
@@ -75,7 +82,7 @@ function validarFormulario(usuario) {
         const campo = document.getElementById(regla.id);
         const valor = usuario[regla.id];
 
-        if (regla.valido(valor)) {
+        if (regla.valido(valor, usuario)) {
             limpiarError(regla.id);
         } else {
             mostrarError(regla.id, regla.mensaje);
@@ -112,8 +119,11 @@ formulario.addEventListener("submit", (evento) => {
     const usuario = obtenerDatosFormulario();
     if (!validarFormulario(usuario)) return;
 
+    // La confirmación solo sirve para validar; no se guarda con la cuenta
+    const { confirmarContrasena, ...cuenta } = usuario;
+
     try {
-        if (!guardarUsuario(usuario)) return;
+        if (!guardarUsuario(cuenta)) return;
     } catch (error) {
         const mensaje = error && typeof error.message === "string"
             ? error.message
@@ -124,8 +134,15 @@ formulario.addEventListener("submit", (evento) => {
 
     alert("Cuenta creada. Ya puedes iniciar sesión.");
     formulario.reset();
+
+    // Lleva a la pestaña de inicio de sesión (existe en login_registro.html)
+    const pestanaLogin = document.getElementById("tab-login");
+    if (pestanaLogin) pestanaLogin.click();
 });
 
 reglas.forEach((regla) => {
     document.getElementById(regla.id).addEventListener("input", () => limpiarError(regla.id));
 });
+
+// Si cambian la contraseña, el aviso de "no coinciden" se actualiza
+document.getElementById("contrasena").addEventListener("input", () => limpiarError("confirmarContrasena"));

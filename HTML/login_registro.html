@@ -4,25 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro | Pasión viajera</title>
+    <title>Iniciar sesión | Pasión viajera</title>
     <link rel="icon" type="image/png" href="../Img/favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/base.css">
     <link rel="stylesheet" href="../CSS/contactenos.css">
+    <link rel="stylesheet" href="../CSS/carrito.css">
+    <link rel="stylesheet" href="../CSS/login_registro.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <header class="custom-header sticky-top">
+       <header class="custom-header sticky-top">
         <nav class="navbar navbar-expand-lg navbar-dark p-0" aria-label="Principal">
             <div class="envoltura d-flex flex-wrap align-items-center">
-                <a class="navbar-brand custom-brand my-auto me-auto me-lg-4" href="../index.html"><img src="../Img/logo.png" alt="Pasión Viajera, agencia de viajes" class="logo-marca" width="200" height="50"></a>
+                <a class="navbar-brand custom-brand my-auto me-auto me-lg-4" href="../index.html"><img
+                        src="../Img/logo.png" alt="Pasión Viajera, agencia de viajes" class="logo-marca" width="200"
+                        height="50"></a>
 
                 <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false"
-                    aria-label="Abrir menú de navegación">Menú</button>
+                    data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false">Menú</button>
 
                 <div class="collapse navbar-collapse" id="menuPrincipal">
                     <ul class="navbar-nav mx-auto">
@@ -30,63 +35,220 @@
                         <li class="nav-item"><a class="nav-link" href="servicios.html">Catálogo</a></li>
                         <li class="nav-item"><a class="nav-link" href="acerca_de_nosotros.html">Acerca de nosotros</a></li>
                         <li class="nav-item"><a class="nav-link" href="contactenos.html">Contáctanos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="login_registro.html" aria-current="page">Iniciar sesión</a></li>
-                        <li class="nav-item"><a class="nav-link" href="CRUD.html">Administrador</a></li>
                     </ul>
+
                     <a href="servicios.html" class="btn-explorar">
                         <span>Explorar viajes</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            viewBox="0 0 16 16" aria-hidden="true">
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                        </svg>
                     </a>
                 </div>
+
+                <!-- Acceso al resumen sin salir de esta página. -->
+                <button class="boton-viaje" type="button" data-bs-toggle="offcanvas" data-bs-target="#panelViaje"
+                    aria-controls="panelViaje" aria-label="Abrir mi viaje">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        viewBox="0 0 16 16" aria-hidden="true">
+                        <path
+                            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                    </svg>
+                    <span class="boton-viaje-texto">Mi viaje</span>
+                    <span class="boton-viaje-contador" id="contadorViaje" hidden>0</span>
+                </button>
+
+                <!-- Sesión: esquina derecha -->
+                <a class="btn-sesion" href="login_registro.html" aria-current="page">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        viewBox="0 0 16 16" aria-hidden="true">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg>
+                    <span class="btn-sesion-texto">Iniciar sesión</span>
+                </a>
             </div>
         </nav>
     </header>
 
+    <div class="envoltura">
+        <p class="carrito-aviso" id="avisoCarrito" data-aviso-carrito role="status" hidden></p>
+        <noscript><p class="carrito-aviso">Activa JavaScript en tu navegador para agregar y guardar tus viajes.</p></noscript>
+    </div>
+
     <main>
-        <section class="seccion">
+        <!-- Banner: mismo que Contáctanos; el texto cambia según la pestaña activa -->
+        <section class="hero-section">
+            <img src="../Img/playa.jpg" alt="Persona con mochila mirando un valle con un río al atardecer"
+                class="hero-image" fetchpriority="high" decoding="async">
+            <div class="hero-overlay"></div>
             <div class="envoltura">
-                <div class="encabezado-seccion">
-                    <h1 class="titulo-seccion">Crea tu cuenta</h1>
-                    <p class="texto-seccion">Regístrate para guardar tus reservas.</p>
+                <h1 id="heroTitulo">Iniciar sesión</h1>
+                <p id="heroTexto">Entra para ver tus reservas y retomar tu próxima aventura.</p>
+            </div>
+        </section>
+
+        <section class="seccion">
+            <div class="envoltura contacto">
+
+                <!-- Columna izquierda -->
+                <div class="contacto-texto">
+                    <h2 class="titulo-seccion">Tus viajes, en un solo lugar.</h2>
+                    <p class="texto-general">
+                        Con tu cuenta guardas tus reservas, revisas el estado de cada viaje
+                        y retomas tu plan cuando quieras.
+                    </p>
+
+                    <dl class="datos-contacto">
+                        <div>
+                            <dt>¿Problemas para ingresar? Escríbenos</dt>
+                            <dd>correo@pasionviajera.com</dd>
+                        </div>
+                        <div>
+                            <dt>Teléfono</dt>
+                            <dd>+57 300 000 0000</dd>
+                        </div>
+                        <div>
+                            <dt>Horario</dt>
+                            <dd>Lunes a viernes, 9:00 – 18:00</dd>
+                        </div>
+                    </dl>
+
+                    <figure class="contacto-foto">
+                        <img src="../Img/Playa2.jpg"
+                            alt="Playa al atardecer con el cielo naranja y sombrillas en la arena" loading="lazy"
+                            decoding="async">
+                        <figcaption>
+                            <strong>Tus reservas, siempre contigo</strong>
+                            <span>Inicia sesión y continúa tu plan donde lo dejaste.</span>
+                        </figcaption>
+                    </figure>
                 </div>
 
-                <form id="formRegistro" class="tarjeta-escribenos" novalidate>
-                    <div class="campos">
-                        <div class="formulario-input campo-ancho">
-                            <label for="nombre">Nombre completo</label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Ej: Mariana Rojas">
+                <!-- Columna derecha: tarjeta con pestañas -->
+                <div class="acceso-panel">
+                    <div class="acceso-tabs" role="tablist" aria-label="Acceso a la cuenta">
+                        <button type="button" class="acceso-tab" role="tab" id="tab-login"
+                            aria-controls="formLogin" aria-selected="true">Iniciar sesión</button>
+                        <button type="button" class="acceso-tab" role="tab" id="tab-registro"
+                            aria-controls="formRegistro" aria-selected="false">Crear cuenta</button>
+                    </div>
+
+                    <!-- INICIAR SESIÓN -->
+                    <form id="formLogin" class="acceso-form" role="tabpanel" aria-labelledby="tab-login" novalidate>
+                        <div class="campo-destino">
+                            <label for="correoLogin">¿Con qué correo te registraste?</label>
+                            <input type="email" id="correoLogin" name="correoLogin"
+                                placeholder="Ej: mariana@correo.com" autocomplete="email"
+                                aria-describedby="error-correoLogin">
+                            <span class="ayuda">Es el correo que usaste al crear tu cuenta.</span>
+                            <span class="mensaje-error" id="error-correoLogin"></span>
+                        </div>
+
+                        <div class="campos">
+                            <div class="formulario-input campo-ancho">
+                                <label for="contrasenaLogin">Contraseña</label>
+                                <input type="password" id="contrasenaLogin" name="contrasenaLogin"
+                                    autocomplete="current-password" aria-describedby="error-contrasenaLogin">
+                                <span class="mensaje-error" id="error-contrasenaLogin"></span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="boton-principal boton-enviar">Iniciar sesión</button>
+                        <p class="acceso-cambio">¿Aún no tienes cuenta? <button type="button" data-ir="registro">Crea una aquí</button></p>
+                    </form>
+
+                    <!-- CREAR CUENTA (mismos id que usa registro.js) -->
+                    <form id="formRegistro" class="acceso-form" role="tabpanel" aria-labelledby="tab-registro" novalidate hidden>
+                        <div class="campo-destino">
+                            <label for="nombre">¿Cómo te llamas?</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Ej: Mariana Rojas"
+                                autocomplete="name" aria-describedby="error-nombre">
+                            <span class="ayuda">Regístrate para guardar tus reservas.</span>
                             <span class="mensaje-error" id="error-nombre"></span>
                         </div>
 
-                        <div class="formulario-input">
-                            <label for="telefono">Teléfono</label>
-                            <input type="tel" id="telefono" name="telefono" placeholder="Ej: 3001234567">
-                            <span class="mensaje-error" id="error-telefono"></span>
+                        <div class="campos">
+                            <div class="formulario-input">
+                                <label for="telefono">Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono" placeholder="Ej: 3001234567"
+                                    autocomplete="tel" inputmode="numeric" aria-describedby="error-telefono">
+                                <span class="mensaje-error" id="error-telefono"></span>
+                            </div>
+
+                            <div class="formulario-input">
+                                <label for="correo">Correo electrónico (usuario)</label>
+                                <input type="email" id="correo" name="correo" placeholder="Ej: mariana@correo.com"
+                                    autocomplete="email" aria-describedby="error-correo">
+                                <span class="mensaje-error" id="error-correo"></span>
+                            </div>
+
+                            <div class="formulario-input">
+                                <label for="contrasena">Contraseña</label>
+                                <input type="password" id="contrasena" name="contrasena"
+                                    autocomplete="new-password" aria-describedby="error-contrasena">
+                                <span class="mensaje-error" id="error-contrasena"></span>
+                            </div>
+
+                            <div class="formulario-input">
+                                <label for="confirmarContrasena">Confirmar contraseña</label>
+                                <input type="password" id="confirmarContrasena" name="confirmarContrasena"
+                                    autocomplete="new-password" aria-describedby="error-confirmarContrasena">
+                                <span class="mensaje-error" id="error-confirmarContrasena"></span>
+                            </div>
                         </div>
 
-                        <div class="formulario-input">
-                            <label for="correo">Correo electrónico (usuario)</label>
-                            <input type="email" id="correo" name="correo" placeholder="Ej: mariana@correo.com">
-                            <span class="mensaje-error" id="error-correo"></span>
-                        </div>
+                        <button type="submit" class="boton-principal boton-enviar">Crear cuenta</button>
+                        <p class="acceso-cambio">¿Ya tienes cuenta? <button type="button" data-ir="login">Inicia sesión</button></p>
+                    </form>
+                </div>
 
-                        <div class="formulario-input campo-ancho">
-                            <label for="contrasena">Contraseña</label>
-                            <input type="password" id="contrasena" name="contrasena">
-                            <span class="mensaje-error" id="error-contrasena"></span>
-                        </div>
-                    </div>
-
-                    <button type="submit" class="boton-principal boton-enviar">Crear cuenta</button>
-                </form>
             </div>
         </section>
     </main>
+
+    <!-- La lista muestra la selección guardada del usuario, también al volver a esta página. -->
+    <aside class="offcanvas offcanvas-end panel-viaje" tabindex="-1" id="panelViaje" aria-labelledby="tituloPanelViaje">
+        <div class="panel-viaje-cabecera">
+            <div>
+                <h2 id="tituloPanelViaje">Resumen de tu viaje</h2>
+                <p id="panelResumen">0 destinos · 0 viajeros</p>
+            </div>
+            <button type="button" class="panel-viaje-cerrar" data-bs-dismiss="offcanvas" aria-label="Cerrar resumen del viaje">&times;</button>
+        </div>
+
+        <div class="panel-viaje-cuerpo">
+            <p class="carrito-aviso" data-aviso-carrito role="status" hidden></p>
+            <div class="viaje-vacio" id="viajeVacio">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M6 7h12a2 2 0 0 1 2 2v10H4V9a2 2 0 0 1 2-2Z"/><path d="M9 7V5a3 3 0 0 1 6 0v2M8 11v4m8-4v4"/></svg>
+                <h3>Tu próximo viaje te espera.</h3>
+                <p>Explora nuestros destinos y agrega los que te gustaría conocer.</p>
+                <a href="servicios.html" class="boton-principal">Explorar destinos <span aria-hidden="true">→</span></a>
+            </div>
+
+            <ul class="viaje-lista" id="listaViaje"></ul>
+        </div>
+
+        <div class="panel-viaje-pie" id="pieViaje" hidden>
+            <dl class="viaje-totales" aria-live="polite" aria-atomic="true">
+                <div class="viaje-total-fila">
+                    <dt>Total estimado · COP</dt>
+                    <dd id="viajeTotal">$ 0</dd>
+                </div>
+            </dl>
+            <p class="viaje-nota">Precio y disponibilidad sujetos a confirmación.</p>
+            <a href="reservas.html" class="viaje-continuar">Ver mi reserva <span aria-hidden="true">→</span></a>
+            <button type="button" class="viaje-vaciar" id="vaciarViaje">Vaciar mi viaje</button>
+        </div>
+    </aside>
 
     <footer class="footer-azul">
         <div class="envoltura">
             <div class="footer-columnas">
                 <div>
-                    <p class="footer-marca"><img src="../Img/logo.png" alt="Pasión Viajera, agencia de viajes" class="logo-footer" width="220" height="55" loading="lazy"></p>
+                    <p class="footer-marca"><img src="../Img/logo.png" alt="Pasión Viajera, agencia de viajes"
+                            class="logo-footer" width="220" height="55" loading="lazy"></p>
                     <p>Viajes a la medida, planeados contigo.</p>
                 </div>
                 <div>
@@ -112,6 +274,49 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../JS/registro.js"></script>
+    <script>
+        // Alterna entre "Iniciar sesión" y "Crear cuenta" y actualiza el banner.
+        // Si la URL termina en #registro, abre directamente el registro.
+        (function () {
+            var vistas = {
+                login: {
+                    form: document.getElementById('formLogin'),
+                    tab: document.getElementById('tab-login'),
+                    titulo: 'Iniciar sesión',
+                    texto: 'Entra para ver tus reservas y retomar tu próxima aventura.'
+                },
+                registro: {
+                    form: document.getElementById('formRegistro'),
+                    tab: document.getElementById('tab-registro'),
+                    titulo: 'Crea tu cuenta',
+                    texto: 'Regístrate para guardar tus reservas y planear tu próxima aventura.'
+                }
+            };
+            var heroTitulo = document.getElementById('heroTitulo');
+            var heroTexto = document.getElementById('heroTexto');
+
+            function mostrar(nombre) {
+                Object.keys(vistas).forEach(function (clave) {
+                    var activa = clave === nombre;
+                    vistas[clave].form.hidden = !activa;
+                    vistas[clave].tab.setAttribute('aria-selected', activa ? 'true' : 'false');
+                });
+                heroTitulo.textContent = vistas[nombre].titulo;
+                heroTexto.textContent = vistas[nombre].texto;
+                document.title = vistas[nombre].titulo + ' | Pasión viajera';
+            }
+
+            vistas.login.tab.addEventListener('click', function () { mostrar('login'); });
+            vistas.registro.tab.addEventListener('click', function () { mostrar('registro'); });
+
+            document.querySelectorAll('[data-ir]').forEach(function (boton) {
+                boton.addEventListener('click', function () { mostrar(boton.dataset.ir); });
+            });
+
+            mostrar(location.hash === '#registro' ? 'registro' : 'login');
+        })();
+    </script>
+    <script src="../JS/carrito.js" defer></script>
 </body>
 
 </html>
