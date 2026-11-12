@@ -1,0 +1,99 @@
+/* ============================================================
+   LOGIN / REGISTRO
+   La página reutiliza las clases de contactenos.css (banner, columnas,
+   foto, tarjeta y campos). Aquí solo van las piezas nuevas:
+   las pestañas y el cambio entre los dos formularios.
+   Orden de carga: base.css -> contactenos.css -> login_registro.css
+   ============================================================ */
+
+/* Tarjeta que contiene las pestañas y los dos formularios */
+.acceso-panel {
+    display: grid;
+    gap: 1.4rem;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    background-color: var(--papel);
+    border: 1px solid var(--linea);
+    border-radius: 20px;
+    box-shadow: 0 14px 34px rgba(18, 33, 46, 0.1);
+}
+
+/* Cada formulario conserva el ritmo de espacios de Contáctanos.
+   El display:grid anularía [hidden], por eso se repite aquí. */
+.acceso-form {
+    display: grid;
+    gap: 1.4rem;
+}
+
+.acceso-form[hidden] {
+    display: none;
+}
+
+/* Selector Iniciar sesión / Crear cuenta */
+.acceso-tabs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.25rem;
+    padding: 0.25rem;
+    border-radius: 10px;
+    background-color: var(--beige);
+}
+
+.acceso-tab {
+    min-height: 44px;
+    padding: 0.5rem 0.75rem;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--texto-suave);
+    font: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.acceso-tab:hover {
+    color: var(--azul-oscuro);
+}
+
+.acceso-tab[aria-selected="true"] {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+}
+
+.acceso-tab:focus-visible,
+.acceso-cambio button:focus-visible {
+    outline: 2px solid var(--azul-petroleo);
+    outline-offset: 2px;
+}
+
+/* Enlace para cambiar de formulario bajo el botón */
+.acceso-cambio {
+    margin: 0;
+    text-align: center;
+    font-size: 0.92rem;
+    color: var(--texto-suave);
+}
+
+.acceso-cambio button {
+    padding: 0.25rem 0.1rem;
+    border: 0;
+    background: none;
+    color: var(--azul-oscuro);
+    font: inherit;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+
+.acceso-cambio button:hover {
+    color: var(--azul-petroleo);
+}
+
+/* Tablet y móvil: el formulario va primero, para llegar rápido a la acción */
+@media (max-width: 991.98px) {
+    .acceso-panel {
+        order: -1;
+    }
+}

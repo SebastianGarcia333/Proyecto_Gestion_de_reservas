@@ -370,3 +370,56 @@ p {
         font-size: 0.85rem;
     }
 }
+
+/* Botón de sesión del header */
+.btn-sesion {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    margin-left: 0.6rem;
+    padding: 0.4rem 0.7rem;
+    border: 1px solid var(--naranja);
+    border-radius: 8px;
+    color: var(--naranja);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-sesion:hover,
+.btn-sesion:focus-visible,
+.btn-sesion[aria-current="page"] {
+    background-color: var(--naranja);
+    color: var(--azul-oscuro);
+}
+
+/* Pantallas medianas y pequeñas: solo el ícono, junto a "Mi viaje" */
+.btn-sesion-texto {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+/* Pantallas anchas: esquina derecha de la ventana, con texto */
+@media (min-width: 1600px) {
+    .btn-sesion {
+        position: absolute;
+        top: 50%;
+        right: 1.5rem;
+        margin-left: 0;
+        padding: 0.4rem 0.9rem;
+        transform: translateY(-50%);
+    }
+
+    .btn-sesion-texto {
+        position: static;
+        width: auto;
+        height: auto;
+        overflow: visible;
+        clip: auto;
+    }
+}
