@@ -53,11 +53,16 @@
                             d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
                     </svg>
                     <span class="boton-viaje-texto">Mi viaje</span>
-                    <span class="boton-viaje-contador" id="contadorViaje">2</span>
+                    <span class="boton-viaje-contador" id="contadorViaje" hidden>0</span>
                 </button>
             </div>
         </nav>
     </header>
+
+    <div class="envoltura">
+        <p class="carrito-aviso" id="avisoCarrito" data-aviso-carrito role="status" hidden></p>
+        <noscript><p class="carrito-aviso">Activa JavaScript en tu navegador para agregar y guardar tus viajes.</p></noscript>
+    </div>
 
     <main class="reservas">
         <div class="envoltura">
@@ -74,83 +79,24 @@
                 <p>Revisa tus destinos, ajusta los viajeros y empieza a planear tu próxima escapada.</p>
             </div>
 
-            <!-- Usamos los mismos ejemplos del panel para revisar ambas vistas con un solo total. -->
-            <div class="reservas-distribucion" id="contenidoReserva">
+            <!-- Esta vista y el panel se dibujan desde el mismo arreglo del carrito. -->
+            <div class="reservas-distribucion" id="contenidoReserva" hidden>
                 <section class="reservas-seleccion" aria-labelledby="tituloSeleccion">
                     <div class="reservas-encabezado">
                         <h2 id="tituloSeleccion">Tus viajes seleccionados</h2>
-                        <p class="reservas-cantidad" id="cantidadReserva">2 destinos · 3 viajeros</p>
+                        <p class="reservas-cantidad" id="cantidadReserva">0 destinos · 0 viajeros</p>
                     </div>
-                    <ul class="viaje-lista reservas-lista" id="listaReserva">
-                        <li class="viaje-item" data-id="san-andres">
-                            <img class="viaje-item-imagen" src="https://images.unsplash.com/photo-1592782985575-a96c6e647155?q=80&w=928&auto=format&fit=crop" alt="Mar de siete colores en San Andrés" width="130" height="190" loading="lazy">
-                            <div class="viaje-item-info">
-                                <p class="viaje-item-meta">Playa · 5 días</p>
-                                <h3>Paraíso en San Andrés</h3>
-                                <p class="viaje-item-descripcion">Caribe colombiano</p>
-                                <p class="viaje-item-precio">$ 950.000 <span>/ persona</span></p>
-                            </div>
-                            <div class="viaje-item-controles">
-                                <div class="campo-viaje">
-                                    <span class="campo-viaje-etiqueta" id="reserva-personas-san-andres">Personas</span>
-                                    <div class="selector-cantidad" role="group" aria-labelledby="reserva-personas-san-andres">
-                                        <button type="button" data-accion="restar" aria-label="Quitar una persona de Paraíso en San Andrés">−</button>
-                                        <output aria-label="Personas en Paraíso en San Andrés">2</output>
-                                        <button type="button" data-accion="sumar" aria-label="Agregar una persona a Paraíso en San Andrés">+</button>
-                                    </div>
-                                </div>
-                                <div class="campo-viaje">
-                                    <label class="campo-viaje-etiqueta" for="reserva-fecha-san-andres">Fecha de salida</label>
-                                    <input type="date" id="reserva-fecha-san-andres" class="campo-viaje-fecha" value="2026-12-20">
-                                </div>
-                            </div>
-                            <div class="viaje-item-pie">
-                                <button type="button" class="viaje-item-quitar" data-accion="eliminar" aria-label="Quitar Paraíso en San Andrés del viaje">Quitar del viaje</button>
-                                <p class="viaje-item-subtotal"><span>Subtotal</span>$ 1.900.000</p>
-                            </div>
-                        </li>
-
-                        <li class="viaje-item" data-id="cartagena">
-                            <img class="viaje-item-imagen" src="https://images.unsplash.com/photo-1714686495394-73e2bb1bbd39?q=80&w=1472&auto=format&fit=crop" alt="Calles coloridas de Cartagena" width="130" height="190" loading="lazy">
-                            <div class="viaje-item-info">
-                                <p class="viaje-item-meta">Cultura · 3 días</p>
-                                <h3>Escapada a Cartagena</h3>
-                                <p class="viaje-item-descripcion">Ciudad amurallada</p>
-                                <p class="viaje-item-precio">$ 850.000 <span>/ persona</span></p>
-                            </div>
-                            <div class="viaje-item-controles">
-                                <div class="campo-viaje">
-                                    <span class="campo-viaje-etiqueta" id="reserva-personas-cartagena">Personas</span>
-                                    <div class="selector-cantidad" role="group" aria-labelledby="reserva-personas-cartagena">
-                                        <button type="button" data-accion="restar" aria-label="Quitar una persona de Escapada a Cartagena" disabled>−</button>
-                                        <output aria-label="Personas en Escapada a Cartagena">1</output>
-                                        <button type="button" data-accion="sumar" aria-label="Agregar una persona a Escapada a Cartagena">+</button>
-                                    </div>
-                                </div>
-                                <div class="campo-viaje">
-                                    <label class="campo-viaje-etiqueta" for="reserva-fecha-cartagena">Fecha de salida</label>
-                                    <input type="date" id="reserva-fecha-cartagena" class="campo-viaje-fecha" value="">
-                                </div>
-                            </div>
-                            <div class="viaje-item-pie">
-                                <button type="button" class="viaje-item-quitar" data-accion="eliminar" aria-label="Quitar Escapada a Cartagena del viaje">Quitar del viaje</button>
-                                <p class="viaje-item-subtotal"><span>Subtotal</span>$ 850.000</p>
-                            </div>
-                        </li>
-                    </ul>
+                    <ul class="viaje-lista reservas-lista" id="listaReserva"></ul>
                     <a class="reservas-seguir" href="servicios.html"><span aria-hidden="true">←</span> Seguir explorando viajes</a>
                 </section>
 
                 <aside class="reserva-resumen" aria-labelledby="tituloResumenReserva">
                     <h2 id="tituloResumenReserva">Resumen de tu reserva</h2>
-                    <p class="reservas-cantidad" id="resumenCantidadReserva">2 destinos · 3 viajeros</p>
-                    <dl class="reserva-desglose" id="desgloseReserva">
-                        <div><dt>San Andrés × 2 personas</dt><dd>$ 1.900.000</dd></div>
-                        <div><dt>Cartagena × 1 persona</dt><dd>$ 850.000</dd></div>
-                    </dl>
+                    <p class="reservas-cantidad" id="resumenCantidadReserva">0 destinos · 0 viajeros</p>
+                    <dl class="reserva-desglose" id="desgloseReserva"></dl>
                     <dl class="reserva-total" aria-live="polite" aria-atomic="true">
                         <dt>Total estimado</dt>
-                        <dd><span>COP</span> <strong id="totalReserva">$ 2.750.000</strong></dd>
+                        <dd><span>COP</span> <strong id="totalReserva">$ 0</strong></dd>
                     </dl>
                     <!-- Por ahora la consulta continúa en contacto; no se confirma ni se cobra una reserva. -->
                     <a href="contactenos.html" class="viaje-continuar">Consultar esta reserva <span aria-hidden="true">→</span></a>
@@ -160,7 +106,7 @@
             </div>
 
             <!-- El carrito vacío tiene su propia invitación a volver al catálogo. -->
-            <section class="viaje-vacio reservas-vacio" id="reservaVacia" aria-labelledby="tituloReservaVacia" hidden>
+            <section class="viaje-vacio reservas-vacio" id="reservaVacia" aria-labelledby="tituloReservaVacia">
                 <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M6 7h12a2 2 0 0 1 2 2v10H4V9a2 2 0 0 1 2-2Z"/><path d="M9 7V5a3 3 0 0 1 6 0v2M8 11v4m8-4v4"/></svg>
                 <h2 id="tituloReservaVacia">Tu próximo viaje te espera.</h2>
                 <p>Agrega un destino del catálogo y empieza a preparar tu aventura.</p>
@@ -177,93 +123,34 @@
         </div>
     </main>
 
-    <!-- Estos viajes son ejemplos para revisar el diseño. La selección se conectará en develop. -->
+    <!-- La lista muestra la selección guardada del usuario, también al volver a esta página. -->
     <aside class="offcanvas offcanvas-end panel-viaje" tabindex="-1" id="panelViaje" aria-labelledby="tituloPanelViaje">
         <div class="panel-viaje-cabecera">
             <div>
                 <h2 id="tituloPanelViaje">Resumen de tu viaje</h2>
-                <p id="panelResumen">2 destinos · 3 viajeros</p>
+                <p id="panelResumen">0 destinos · 0 viajeros</p>
             </div>
             <button type="button" class="panel-viaje-cerrar" data-bs-dismiss="offcanvas" aria-label="Cerrar resumen del viaje">&times;</button>
         </div>
 
         <div class="panel-viaje-cuerpo">
+            <p class="carrito-aviso" data-aviso-carrito role="status" hidden></p>
             <!-- Al quedar vacío, se mostrará este bloque en lugar del listado y del total. -->
-            <div class="viaje-vacio" id="viajeVacio" hidden>
+            <div class="viaje-vacio" id="viajeVacio">
                 <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M6 7h12a2 2 0 0 1 2 2v10H4V9a2 2 0 0 1 2-2Z"/><path d="M9 7V5a3 3 0 0 1 6 0v2M8 11v4m8-4v4"/></svg>
                 <h3>Tu próximo viaje te espera.</h3>
                 <p>Explora nuestros destinos y agrega los que te gustaría conocer.</p>
                 <a href="servicios.html" class="boton-principal">Explorar destinos <span aria-hidden="true">→</span></a>
             </div>
 
-            <ul class="viaje-lista" id="listaViaje">
-                <li class="viaje-item" data-id="san-andres">
-                    <div class="viaje-item-cabecera">
-                        <img class="viaje-item-imagen" src="https://images.unsplash.com/photo-1592782985575-a96c6e647155?q=80&w=928&auto=format&fit=crop" alt="Mar de siete colores en San Andrés" width="130" height="190" loading="lazy">
-                        <div class="viaje-item-info">
-                            <p class="viaje-item-meta">Playa · 5 días</p>
-                            <h3>Paraíso en San Andrés</h3>
-                            <p class="viaje-item-descripcion">Caribe colombiano</p>
-                            <p class="viaje-item-precio">$ 950.000 <span>/ persona</span></p>
-                        </div>
-                    </div>
-                    <div class="viaje-item-controles">
-                        <div class="campo-viaje">
-                            <span class="campo-viaje-etiqueta" id="panel-personas-san-andres">Personas</span>
-                            <div class="selector-cantidad" role="group" aria-labelledby="panel-personas-san-andres">
-                                <button type="button" data-accion="restar" aria-label="Quitar una persona de Paraíso en San Andrés">−</button>
-                                <output aria-label="Personas en Paraíso en San Andrés">2</output>
-                                <button type="button" data-accion="sumar" aria-label="Agregar una persona a Paraíso en San Andrés">+</button>
-                            </div>
-                        </div>
-                        <div class="campo-viaje">
-                            <label class="campo-viaje-etiqueta" for="panel-fecha-san-andres">Fecha de salida</label>
-                            <input type="date" id="panel-fecha-san-andres" class="campo-viaje-fecha" value="2026-12-20">
-                        </div>
-                    </div>
-                    <div class="viaje-item-pie">
-                        <button type="button" class="viaje-item-quitar" data-accion="eliminar" aria-label="Quitar Paraíso en San Andrés del viaje">Quitar del viaje</button>
-                        <p class="viaje-item-subtotal"><span>Subtotal</span>$ 1.900.000</p>
-                    </div>
-                </li>
-
-                <li class="viaje-item" data-id="cartagena">
-                    <div class="viaje-item-cabecera">
-                        <img class="viaje-item-imagen" src="https://images.unsplash.com/photo-1714686495394-73e2bb1bbd39?q=80&w=1472&auto=format&fit=crop" alt="Calles coloridas de Cartagena" width="130" height="190" loading="lazy">
-                        <div class="viaje-item-info">
-                            <p class="viaje-item-meta">Cultura · 3 días</p>
-                            <h3>Escapada a Cartagena</h3>
-                            <p class="viaje-item-descripcion">Ciudad amurallada</p>
-                            <p class="viaje-item-precio">$ 850.000 <span>/ persona</span></p>
-                        </div>
-                    </div>
-                    <div class="viaje-item-controles">
-                        <div class="campo-viaje">
-                            <span class="campo-viaje-etiqueta" id="panel-personas-cartagena">Personas</span>
-                            <div class="selector-cantidad" role="group" aria-labelledby="panel-personas-cartagena">
-                                <button type="button" data-accion="restar" aria-label="Quitar una persona de Escapada a Cartagena" disabled>−</button>
-                                <output aria-label="Personas en Escapada a Cartagena">1</output>
-                                <button type="button" data-accion="sumar" aria-label="Agregar una persona a Escapada a Cartagena">+</button>
-                            </div>
-                        </div>
-                        <div class="campo-viaje">
-                            <label class="campo-viaje-etiqueta" for="panel-fecha-cartagena">Fecha de salida</label>
-                            <input type="date" id="panel-fecha-cartagena" class="campo-viaje-fecha" value="">
-                        </div>
-                    </div>
-                    <div class="viaje-item-pie">
-                        <button type="button" class="viaje-item-quitar" data-accion="eliminar" aria-label="Quitar Escapada a Cartagena del viaje">Quitar del viaje</button>
-                        <p class="viaje-item-subtotal"><span>Subtotal</span>$ 850.000</p>
-                    </div>
-                </li>
-            </ul>
+            <ul class="viaje-lista" id="listaViaje"></ul>
         </div>
 
-        <div class="panel-viaje-pie" id="pieViaje">
+        <div class="panel-viaje-pie" id="pieViaje" hidden>
             <dl class="viaje-totales" aria-live="polite" aria-atomic="true">
                 <div class="viaje-total-fila">
                     <dt>Total estimado · COP</dt>
-                    <dd id="viajeTotal">$ 2.750.000</dd>
+                    <dd id="viajeTotal">$ 0</dd>
                 </div>
             </dl>
             <p class="viaje-nota">Precio y disponibilidad sujetos a confirmación.</p>
@@ -349,5 +236,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../JS/carrito.js" defer></script>
 </body>
 </html>

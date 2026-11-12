@@ -426,7 +426,7 @@
     transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
-.destinos .btn-agregar:hover,
+.destinos .btn-agregar:hover:not(:disabled),
 .destinos .btn-agregar:focus-visible {
     background-color: var(--naranja);
     border-color: var(--naranja);
@@ -435,6 +435,35 @@
 .destinos .btn-agregar.agregado {
     background-color: var(--verde-azulado);
     border-color: var(--verde-azulado);
+}
+
+.destinos .btn-agregar:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* El aviso queda junto al contenido; al abrir Mi viaje se muestra dentro del panel. */
+.carrito-aviso {
+    margin-block: 1rem;
+    padding: 0.75rem 1rem;
+    border-left: 3px solid var(--verde-azulado);
+    border-radius: 0 6px 6px 0;
+    background-color: var(--papel);
+    color: var(--azul-oscuro);
+    font-size: 0.85rem;
+}
+
+.carrito-aviso[data-error="true"] {
+    border-left-color: var(--error);
+    color: var(--error);
+}
+
+.carrito-aviso[hidden] {
+    display: none;
+}
+
+.panel-viaje-cuerpo .carrito-aviso {
+    margin-top: 0;
 }
 
 /* Dejamos Mi viaje junto al menú cuando la navegación se recoge. */

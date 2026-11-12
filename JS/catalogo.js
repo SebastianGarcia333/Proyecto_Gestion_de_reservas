@@ -19,13 +19,20 @@
             '<div class="destino-cuerpo"><p class="destino-categoria"></p>' +
             '<h2></h2><p class="destino-detalle"></p>' +
             '<p class="destino-precio"><small>Desde</small> <span></span></p>' +
-            '<a href="contactenos.html" class="btn-destino">Consultar viaje <span aria-hidden="true">→</span></a></div>';
+            '<a href="contactenos.html" class="btn-destino">Consultar viaje <span aria-hidden="true">→</span></a>' +
+            '<button type="button" class="btn-agregar">Agregar a mi viaje <span aria-hidden="true">+</span></button></div>';
         tarjeta.querySelector("img").src = d.imagen || "../Img/Paisaje.jpg";
         tarjeta.querySelector("img").alt = d.imagen ? "Imagen de " + d.nombre : "Paisaje de viaje";
         tarjeta.querySelector(".destino-categoria").textContent = d.categoria;
         tarjeta.querySelector("h2").textContent = d.nombre;
         tarjeta.querySelector(".destino-detalle").textContent = d.duracion + " días · " + d.descripcion;
         tarjeta.querySelector(".destino-precio span").textContent = "$ " + d.precio.toLocaleString("es-CO");
+        // El carrito escucha el mismo botón en las cards fijas y en las creadas aquí.
+        const agregar = tarjeta.querySelector(".btn-agregar");
+        agregar.dataset.id = d.id;
+        agregar.dataset.nombre = d.nombre;
+        agregar.dataset.precio = d.precio;
+        agregar.dataset.dias = d.duracion;
         return tarjeta;
     }
 
