@@ -148,21 +148,24 @@
 }
 
 .reserva-desglose > div {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    /* El nombre puede ocupar varias líneas sin desplazar el importe de la derecha. */
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
     gap: 0.25rem 0.75rem;
 }
 
 .reserva-desglose dt {
     color: var(--texto-suave);
     font-weight: 400;
+    overflow-wrap: anywhere;
 }
 
 .reserva-desglose dd {
     margin: 0;
     font-weight: 600;
     font-variant-numeric: tabular-nums;
+    text-align: right;
+    white-space: nowrap;
 }
 
 .reserva-total {
