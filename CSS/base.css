@@ -404,15 +404,10 @@ p {
     clip: rect(0 0 0 0);
 }
 
-/* Pantallas anchas: esquina derecha de la ventana, con texto */
-@media (min-width: 1600px) {
+/* Laptops y pantallas más grandes: el botón muestra el texto */
+@media (min-width: 1200px) {
     .btn-sesion {
-        position: absolute;
-        top: 50%;
-        right: 1.5rem;
-        margin-left: 0;
         padding: 0.4rem 0.9rem;
-        transform: translateY(-50%);
     }
 
     .btn-sesion-texto {
@@ -421,6 +416,17 @@ p {
         height: auto;
         overflow: visible;
         clip: auto;
+    }
+}
+
+/* Pantallas muy anchas: el botón va en la esquina derecha de la ventana */
+@media (min-width: 1600px) {
+    .btn-sesion {
+        position: absolute;
+        top: 50%;
+        right: 1.5rem;
+        margin-left: 0;
+        transform: translateY(-50%);
     }
 }
 
