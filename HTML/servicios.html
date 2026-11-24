@@ -70,10 +70,6 @@
                             <a class="nav-link" href="contactenos.html">Contáctanos</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="CRUD.html">Administrador</a>
-                        </li>
-
                     </ul>
 
                     <a href="#destinosGrid" class="btn-explorar">
@@ -99,12 +95,13 @@
                     <span class="boton-viaje-contador" id="contadorViaje" hidden>0</span>
                 </button>
 
- <!-- Sesión: esquina derecha -->
+                <!-- Sesión: esquina derecha -->
                 <a class="btn-sesion" href="/HTML/login_registro.html">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                         viewBox="0 0 16 16" aria-hidden="true">
                         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
                     </svg>
                     <span class="btn-sesion-texto">Iniciar sesión</span>
                 </a>
@@ -115,7 +112,9 @@
 
     <div class="envoltura">
         <p class="carrito-aviso" id="avisoCarrito" data-aviso-carrito role="status" hidden></p>
-        <noscript><p class="carrito-aviso">Activa JavaScript en tu navegador para agregar y guardar tus viajes.</p></noscript>
+        <noscript>
+            <p class="carrito-aviso">Activa JavaScript en tu navegador para agregar y guardar tus viajes.</p>
+        </noscript>
     </div>
 
 
@@ -347,14 +346,19 @@
                 <h2 id="tituloPanelViaje">Resumen de tu viaje</h2>
                 <p id="panelResumen">0 destinos · 0 viajeros</p>
             </div>
-            <button type="button" class="panel-viaje-cerrar" data-bs-dismiss="offcanvas" aria-label="Cerrar resumen del viaje">&times;</button>
+            <button type="button" class="panel-viaje-cerrar" data-bs-dismiss="offcanvas"
+                aria-label="Cerrar resumen del viaje">&times;</button>
         </div>
 
         <div class="panel-viaje-cuerpo">
             <p class="carrito-aviso" data-aviso-carrito role="status" hidden></p>
             <!-- Al quedar vacío, se mostrará este bloque en lugar del listado y del total. -->
             <div class="viaje-vacio" id="viajeVacio">
-                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M6 7h12a2 2 0 0 1 2 2v10H4V9a2 2 0 0 1 2-2Z"/><path d="M9 7V5a3 3 0 0 1 6 0v2M8 11v4m8-4v4"/></svg>
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"
+                    aria-hidden="true">
+                    <path d="M6 7h12a2 2 0 0 1 2 2v10H4V9a2 2 0 0 1 2-2Z" />
+                    <path d="M9 7V5a3 3 0 0 1 6 0v2M8 11v4m8-4v4" />
+                </svg>
                 <h3>Tu próximo viaje te espera.</h3>
                 <p>Explora nuestros destinos y agrega los que te gustaría conocer.</p>
                 <a href="servicios.html" class="boton-principal">Explorar destinos <span aria-hidden="true">→</span></a>
@@ -472,7 +476,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../JS/catalogo.js" defer></script>
-
+    <script src="../JS/sesion.js" defer></script>
     <script src="../JS/carrito.js" defer></script>
 </body>
 

@@ -423,3 +423,14 @@ p {
         clip: auto;
     }
 }
+
+/* Boton de sesion cuanto el usuario ya ingreso */
+.btn-sesion.con-sesion {
+    background-color: var(--naranja);
+    color: var(--azul-oscuro);
+}
+
+.btn-sesion.con-sesion:hover,
+.btn-sesion.con-sesion:focus-visible {
+    background-color: var(--naranja-hover);
+}
