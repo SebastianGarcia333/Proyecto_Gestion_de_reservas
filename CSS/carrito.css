@@ -535,3 +535,86 @@
         display: none;
     }
 }
+
+/* ============================================================
+   PANEL "MI VIAJE" · efecto vidrio (estilo iOS 26)
+   ============================================================ */
+.panel-viaje {
+    --bs-offcanvas-bg: transparent;
+    /* Flota separado de los bordes, con esquinas muy redondeadas */
+    top: 12px;
+    right: 12px;
+    bottom: 12px;
+    max-width: calc(100% - 24px);
+    overflow: hidden;
+    border-radius: 28px;
+    /* Oculto: se desliza fuera de la pantalla contando el margen */
+    transform: translateX(calc(100% + 24px));
+    /* El vidrio: translúcido, desenfocado y con colores más vivos */
+    background-color: rgba(236, 231, 220, 0.55);
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+    backdrop-filter: blur(28px) saturate(180%);
+    /* Reflejo en el borde y sombra suave */
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.75),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.35),
+        0 24px 60px rgba(18, 33, 46, 0.3);
+}
+
+/* Si el navegador no soporta el desenfoque, el panel queda casi opaco */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .panel-viaje {
+        background-color: rgba(236, 231, 220, 0.96);
+    }
+}
+
+/* Fondo oscuro detrás del panel: más tenue para que el vidrio deje ver la página */
+.offcanvas-backdrop.show {
+    opacity: 0.22;
+}
+
+.panel-viaje-cabecera,
+.panel-viaje-pie {
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.45);
+}
+
+.panel-viaje-cerrar {
+    border-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.4);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+/* Tarjetas de cada viaje: otra capa de vidrio, más clara */
+.panel-viaje .viaje-item {
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    background-color: rgba(255, 255, 255, 0.5);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.8),
+        0 6px 18px rgba(18, 33, 46, 0.08);
+}
+
+.panel-viaje .selector-cantidad,
+.panel-viaje .campo-viaje-fecha {
+    border-color: rgba(18, 33, 46, 0.12);
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.panel-viaje .viaje-item-pie {
+    border-top-color: rgba(18, 33, 46, 0.1);
+}
+
+/* Celular */
+@media (max-width: 575.98px) {
+    .panel-viaje {
+        top: 8px;
+        right: 8px;
+        bottom: 8px;
+        max-width: calc(100% - 16px);
+        border-radius: 24px;
+        transform: translateX(calc(100% + 16px));
+    }
+}
