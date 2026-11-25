@@ -1,4 +1,4 @@
-// Ell botón del nav pasa a "Cerrar sesión".
+// El botón del nav pasa a "Cerrar sesión".
 (function () {
     const CLAVE_SESION = "pasionViajera_sesion";
 

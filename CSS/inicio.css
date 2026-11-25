@@ -243,6 +243,11 @@
     cursor: pointer;
 }
 
+.filtroCatalogo-control svg {
+    width: 16px;
+    height: 16px;
+}
+
 .filtroCatalogo-control:disabled {
     opacity: 0.4;
     cursor: not-allowed;

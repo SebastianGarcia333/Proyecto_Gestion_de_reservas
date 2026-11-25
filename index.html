@@ -27,9 +27,9 @@
 <body>
     <!-- ==================== HEADER / NAVEGACIÓN ==================== -->
     <header class="custom-header sticky-top">
-        <nav class="navbar navbar-expand-lg navbar-dark p-0" aria-label="Principal">
-            <div class="envoltura d-flex flex-wrap align-items-center">
-                <a class="navbar-brand custom-brand my-auto me-auto me-lg-4" href="index.html"><img src="Img/logo.png"
+        <nav class="navbar navbar-expand-xl navbar-dark p-0" aria-label="Principal">
+            <div class="envoltura">
+                <a class="navbar-brand custom-brand me-xl-4" href="index.html"><img src="Img/logo.png"
                         alt="Pasión Viajera, agencia de viajes" class="logo-marca" width="200" height="50"></a>
 
                 <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
@@ -47,34 +47,21 @@
 
                     <a href="HTML/servicios.html" class="btn-explorar">
                         <span>Explorar viajes</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            viewBox="0 0 16 16" aria-hidden="true">
-                            <path
-                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 21-4.34-4.34" /><circle cx="11" cy="11" r="8" /></svg>
                     </a>
                 </div>
 
                 <!-- Acceso al resumen sin salir de esta página. -->
                 <button class="boton-viaje" type="button" data-bs-toggle="offcanvas" data-bs-target="#panelViaje"
                     aria-controls="panelViaje" aria-label="Abrir mi viaje">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                        viewBox="0 0 16 16" aria-hidden="true">
-                        <path
-                            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 20a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2" /><path d="M8 18V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v14" /><path d="M10 20h4" /><circle cx="16" cy="20" r="2" /><circle cx="8" cy="20" r="2" /></svg>
                     <span class="boton-viaje-texto">Mi viaje</span>
                     <span class="boton-viaje-contador" id="contadorViaje" hidden>0</span>
                 </button>
 
                 <!-- Sesión: esquina derecha -->
                 <a class="btn-sesion" href="HTML/login_registro.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                        viewBox="0 0 16 16" aria-hidden="true">
-                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                        <path fill-rule="evenodd"
-                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5" /><path d="M20 21a8 8 0 0 0-16 0" /></svg>
                     <span class="btn-sesion-texto">Iniciar sesión</span>
                 </a>
             </div>
@@ -197,10 +184,10 @@
                             </span>
                             <span class="filtroCatalogo-controles">
                                 <button class="filtroCatalogo-control" type="button" data-contador="adultos"
-                                    data-cambio="-1" aria-label="Quitar un adulto">−</button>
+                                    data-cambio="-1" aria-label="Quitar un adulto"><i data-lucide="minus">−</i></button>
                                 <output id="adultosCantidad" aria-live="polite">1</output>
                                 <button class="filtroCatalogo-control" type="button" data-contador="adultos"
-                                    data-cambio="1" aria-label="Agregar un adulto">+</button>
+                                    data-cambio="1" aria-label="Agregar un adulto"><i data-lucide="plus">+</i></button>
                             </span>
                         </div>
                         <div class="filtroCatalogo-contador">
@@ -210,10 +197,10 @@
                             </span>
                             <span class="filtroCatalogo-controles">
                                 <button class="filtroCatalogo-control" type="button" data-contador="ninos"
-                                    data-cambio="-1" aria-label="Quitar un niño">−</button>
+                                    data-cambio="-1" aria-label="Quitar un niño"><i data-lucide="minus">−</i></button>
                                 <output id="ninosCantidad" aria-live="polite">0</output>
                                 <button class="filtroCatalogo-control" type="button" data-contador="ninos"
-                                    data-cambio="1" aria-label="Agregar un niño">+</button>
+                                    data-cambio="1" aria-label="Agregar un niño"><i data-lucide="plus">+</i></button>
                             </span>
                         </div>
                         <p class="filtroCatalogo-aviso" id="viajerosAviso" role="alert" hidden>Has alcanzado el máximo
@@ -316,12 +303,9 @@
                             <h3>Paraíso en San Andrés</h3>
                             <p class="destino-detalle">5 días · Caribe colombiano</p>
                             <p class="destino-precio"><small>Desde</small> $950.000</p>
-                            <a href="HTML/contactenos.html" class="btn-destino">Consultar viaje <span
-                                    aria-hidden="true">→</span></a>
-
                             <button type="button" class="btn-agregar" data-id="san-andres"
                                 data-nombre="Paraíso en San Andrés" data-precio="950000" data-dias="5">
-                                Agregar a mi viaje <span aria-hidden="true">+</span>
+                                Agregar a mi viaje <i data-lucide="plus"></i>
                             </button>
 
                         </div>
@@ -336,11 +320,9 @@
                             <h3>Aventura en La Guajira</h3>
                             <p class="destino-detalle">4 días · Desierto y mar</p>
                             <p class="destino-precio"><small>Desde</small> $750.000</p>
-                            <a href="HTML/contactenos.html" class="btn-destino">Consultar viaje <span
-                                    aria-hidden="true">→</span></a>
                             <button type="button" class="btn-agregar" data-id="la-guajira"
                                 data-nombre="Aventura en La Guajira" data-precio="750000" data-dias="4">
-                                Agregar a mi viaje <span aria-hidden="true">+</span>
+                                Agregar a mi viaje <i data-lucide="plus"></i>
                             </button>
 
                         </div>
@@ -355,11 +337,9 @@
                             <h3>Experiencia Santa Marta</h3>
                             <p class="destino-detalle">4 días · Playa y Sierra Nevada</p>
                             <p class="destino-precio"><small>Desde</small> $950.000</p>
-                            <a href="HTML/contactenos.html" class="btn-destino">Consultar viaje <span
-                                    aria-hidden="true">→</span></a>
                             <button type="button" class="btn-agregar" data-id="santa-marta"
                                 data-nombre="Experiencia Santa Marta" data-precio="950000" data-dias="4">
-                                Agregar a mi viaje <span aria-hidden="true">+</span>
+                                Agregar a mi viaje <i data-lucide="plus"></i>
                             </button>
 
                         </div>
@@ -375,19 +355,16 @@
                             <h3>Escapada a Cartagena</h3>
                             <p class="destino-detalle">3 días · Ciudad amurallada</p>
                             <p class="destino-precio"><small>Desde</small> $850.000</p>
-                            <a href="HTML/contactenos.html" class="btn-destino">Consultar viaje <span
-                                    aria-hidden="true">→</span></a>
                             <button type="button" class="btn-agregar" data-id="cartagena"
                                 data-nombre="Escapada a Cartagena" data-precio="850000" data-dias="3">
-                                Agregar a mi viaje <span aria-hidden="true">+</span>
+                                Agregar a mi viaje <i data-lucide="plus"></i>
                             </button>
 
                         </div>
                     </article>
                 </div>
                 <div class="destinos-acciones">
-                    <a href="HTML/servicios.html" class="enlace-catalogo">Ver catálogo completo <span
-                            aria-hidden="true">→</span></a>
+                    <a href="HTML/servicios.html" class="enlace-catalogo">Ver catálogo completo <i data-lucide="arrow-right"></i></a>
                 </div>
             </div>
         </section>
@@ -445,9 +422,10 @@
                             </button>
                         </h3>
                         <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faq">
-                            <div class="accordion-body">Explora el catálogo, elige una experiencia y pulsa «Consultar
-                                viaje».
-                                Desde el formulario de contacto puedes contarle a un asesor lo que buscas.</div>
+                            <div class="accordion-body">Explora el catálogo y pulsa «Agregar a mi viaje» en la
+                                experiencia que te guste. En Mi viaje eliges personas y fechas, y en «Ver mi reserva»
+                                encuentras «Consultar esta reserva», que te lleva al formulario para contarle a un
+                                asesor lo que buscas.</div>
                         </div>
                     </div>
 
@@ -541,8 +519,7 @@
                 <h2 id="tituloPanelViaje">Resumen de tu viaje</h2>
                 <p id="panelResumen">0 destinos · 0 viajeros</p>
             </div>
-            <button type="button" class="panel-viaje-cerrar" data-bs-dismiss="offcanvas"
-                aria-label="Cerrar resumen del viaje">&times;</button>
+            <button type="button" class="panel-viaje-cerrar" data-bs-dismiss="offcanvas" aria-label="Cerrar resumen del viaje"><i data-lucide="x">&times;</i></button>
         </div>
 
         <div class="panel-viaje-cuerpo">
@@ -556,8 +533,7 @@
                 </svg>
                 <h3>Tu próximo viaje te espera.</h3>
                 <p>Explora nuestros destinos y agrega los que te gustaría conocer.</p>
-                <a href="HTML/servicios.html" class="boton-principal">Explorar destinos <span
-                        aria-hidden="true">→</span></a>
+                <a href="HTML/servicios.html" class="boton-principal">Explorar destinos <i data-lucide="arrow-right"></i></a>
             </div>
 
             <ul class="viaje-lista" id="listaViaje"></ul>
@@ -571,7 +547,7 @@
                 </div>
             </dl>
             <p class="viaje-nota">Precio y disponibilidad sujetos a confirmación.</p>
-            <a href="HTML/reservas.html" class="viaje-continuar">Ver mi reserva <span aria-hidden="true">→</span></a>
+            <a href="HTML/reservas.html" class="viaje-continuar">Ver mi reserva <i data-lucide="arrow-right"></i></a>
             <button type="button" class="viaje-vaciar" id="vaciarViaje">Vaciar mi viaje</button>
         </div>
     </aside>
@@ -622,6 +598,7 @@
     </a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/lucide@1.70.0/dist/umd/lucide.min.js"></script>
     <script src="JS/inicio.js" defer></script>
     <script src="JS/carrito.js" defer></script>
     <script src="JS/sesion.js" defer></script>

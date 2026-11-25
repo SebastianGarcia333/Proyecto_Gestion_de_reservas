@@ -26,6 +26,22 @@ body {
     overflow-x: clip;
 }
 
+/* Evita que el encabezado cambie de posición entre páginas con y sin scroll. */
+html {
+    scrollbar-gutter: stable;
+}
+
+/* !important anula la compensación en línea de Bootstrap:
+   la barra de desplazamiento sigue visible y su espacio ya está reservado. */
+body,
+.custom-header {
+    padding-right: 0 !important;
+}
+
+.custom-header {
+    margin-right: 0 !important;
+}
+
 body {
     background-color: var(--beige);
     color: var(--azul-oscuro);
@@ -73,9 +89,17 @@ p {
     min-height: 68px;
 }
 
-.custom-brand {
+.custom-header .envoltura {
     display: flex;
     align-items: center;
+}
+
+.custom-brand {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    min-width: 0;
+    margin-right: 0;
     padding: 0.5rem 0;
 }
 
@@ -84,12 +108,6 @@ p {
     display: block;
     width: auto;
     height: 48px;
-}
-
-@media (max-width: 400px) {
-    .logo-marca {
-        height: 40px;
-    }
 }
 
 .custom-header .nav-link {
@@ -111,6 +129,7 @@ p {
 }
 
 .custom-toggler {
+    min-height: 44px;
     border: 1px solid rgba(236, 231, 220, 0.3) !important;
     color: var(--beige);
     font-size: 0.9rem;
@@ -122,8 +141,55 @@ p {
     box-shadow: none;
 }
 
-@media (max-width: 991.98px) {
+@media (min-width: 1200px) {
     .custom-header .navbar-collapse {
+        white-space: nowrap;
+    }
+
+    .custom-header .boton-viaje {
+        flex-shrink: 0;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1599.98px) {
+    .custom-header .nav-link {
+        padding-inline: 0.5rem !important;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .custom-header .envoltura {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) repeat(3, max-content);
+        grid-template-rows: minmax(68px, auto) auto;
+        grid-template-areas:
+            "marca sesion viaje menu"
+            "panel panel panel panel";
+        column-gap: 0.6rem;
+    }
+
+    .custom-header .custom-brand {
+        grid-area: marca;
+        justify-self: start;
+    }
+
+    .custom-header .logo-marca {
+        height: auto;
+        max-width: 100%;
+        max-height: 48px;
+    }
+
+    .custom-header .btn-sesion {
+        grid-area: sesion;
+        margin-left: 0;
+    }
+
+    .custom-header .navbar-toggler {
+        grid-area: menu;
+    }
+
+    .custom-header .navbar-collapse {
+        grid-area: panel;
         padding-bottom: 1rem;
     }
 
@@ -140,6 +206,12 @@ p {
     .custom-header .btn-explorar {
         margin-top: 1rem;
         width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .custom-header .logo-marca {
+        max-height: 40px;
     }
 }
 
@@ -316,6 +388,14 @@ p {
     }
 }
 
+/* Íconos de Lucide: toman el tamaño y el color del texto que acompañan */
+svg.lucide {
+    width: 1.1em;
+    height: 1.1em;
+    flex-shrink: 0;
+    vertical-align: -0.2em;
+}
+
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -374,6 +454,7 @@ p {
 
 /* Botón de sesión del header */
 .btn-sesion {
+    position: relative;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -389,11 +470,23 @@ p {
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+.btn-sesion svg {
+    flex-shrink: 0;
+}
+
 .btn-sesion:hover,
-.btn-sesion:focus-visible,
-.btn-sesion[aria-current="page"] {
+.btn-sesion:focus-visible {
+    border-color: var(--naranja-hover);
+    color: var(--naranja-hover);
+}
+
+.btn-sesion[aria-current="page"]::after {
+    position: absolute;
+    inset-inline: 0.55rem;
+    bottom: 4px;
+    height: 2px;
     background-color: var(--naranja);
-    color: var(--azul-oscuro);
+    content: "";
 }
 
 /* Pantallas medianas y pequeñas: solo el ícono, junto a "Mi viaje" */
@@ -405,33 +498,29 @@ p {
     clip: rect(0 0 0 0);
 }
 
-/* Laptops y pantallas más grandes: el botón muestra el texto */
-@media (min-width: 1200px) {
-    .btn-sesion {
-        padding: 0.4rem 0.9rem;
-    }
-
+/* La sesión aprovecha el margen exterior de la envoltura en pantallas anchas. */
+@media (min-width: 1600px) {
     .btn-sesion-texto {
         position: static;
         width: auto;
         height: auto;
-        overflow: visible;
         clip: auto;
+        white-space: nowrap;
+        text-overflow: ellipsis;
     }
-}
 
-/* Pantallas muy anchas: el botón va en la esquina derecha de la ventana */
-@media (min-width: 1600px) {
     .btn-sesion {
         position: absolute;
         top: 50%;
         right: 1.5rem;
+        max-width: calc((100% - 1180px) / 2 - 1.5rem);
         margin-left: 0;
+        padding: 0.4rem 0.9rem;
         transform: translateY(-50%);
     }
 }
 
-/* Boton de sesion cuanto el usuario ya ingreso */
+/* Botón de sesión cuando el usuario ya ingresó */
 .btn-sesion.con-sesion {
     background-color: var(--naranja);
     color: var(--azul-oscuro);

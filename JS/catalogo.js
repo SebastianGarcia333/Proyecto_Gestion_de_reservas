@@ -19,8 +19,7 @@
             '<div class="destino-cuerpo"><p class="destino-categoria"></p>' +
             '<h2></h2><p class="destino-detalle"></p>' +
             '<p class="destino-precio"><small>Desde</small> <span></span></p>' +
-            '<a href="contactenos.html" class="btn-destino">Consultar viaje <span aria-hidden="true">→</span></a>' +
-            '<button type="button" class="btn-agregar">Agregar a mi viaje <span aria-hidden="true">+</span></button></div>';
+            '<button type="button" class="btn-agregar">Agregar a mi viaje <i data-lucide="plus"></i></button></div>';
         tarjeta.querySelector("img").src = d.imagen || "../Img/Paisaje.jpg";
         tarjeta.querySelector("img").alt = d.imagen ? "Imagen de " + d.nombre : "Paisaje de viaje";
         tarjeta.querySelector(".destino-categoria").textContent = d.categoria;

@@ -1,50 +1,52 @@
 /* ============================================================
    LOGIN / REGISTRO
-   La página reutiliza las clases de contactenos.css (banner, columnas,
-   foto, tarjeta y campos). Aquí solo van las piezas nuevas:
-   las pestañas y el cambio entre los dos formularios.
-   Orden de carga: base.css -> contactenos.css -> login_registro.css
+   El formulario es un pase de abordar que sube sobre el banner.
+   El banner, el header y el pie vienen de base.css.
+   Orden de carga: base.css -> carrito.css -> login_registro.css
    ============================================================ */
 
-/* Tarjeta que contiene las pestañas y los dos formularios */
-.acceso-panel {
+/* Banner: espacio abajo para que el pase no tape el texto.
+   La máscara funde la foto con el beige justo debajo del texto,
+   donde se apoyan las pestañas del pase. */
+.hero-acceso .envoltura {
+    padding-bottom: 10.5rem;
+}
+
+.hero-acceso .hero-image,
+.hero-acceso .hero-overlay {
+    -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 10rem), transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 calc(100% - 10rem), transparent 100%);
+}
+
+.acceso {
+    position: relative;
+    z-index: 1;
+    margin-top: -7rem;
+    padding-bottom: 6rem;
+}
+
+.acceso .envoltura {
     display: grid;
-    gap: 1.4rem;
-    padding: clamp(1.5rem, 4vw, 2.5rem);
-    background-color: var(--papel);
-    border: 1px solid var(--linea);
-    border-radius: 20px;
-    box-shadow: 0 14px 34px rgba(18, 33, 46, 0.1);
+    gap: 2.25rem;
 }
 
-/* Cada formulario conserva el ritmo de espacios de Contáctanos.
-   El display:grid anularía [hidden], por eso se repite aquí. */
-.acceso-form {
-    display: grid;
-    gap: 1.4rem;
+.pase {
+    max-width: 62.5rem;
 }
 
-.acceso-form[hidden] {
-    display: none;
+/* Pestañas: solapas que salen del borde superior del pase */
+.pase-tabs {
+    display: flex;
+    gap: 0.4rem;
 }
 
-/* Selector Iniciar sesión / Crear cuenta */
-.acceso-tabs {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.25rem;
-    padding: 0.25rem;
-    border-radius: 10px;
-    background-color: var(--beige);
-}
-
-.acceso-tab {
-    min-height: 44px;
-    padding: 0.5rem 0.75rem;
+.pase-tab {
+    min-height: 48px;
+    padding: 0 1.4rem;
     border: 0;
-    border-radius: 8px;
-    background: transparent;
-    color: var(--texto-suave);
+    border-radius: 12px 12px 0 0;
+    background-color: #DDD6C8;
+    color: rgba(18, 33, 46, 0.8);
     font: inherit;
     font-size: 0.95rem;
     font-weight: 600;
@@ -52,26 +54,150 @@
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.acceso-tab:hover {
+.pase-tab:hover {
     color: var(--azul-oscuro);
 }
 
-.acceso-tab[aria-selected="true"] {
-    background-color: var(--azul-oscuro);
-    color: var(--blanco);
+.pase-tab[aria-selected="true"] {
+    background-color: #FFFDF9;
+    color: var(--azul-oscuro);
 }
 
-.acceso-tab:focus-visible,
-.acceso-cambio button:focus-visible {
-    outline: 2px solid var(--azul-petroleo);
-    outline-offset: 2px;
+/* Cuerpo del pase. Las muescas del troquel se recortan con máscaras,
+   y drop-shadow (no box-shadow) hace que la sombra siga ese recorte. */
+.pase-cuerpo {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(17rem, 20rem);
+    filter: drop-shadow(0 2px 3px rgba(18, 33, 46, 0.08)) drop-shadow(0 22px 24px rgba(18, 33, 46, 0.18));
 }
 
-/* Enlace para cambiar de formulario bajo el botón */
+.pase-principal {
+    display: grid;
+    gap: 1.75rem;
+    align-content: start;
+    padding: 2.25rem clamp(1.5rem, 4vw, 3rem) 2.5rem;
+    background-color: #FFFDF9;
+    border-radius: 0 0 0 20px;
+    -webkit-mask: radial-gradient(circle at 100% 0, transparent 14px, #000 14.5px),
+        radial-gradient(circle at 100% 100%, transparent 14px, #000 14.5px);
+    mask: radial-gradient(circle at 100% 0, transparent 14px, #000 14.5px),
+        radial-gradient(circle at 100% 100%, transparent 14px, #000 14.5px);
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+}
+
+.pase-cabecera {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.25rem 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(18, 33, 46, 0.12);
+    font-size: 0.875rem;
+    color: var(--texto-suave);
+}
+
+.pase-marca {
+    font-family: var(--fuente-titulos);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--azul-petroleo);
+}
+
+/* El display:grid anularía [hidden], por eso se repite aquí */
+.acceso-form {
+    display: grid;
+    gap: 1.6rem;
+}
+
+.acceso-form[hidden] {
+    display: none;
+}
+
+.pase-campo {
+    display: grid;
+    gap: 0.25rem;
+    align-content: start;
+}
+
+.pase-campo label {
+    font-size: 0.875rem;
+    color: var(--texto-suave);
+}
+
+.pase-input {
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid rgba(18, 33, 46, 0.2);
+    border-radius: 0;
+    background: transparent;
+    padding: 0.4rem 0 0.55rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--azul-oscuro);
+}
+
+.pase-input::placeholder {
+    color: rgba(18, 33, 46, 0.5);
+}
+
+.pase-input:focus {
+    outline: none;
+    border-bottom-color: var(--azul-petroleo);
+    box-shadow: 0 2px 0 var(--azul-petroleo);
+}
+
+.pase-input[aria-invalid="true"] {
+    border-bottom-color: var(--error);
+}
+
+.pase-input[aria-invalid="true"]:focus {
+    box-shadow: 0 2px 0 var(--error);
+}
+
+.pase-clave {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5rem;
+}
+
+.pase-ver {
+    min-height: 44px;
+    padding: 0 0.25rem;
+    border: 0;
+    background: none;
+    color: var(--azul-petroleo);
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.pase-dos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.mensaje-error {
+    font-size: 0.85rem;
+    color: var(--error);
+}
+
+.mensaje-error:empty {
+    display: none;
+}
+
+.pase-enviar {
+    width: 100%;
+    min-height: 54px;
+    font-size: 1rem;
+}
+
 .acceso-cambio {
     margin: 0;
-    text-align: center;
-    font-size: 0.92rem;
+    font-size: 0.95rem;
     color: var(--texto-suave);
 }
 
@@ -91,9 +217,147 @@
     color: var(--azul-petroleo);
 }
 
-/* Tablet y móvil: el formulario va primero, para llegar rápido a la acción */
-@media (max-width: 991.98px) {
-    .acceso-panel {
-        order: -1;
+/* El naranja de base.css casi no se ve sobre el papel del pase */
+.pase-tab:focus-visible,
+.pase-ver:focus-visible,
+.acceso-cambio button:focus-visible {
+    outline: 2px solid var(--azul-petroleo);
+    outline-offset: 2px;
+}
+
+/* Talón: foto del destino, datos y código de barras */
+.pase-talon {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    padding: 1.75rem;
+    background-color: var(--azul-oscuro);
+    color: var(--beige);
+    border-left: 2px dashed rgba(236, 231, 220, 0.4);
+    border-radius: 0 20px 20px 0;
+    -webkit-mask: radial-gradient(circle at 0 0, transparent 14px, #000 14.5px),
+        radial-gradient(circle at 0 100%, transparent 14px, #000 14.5px);
+    mask: radial-gradient(circle at 0 0, transparent 14px, #000 14.5px),
+        radial-gradient(circle at 0 100%, transparent 14px, #000 14.5px);
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+}
+
+.pase-talon figure {
+    display: grid;
+    gap: 0.5rem;
+    margin: 0;
+}
+
+.pase-talon img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.pase-talon figcaption,
+.pase-destino span,
+.pase-datos dt {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: rgba(236, 231, 220, 0.75);
+}
+
+.pase-destino {
+    display: grid;
+    gap: 0.1rem;
+}
+
+.pase-destino strong {
+    font-family: var(--fuente-titulos);
+    font-size: 1.9rem;
+    line-height: 1.1;
+    color: var(--blanco);
+}
+
+.pase-datos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin: 0;
+}
+
+.pase-datos dd {
+    margin: 0;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--naranja);
+}
+
+.pase-codigo {
+    height: 44px;
+    margin-top: auto;
+    opacity: 0.85;
+    background: repeating-linear-gradient(90deg,
+            var(--beige) 0 3px, transparent 3px 5px,
+            var(--beige) 5px 6px, transparent 6px 9px,
+            var(--beige) 9px 11px, transparent 11px 13px,
+            var(--beige) 13px 17px, transparent 17px 19px,
+            var(--beige) 19px 20px, transparent 20px 23px);
+}
+
+.acceso-ayuda {
+    max-width: 62.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--texto-suave);
+}
+
+.acceso-ayuda strong {
+    font-weight: 600;
+    color: var(--azul-oscuro);
+}
+
+/* Móvil: banner más bajo para ver el formulario al cargar, y el talón pasa debajo */
+@media (max-width: 767.98px) {
+    .hero-acceso {
+        min-height: 25rem;
+    }
+
+    .hero-acceso .envoltura {
+        padding-top: 3.5rem;
+        padding-bottom: 9.5rem;
+    }
+
+    .hero-acceso .hero-image,
+    .hero-acceso .hero-overlay {
+        -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 9rem), transparent 100%);
+        mask-image: linear-gradient(to bottom, #000 calc(100% - 9rem), transparent 100%);
+    }
+
+    .pase-cuerpo {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .pase-principal {
+        border-radius: 0;
+        -webkit-mask: radial-gradient(circle at 0 100%, transparent 14px, #000 14.5px),
+            radial-gradient(circle at 100% 100%, transparent 14px, #000 14.5px);
+        mask: radial-gradient(circle at 0 100%, transparent 14px, #000 14.5px),
+            radial-gradient(circle at 100% 100%, transparent 14px, #000 14.5px);
+        -webkit-mask-composite: source-in;
+        mask-composite: intersect;
+    }
+
+    .pase-talon {
+        border-left: 0;
+        border-top: 2px dashed rgba(236, 231, 220, 0.4);
+        border-radius: 0 0 20px 20px;
+        -webkit-mask: radial-gradient(circle at 0 0, transparent 14px, #000 14.5px),
+            radial-gradient(circle at 100% 0, transparent 14px, #000 14.5px);
+        mask: radial-gradient(circle at 0 0, transparent 14px, #000 14.5px),
+            radial-gradient(circle at 100% 0, transparent 14px, #000 14.5px);
+        -webkit-mask-composite: source-in;
+        mask-composite: intersect;
+    }
+
+    .pase-dos {
+        grid-template-columns: minmax(0, 1fr);
     }
 }

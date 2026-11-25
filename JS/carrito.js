@@ -138,8 +138,8 @@
         item.innerHTML = (esPagina ? informacion : '<div class="viaje-item-cabecera">' + informacion + '</div>') +
             '<div class="viaje-item-controles"><div class="campo-viaje">' +
             '<span class="campo-viaje-etiqueta">Personas</span><div class="selector-cantidad" role="group">' +
-            '<button type="button" data-accion="restar">−</button><output></output>' +
-            '<button type="button" data-accion="sumar">+</button></div></div>' +
+            '<button type="button" data-accion="restar"><i data-lucide="minus">−</i></button><output></output>' +
+            '<button type="button" data-accion="sumar"><i data-lucide="plus">+</i></button></div></div>' +
             '<div class="campo-viaje"><label class="campo-viaje-etiqueta">Fecha de salida</label>' +
             '<input type="date" class="campo-viaje-fecha"></div></div>' +
             '<div class="viaje-item-pie"><button type="button" class="viaje-item-quitar" data-accion="eliminar">Quitar del viaje</button>' +
@@ -230,9 +230,17 @@
             boton.classList.toggle("agregado", indice !== -1);
             boton.disabled = indice !== -1 && carrito[indice].personas === maximoPersonas;
             boton.textContent = boton.disabled ? "Máximo de 9 personas" :
-                indice !== -1 ? "Agregar otra persona +" : "Agregar a mi viaje +";
+                indice !== -1 ? "Agregar otra persona" : "Agregar a mi viaje";
             boton.setAttribute("aria-label", boton.textContent + ": " + boton.dataset.nombre);
+            if (!boton.disabled) boton.insertAdjacentHTML("beforeend", ' <i data-lucide="plus"></i>');
         });
+        dibujarIconos();
+    }
+
+    // El carrito vuelve a crear sus botones en cada cambio, así que los íconos se dibujan después.
+    // Sin el CDN de Lucide, los marcadores muestran el símbolo de texto que llevan dentro.
+    function dibujarIconos() {
+        if (window.lucide) lucide.createIcons();
     }
 
     function refrescarCarrito() {
@@ -373,4 +381,6 @@
     });
 
     refrescarCarrito();
+    // Por si el carrito guardado no se pudo leer y no se dibujó: los íconos fijos de la página igual se muestran.
+    dibujarIconos();
 })();

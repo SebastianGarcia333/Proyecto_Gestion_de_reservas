@@ -42,6 +42,11 @@
     margin: 0 0 0.9rem 1rem;
 }
 
+.carrusel .carousel-indicators [data-bs-target] {
+    /* El borde superior amplía el área táctil sin mover la línea visible. */
+    border-top-width: 31px;
+}
+
 /* Misión y visión */
 .mision-vision {
     display: grid;
