@@ -551,3 +551,29 @@ p {
         animation: none !important;
     }
 }
+
+/* Sesión iniciada */
+@media (min-width: 1200px) {
+    .custom-header {
+        --sesion-reserva: 19.5rem; /* espacio que la barra deja libre a la derecha */
+    }
+
+    .custom-header .btn-sesion.con-sesion {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        width: auto;
+        padding: 0 1.1rem;
+        border-radius: 999px;
+    }
+
+    .custom-header .btn-sesion.con-sesion .btn-sesion-texto {
+        position: static;
+        width: auto;
+        height: auto;
+        overflow: visible;
+        clip: auto;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+}
