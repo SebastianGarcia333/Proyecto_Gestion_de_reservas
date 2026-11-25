@@ -31,7 +31,7 @@
     boton.setAttribute("href", "#");
     boton.setAttribute("title", "Cerrar sesión de " + primerNombre);
     boton.setAttribute("aria-label", "Cerrar sesión de " + primerNombre);
-    if (texto) texto.textContent = "Hola, " + primerNombre + " · Cerrar sesión";
+    if (texto) texto.textContent = primerNombre;
 
     boton.addEventListener("click", (evento) => {
         evento.preventDefault();
