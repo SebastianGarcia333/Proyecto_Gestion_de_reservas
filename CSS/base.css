@@ -60,23 +60,50 @@ p {
     padding-right: 1.25rem;
 }
 
-/* HEADER / BARRA DE NAVEGACIÓN SUPERIOR: fija arriba durante toda la navegación */
+/* ============================================================
+   HEADER FLOTANTE
+   Barra en forma de píldora, separada del borde de la pantalla.
+   Las variables de abajo controlan la posición de cada pieza.
+   ============================================================ */
 .custom-header {
+    --barra-separacion: 12px;     /* espacio entre la barra y los bordes */
+    --barra-ancho: 1180px;        /* ancho máximo de la barra */
+    --sesion-arriba: 21px;        /* botón de sesión: distancia al borde superior */
+    --sesion-derecha: 1.25rem;    /* botón de sesión: distancia al borde derecho */
+    --sesion-tamano: 48px;
+    --boton-tamano: 44px;         /* lupa y carrito */
+    --boton-separacion: 0.5rem;   /* espacio entre la lupa y el carrito */
+
     position: sticky;
     top: 0;
     z-index: 1030;
-    background-color: var(--azul-oscuro);
-    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.18);
+    background: transparent;
+    /* Los espacios vacíos alrededor de la barra no bloquean clics */
+    pointer-events: none;
 }
 
 .custom-header .navbar {
-    min-height: 68px;
+    min-height: 0;
+    pointer-events: none;
+}
+
+/* La barra (píldora) es el contenedor interno */
+.custom-header .navbar > .envoltura {
+    position: relative;
+    pointer-events: auto;
+    width: min(var(--barra-ancho), calc(100% - 2rem));
+    max-width: none;
+    margin: var(--barra-separacion) auto;
+    padding: 0.4rem 0.6rem 0.4rem 1.25rem;
+    border-radius: 999px;
+    background-color: var(--azul-oscuro);
+    box-shadow: 0 10px 30px rgba(18, 33, 46, 0.28);
 }
 
 .custom-brand {
     display: flex;
     align-items: center;
-    padding: 0.5rem 0;
+    padding: 0.15rem 0;
 }
 
 /* Logo (Img/logo.png): emblema + nombre de la agencia */
@@ -86,28 +113,24 @@ p {
     height: 48px;
 }
 
-@media (max-width: 400px) {
-    .logo-marca {
-        height: 40px;
-    }
-}
-
+/* Enlaces del menú */
 .custom-header .nav-link {
     color: #e2e8f0 !important;
     font-size: 0.95rem;
-    padding: 1.4rem 0.75rem 1.2rem !important;
-    border-bottom: 3px solid transparent;
-    transition: color 0.2s ease;
+    padding: 0.55rem 1rem !important;
+    border-radius: 999px;
+    transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 .custom-header .nav-link:hover {
     color: var(--naranja) !important;
+    background-color: rgba(236, 231, 220, 0.08);
 }
 
 /* Página actual: el enlace lleva aria-current="page" */
 .custom-header .nav-link[aria-current="page"] {
     color: var(--naranja) !important;
-    border-bottom-color: var(--naranja);
+    background-color: rgba(234, 153, 64, 0.16);
 }
 
 .custom-toggler {
@@ -122,24 +145,24 @@ p {
     box-shadow: none;
 }
 
+/* Menú recogido: la barra deja de ser píldora total */
 @media (max-width: 991.98px) {
+    .custom-header .navbar > .envoltura {
+        border-radius: 28px;
+    }
+
     .custom-header .navbar-collapse {
         padding-bottom: 1rem;
     }
 
     .custom-header .nav-link {
         padding: 0.75rem 0.25rem !important;
+        border-radius: 0;
         border-bottom: 1px solid rgba(236, 231, 220, 0.12);
     }
 
-    .custom-header .nav-link[aria-current="page"] {
-        border-bottom-color: rgba(236, 231, 220, 0.12);
-        font-weight: 600;
-    }
-
     .custom-header .btn-explorar {
-        margin-top: 1rem;
-        width: 100%;
+        margin-top: 0.75rem;
     }
 }
 
@@ -166,10 +189,166 @@ p {
     background-color: var(--naranja-hover);
 }
 
-/* PORTADA de cada página: misma altura en todas, título abajo a la izquierda */
+/* Explorar viajes: solo la lupa (el texto queda para lectores de pantalla) */
+.custom-header .btn-explorar {
+    flex: 0 0 auto;
+    width: var(--boton-tamano);
+    height: var(--boton-tamano);
+    padding: 0;
+    border-radius: 50%;
+}
+
+.custom-header .btn-explorar span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+/* Mi viaje: solo el carrito, con el número como insignia */
+.custom-header .boton-viaje {
+    position: relative;
+    justify-content: center;
+    width: var(--boton-tamano);
+    height: var(--boton-tamano);
+    min-height: 0;
+    margin-left: var(--boton-separacion);
+    padding: 0;
+    border-radius: 50%;
+}
+
+.custom-header .boton-viaje-texto {
+    display: none;
+}
+
+.custom-header .boton-viaje-contador {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    min-width: 20px;
+    height: 20px;
+    border: 2px solid var(--azul-oscuro);
+    font-size: 0.7rem;
+}
+
+/* Iniciar sesión: fuera de la barra, fijo en la esquina superior derecha */
+.custom-header .btn-sesion {
+    position: fixed;
+    top: var(--sesion-arriba);
+    right: var(--sesion-derecha);
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: var(--sesion-tamano);
+    height: var(--sesion-tamano);
+    margin: 0;
+    padding: 0;
+    pointer-events: auto;
+    border: 1px solid var(--naranja);
+    border-radius: 50%;
+    background-color: var(--azul-oscuro);
+    color: var(--naranja);
+    box-shadow: 0 10px 30px rgba(18, 33, 46, 0.28);
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.custom-header .btn-sesion:hover,
+.custom-header .btn-sesion:focus-visible,
+.custom-header .btn-sesion[aria-current="page"] {
+    background-color: var(--naranja);
+    color: var(--azul-oscuro);
+}
+
+/* Con sesión iniciada (clase que agrega JS/sesion.js) */
+.custom-header .btn-sesion.con-sesion {
+    background-color: var(--naranja);
+    color: var(--azul-oscuro);
+}
+
+.custom-header .btn-sesion.con-sesion:hover,
+.custom-header .btn-sesion.con-sesion:focus-visible {
+    background-color: var(--naranja-hover);
+}
+
+/* El texto queda oculto a la vista pero disponible para lectores de pantalla */
+.btn-sesion-texto {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+/* Laptops: la barra deja libre la esquina para el botón de sesión */
+@media (max-width: 1347.98px) {
+    .custom-header .navbar > .envoltura {
+        width: calc(100% - 5.5rem);
+        margin: var(--barra-separacion) 4.5rem var(--barra-separacion) 1rem;
+    }
+}
+
+/* Celular */
+@media (max-width: 575.98px) {
+    .custom-header {
+        --sesion-arriba: 16px;
+        --sesion-derecha: 0.75rem;
+        --sesion-tamano: 42px;
+    }
+
+    .custom-header .navbar > .envoltura {
+        width: calc(100% - 4.75rem);
+        margin: 10px 3.75rem 10px 0.75rem;
+        padding: 0.3rem 0.5rem 0.3rem 0.9rem;
+    }
+
+    .logo-marca {
+        height: 40px;
+    }
+}
+
+/* Avión que recorre la barra de izquierda a derecha cada 10 segundos */
+.avion-navbar {
+    position: absolute;
+    top: 2px;
+    left: 2%;
+    z-index: 3;
+    width: 26px;
+    height: auto;
+    pointer-events: none;
+    opacity: 0;
+    animation: avion-navbar 10s linear infinite;
+}
+
+@keyframes avion-navbar {
+    0% {
+        left: 2%;
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    58% {
+        left: calc(100% - 34px);
+        opacity: 0;
+    }
+    100% {
+        left: calc(100% - 34px);
+        opacity: 0;
+    }
+}
+
+/* PORTADA de cada página: misma altura en todas, título abajo a la izquierda.
+   El margen negativo la sube por detrás de la barra flotante. */
 .hero-section {
     position: relative;
     min-height: min(62vh, 560px);
+    margin-top: -100px;
     display: grid;
     align-items: end;
     color: var(--blanco);
@@ -247,7 +426,7 @@ p {
     }
 }
 
-/* PIE DE PÁGINA (muy compacto) */
+/* PIE DE PÁGINA (compacto) */
 .footer-azul {
     background-color: var(--azul-oscuro);
     color: rgba(236, 231, 220, 0.8);
@@ -316,15 +495,6 @@ p {
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        transition: none !important;
-        animation: none !important;
-    }
-}
-
 /* Soporte: mismo botón en Inicio y Catálogo. */
 .boton-chat-ayuda {
     position: fixed;
@@ -362,7 +532,6 @@ p {
     color: var(--azul-oscuro);
 }
 
-
 @media (max-width: 576px) {
     .boton-chat-ayuda {
         right: 1rem;
@@ -372,72 +541,13 @@ p {
     }
 }
 
-/* Botón de sesión del header */
-.btn-sesion {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    min-height: 44px;
-    margin-left: 0.6rem;
-    padding: 0.4rem 0.7rem;
-    border: 1px solid var(--naranja);
-    border-radius: 8px;
-    color: var(--naranja);
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.btn-sesion:hover,
-.btn-sesion:focus-visible,
-.btn-sesion[aria-current="page"] {
-    background-color: var(--naranja);
-    color: var(--azul-oscuro);
-}
-
-/* Pantallas medianas y pequeñas: solo el ícono, junto a "Mi viaje" */
-.btn-sesion-texto {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-}
-
-/* Laptops y pantallas más grandes: el botón muestra el texto */
-@media (min-width: 1200px) {
-    .btn-sesion {
-        padding: 0.4rem 0.9rem;
+/* Si la persona prefiere menos movimiento: sin transiciones ni animaciones
+   (esto también detiene el avión, que queda invisible) */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
     }
-
-    .btn-sesion-texto {
-        position: static;
-        width: auto;
-        height: auto;
-        overflow: visible;
-        clip: auto;
-    }
-}
-
-/* Pantallas muy anchas: el botón va en la esquina derecha de la ventana */
-@media (min-width: 1600px) {
-    .btn-sesion {
-        position: absolute;
-        top: 50%;
-        right: 1.5rem;
-        margin-left: 0;
-        transform: translateY(-50%);
-    }
-}
-
-/* Boton de sesion cuanto el usuario ya ingreso */
-.btn-sesion.con-sesion {
-    background-color: var(--naranja);
-    color: var(--azul-oscuro);
-}
-
-.btn-sesion.con-sesion:hover,
-.btn-sesion.con-sesion:focus-visible {
-    background-color: var(--naranja-hover);
 }
