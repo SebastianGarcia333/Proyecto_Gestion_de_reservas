@@ -94,6 +94,45 @@ p {
     align-items: center;
 }
 
+/* Avión decorativo: cruza el header cada 10 s. Se ubica respecto al header (sticky),
+   no a .envoltura, porque desde 1600 px el botón de sesión también usa el header como referencia. */
+.avion-navbar {
+    position: absolute;
+    top: 1px;
+    left: 2%;
+    z-index: 3;
+    width: 50px;
+    height: auto;
+    pointer-events: none;
+    opacity: 0;
+    animation: avion-navbar 10s linear infinite;
+}
+
+@keyframes avion-navbar {
+    0% {
+        left: 2%;
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    58% {
+        left: calc(100% - 34px);
+        opacity: 0;
+    }
+
+    100% {
+        left: calc(100% - 34px);
+        opacity: 0;
+    }
+}
+
 .custom-brand {
     display: flex;
     flex-shrink: 0;
