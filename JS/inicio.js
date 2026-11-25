@@ -208,3 +208,26 @@ if (botonLimpiarFiltro) {
 }
 
 actualizarViajeros();
+
+// 8. Vídeo de portada: se pausa mientras el panel Mi viaje está abierto
+// Lo que se mueve detrás del panel obliga a recalcular su backdrop-filter en cada fotograma.
+const videoPortada = document.querySelector(".hero-section video");
+const panelViaje = document.getElementById("panelViaje");
+
+if (videoPortada && panelViaje) {
+    let pausadoPorPanel = false;
+
+    panelViaje.addEventListener("show.bs.offcanvas", () => {
+        if (!videoPortada.paused) {
+            videoPortada.pause();
+            pausadoPorPanel = true;
+        }
+    });
+
+    panelViaje.addEventListener("hidden.bs.offcanvas", () => {
+        if (pausadoPorPanel) {
+            pausadoPorPanel = false;
+            videoPortada.play().catch(() => {});
+        }
+    });
+}

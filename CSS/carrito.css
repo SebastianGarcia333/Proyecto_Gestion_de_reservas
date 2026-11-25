@@ -572,17 +572,13 @@
 
 .panel-viaje-cerrar {
     border-color: rgba(255, 255, 255, 0.6);
-    background-color: rgba(255, 255, 255, 0.4);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
-/* Tarjetas de cada viaje: otra capa de vidrio, más clara */
+/* La capa clara translúcida distingue las tarjetas del fondo del panel. */
 .panel-viaje .viaje-item {
     border: 1px solid rgba(255, 255, 255, 0.65);
-    background-color: rgba(255, 255, 255, 0.5);
-    -webkit-backdrop-filter: blur(14px);
-    backdrop-filter: blur(14px);
+    background-color: rgba(255, 255, 255, 0.62);
     box-shadow:
         inset 0 1px 0 rgba(255, 255, 255, 0.8),
         0 6px 18px rgba(18, 33, 46, 0.08);

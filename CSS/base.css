@@ -108,9 +108,14 @@ p {
     animation: avion-navbar 10s linear infinite;
 }
 
+/* El movimiento detrás del panel obliga a recalcular su backdrop-filter en cada fotograma. */
+body:has(.panel-viaje:is(.show, .showing, .hiding)) .avion-navbar {
+    animation-play-state: paused;
+}
+
 @keyframes avion-navbar {
     0% {
-        left: 2%;
+        transform: translateX(0);
         opacity: 0;
     }
 
@@ -123,12 +128,12 @@ p {
     }
 
     58% {
-        left: calc(100% - 34px);
+        transform: translateX(calc(98vw - 34px));
         opacity: 0;
     }
 
     100% {
-        left: calc(100% - 34px);
+        transform: translateX(calc(98vw - 34px));
         opacity: 0;
     }
 }

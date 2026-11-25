@@ -9,7 +9,10 @@
     if (!/Chrome\/|Chromium\/|Edg\//.test(ua) || /Firefox\/|FxiOS/.test(ua)) return;
 
     const ns = "http://www.w3.org/2000/svg";
-    const opciones = { borde: 18, fuerza: 70, aberracion: 4, desenfoque: 4 };
+    const opciones = { borde: 18, fuerza: 70, desenfoque: 4.5 };
+    const reposo = `blur(${opciones.desenfoque}px) brightness(1.05) saturate(1.5)`;
+    const lente = `url(#vidrio-panel-viaje) blur(${opciones.desenfoque}px) brightness(1.05) saturate(1.5)`;
+    let quieto = false;
 
     // Rojo mueve en x y verde en y; el gris neutro (128) del centro no mueve nada.
     // El panel va pegado al borde derecho de la ventana: el gris se extiende más allá de ese lado
@@ -42,21 +45,11 @@
     const contenedor = nodo("svg", { width: 0, height: 0, "aria-hidden": "true", style: "position:absolute" }, document.body);
     const filtro = nodo("filter", { id: "vidrio-panel-viaje", "color-interpolation-filters": "sRGB" }, nodo("defs", {}, contenedor));
     const imagen = nodo("feImage", { x: 0, y: 0, result: "mapa", preserveAspectRatio: "none" }, filtro);
-    // Tres desplazamientos con escalas distintas, uno por canal, dan la aberración cromática.
-    const matrices = {
-        R: "1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0",
-        G: "0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0",
-        B: "0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0"
-    };
-    ["R", "G", "B"].forEach((canal, i) => {
-        nodo("feDisplacementMap", {
-            in: "SourceGraphic", in2: "mapa", xChannelSelector: "R", yChannelSelector: "G",
-            scale: opciones.fuerza + opciones.aberracion * (2 - i), result: "d" + canal
-        }, filtro);
-        nodo("feColorMatrix", { in: "d" + canal, type: "matrix", values: matrices[canal], result: "c" + canal }, filtro);
-    });
-    nodo("feBlend", { in: "cR", in2: "cG", mode: "screen", result: "rg" }, filtro);
-    nodo("feBlend", { in: "rg", in2: "cB", mode: "screen" }, filtro);
+    nodo("feDisplacementMap", {
+        in: "SourceGraphic", in2: "mapa", xChannelSelector: "R", yChannelSelector: "G",
+        scale: opciones.fuerza
+    }, filtro);
+    panel.style.backdropFilter = reposo;
 
     function pintar() {
         const ancho = Math.round(panel.offsetWidth);
@@ -67,8 +60,7 @@
         imagen.setAttribute("width", ancho);
         imagen.setAttribute("height", alto);
         imagen.setAttribute("href", mapa(ancho, alto, radio));
-        const d = opciones.desenfoque;
-        panel.style.backdropFilter = `blur(${d / 2}px) url(#vidrio-panel-viaje) blur(${d}px) brightness(1.05) saturate(1.5)`;
+        if (quieto) panel.style.backdropFilter = lente;
     }
 
     // El mapa depende del tamaño: se rehace cuando el panel cambia (al abrirlo, al girar el teléfono).
@@ -78,6 +70,14 @@
         pendiente = true;
         requestAnimationFrame(() => { pendiente = false; pintar(); });
     }).observe(panel);
-    panel.addEventListener("shown.bs.offcanvas", pintar);
+    // El fondo cambia en cada fotograma del deslizamiento, así que la lente solo se aplica con el panel quieto.
+    panel.addEventListener("shown.bs.offcanvas", () => {
+        quieto = true;
+        pintar();
+    });
+    panel.addEventListener("hide.bs.offcanvas", () => {
+        quieto = false;
+        panel.style.backdropFilter = reposo;
+    });
     pintar();
 })();
