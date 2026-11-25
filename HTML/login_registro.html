@@ -8,7 +8,6 @@
     <link rel="icon" type="image/png" href="../Img/favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/base.css">
-    <link rel="stylesheet" href="../CSS/contactenos.css">
     <link rel="stylesheet" href="../CSS/carrito.css">
     <link rel="stylesheet" href="../CSS/login_registro.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,9 +19,10 @@
 
 <body>
        <header class="custom-header sticky-top">
-        <nav class="navbar navbar-expand-lg navbar-dark p-0" aria-label="Principal">
-            <div class="envoltura d-flex flex-wrap align-items-center">
-                <a class="navbar-brand custom-brand my-auto me-auto me-lg-4" href="../index.html"><img
+        <nav class="navbar navbar-expand-xl navbar-dark p-0" aria-label="Principal">
+            <div class="envoltura">
+                <img class="avion-navbar" src="../Img/5731625.png" alt="" aria-hidden="true" width="50" height="50">
+                <a class="navbar-brand custom-brand me-xl-4" href="../index.html"><img
                         src="../Img/logo.png" alt="Pasión Viajera, agencia de viajes" class="logo-marca" width="200"
                         height="50"></a>
 
@@ -39,33 +39,21 @@
 
                     <a href="servicios.html" class="btn-explorar">
                         <span>Explorar viajes</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            viewBox="0 0 16 16" aria-hidden="true">
-                            <path
-                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 21-4.34-4.34" /><circle cx="11" cy="11" r="8" /></svg>
                     </a>
                 </div>
 
                 <!-- Acceso al resumen sin salir de esta página. -->
                 <button class="boton-viaje" type="button" data-bs-toggle="offcanvas" data-bs-target="#panelViaje"
                     aria-controls="panelViaje" aria-label="Abrir mi viaje">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                        viewBox="0 0 16 16" aria-hidden="true">
-                        <path
-                            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 20a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2" /><path d="M8 18V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v14" /><path d="M10 20h4" /><circle cx="16" cy="20" r="2" /><circle cx="8" cy="20" r="2" /></svg>
                     <span class="boton-viaje-texto">Mi viaje</span>
                     <span class="boton-viaje-contador" id="contadorViaje" hidden>0</span>
                 </button>
 
                 <!-- Sesión: esquina derecha -->
                 <a class="btn-sesion" href="login_registro.html" aria-current="page">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                        viewBox="0 0 16 16" aria-hidden="true">
-                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5" /><path d="M20 21a8 8 0 0 0-16 0" /></svg>
                     <span class="btn-sesion-texto">Iniciar sesión</span>
                 </a>
             </div>
@@ -78,132 +66,131 @@
     </div>
 
     <main>
-        <!-- Banner: mismo que Contáctanos; el texto cambia según la pestaña activa -->
-        <section class="hero-section">
-            <img src="../Img/playa.jpg" alt="Persona con mochila mirando un valle con un río al atardecer"
+        <!-- Banner como en las demás páginas; el texto cambia según la pestaña activa -->
+        <section class="hero-section hero-acceso">
+            <img src="../Img/playa.jpg" alt="Playa al atardecer con sombrillas en la arena y botes en el mar"
                 class="hero-image" fetchpriority="high" decoding="async">
             <div class="hero-overlay"></div>
             <div class="envoltura">
                 <h1 id="heroTitulo">Iniciar sesión</h1>
-                <p id="heroTexto">Entra para ver tus reservas y retomar tu próxima aventura.</p>
+                <p id="heroTexto">Tu cuenta es el pase a tus reservas: entra y retoma el viaje donde lo dejaste.</p>
             </div>
         </section>
 
-        <section class="seccion">
-            <div class="envoltura contacto">
-
-                <!-- Columna izquierda -->
-                <div class="contacto-texto">
-                    <h2 class="titulo-seccion">Tus viajes, en un solo lugar.</h2>
-                    <p class="texto-general">
-                        Con tu cuenta guardas tus reservas, revisas el estado de cada viaje
-                        y retomas tu plan cuando quieras.
-                    </p>
-
-                    <dl class="datos-contacto">
-                        <div>
-                            <dt>¿Problemas para ingresar? Escríbenos</dt>
-                            <dd>correo@pasionviajera.com</dd>
-                        </div>
-                        <div>
-                            <dt>Teléfono</dt>
-                            <dd>+57 300 000 0000</dd>
-                        </div>
-                        <div>
-                            <dt>Horario</dt>
-                            <dd>Lunes a viernes, 9:00 – 18:00</dd>
-                        </div>
-                    </dl>
-
-                    <figure class="contacto-foto">
-                        <img src="../Img/Playa2.jpg"
-                            alt="Playa al atardecer con el cielo naranja y sombrillas en la arena" loading="lazy"
-                            decoding="async">
-                        <figcaption>
-                            <strong>Tus reservas, siempre contigo</strong>
-                            <span>Inicia sesión y continúa tu plan donde lo dejaste.</span>
-                        </figcaption>
-                    </figure>
-                </div>
-
-                <!-- Columna derecha: tarjeta con pestañas -->
-                <div class="acceso-panel">
-                    <div class="acceso-tabs" role="tablist" aria-label="Acceso a la cuenta">
-                        <button type="button" class="acceso-tab" role="tab" id="tab-login"
+        <!-- El pase sube sobre el borde inferior del banner -->
+        <section class="acceso">
+            <div class="envoltura">
+                <div class="pase">
+                    <div class="pase-tabs" role="tablist" aria-label="Acceso a la cuenta">
+                        <button type="button" class="pase-tab" role="tab" id="tab-login"
                             aria-controls="formLogin" aria-selected="true">Iniciar sesión</button>
-                        <button type="button" class="acceso-tab" role="tab" id="tab-registro"
+                        <button type="button" class="pase-tab" role="tab" id="tab-registro"
                             aria-controls="formRegistro" aria-selected="false">Crear cuenta</button>
                     </div>
 
-                    <!-- INICIAR SESIÓN -->
-                    <form id="formLogin" class="acceso-form" role="tabpanel" aria-labelledby="tab-login" novalidate>
-                        <div class="campo-destino">
-                            <label for="correoLogin">¿Con qué correo te registraste?</label>
-                            <input type="email" id="correoLogin" name="correoLogin"
-                                placeholder="Ej: mariana@correo.com" autocomplete="email"
-                                aria-describedby="error-correoLogin">
-                            <span class="ayuda">Es el correo que usaste al crear tu cuenta.</span>
-                            <span class="mensaje-error" id="error-correoLogin"></span>
+                    <div class="pase-cuerpo">
+                        <div class="pase-principal">
+                            <div class="pase-cabecera">
+                                <span class="pase-marca">Pasión Viajera</span>
+                                <span>Pase de acceso a tu cuenta</span>
+                            </div>
+
+                            <!-- INICIAR SESIÓN (mismos id que usa login.js) -->
+                            <form id="formLogin" class="acceso-form" role="tabpanel" aria-labelledby="tab-login" novalidate>
+                                <div class="pase-campo">
+                                    <label for="correoLogin">Pasajero (tu correo)</label>
+                                    <input type="email" id="correoLogin" name="correoLogin" class="pase-input"
+                                        placeholder="mariana@correo.com" autocomplete="email"
+                                        aria-describedby="error-correoLogin">
+                                    <span class="mensaje-error" id="error-correoLogin"></span>
+                                </div>
+
+                                <div class="pase-campo">
+                                    <label for="contrasenaLogin">Contraseña</label>
+                                    <div class="pase-clave">
+                                        <input type="password" id="contrasenaLogin" name="contrasenaLogin" class="pase-input"
+                                            autocomplete="current-password" aria-describedby="error-contrasenaLogin">
+                                        <button type="button" class="pase-ver" id="verClave" aria-controls="contrasenaLogin"
+                                            aria-pressed="false">Mostrar</button>
+                                    </div>
+                                    <span class="mensaje-error" id="error-contrasenaLogin"></span>
+                                </div>
+
+                                <button type="submit" class="boton-principal pase-enviar">Iniciar sesión</button>
+                                <p class="acceso-cambio">¿Aún no tienes cuenta? <button type="button" data-ir="registro">Crea una aquí</button></p>
+                            </form>
+
+                            <!-- CREAR CUENTA (mismos id que usa registro.js) -->
+                            <form id="formRegistro" class="acceso-form" role="tabpanel" aria-labelledby="tab-registro" novalidate hidden>
+                                <div class="pase-campo">
+                                    <label for="nombre">Nombre del pasajero</label>
+                                    <input type="text" id="nombre" name="nombre" class="pase-input" placeholder="Mariana Rojas"
+                                        autocomplete="name" aria-describedby="error-nombre">
+                                    <span class="mensaje-error" id="error-nombre"></span>
+                                </div>
+
+                                <div class="pase-dos">
+                                    <div class="pase-campo">
+                                        <label for="telefono">Teléfono</label>
+                                        <input type="tel" id="telefono" name="telefono" class="pase-input" placeholder="3001234567"
+                                            autocomplete="tel" inputmode="numeric" aria-describedby="error-telefono">
+                                        <span class="mensaje-error" id="error-telefono"></span>
+                                    </div>
+
+                                    <div class="pase-campo">
+                                        <label for="correo">Correo (será tu usuario)</label>
+                                        <input type="email" id="correo" name="correo" class="pase-input" placeholder="mariana@correo.com"
+                                            autocomplete="email" aria-describedby="error-correo">
+                                        <span class="mensaje-error" id="error-correo"></span>
+                                    </div>
+
+                                    <div class="pase-campo">
+                                        <label for="contrasena">Contraseña</label>
+                                        <input type="password" id="contrasena" name="contrasena" class="pase-input"
+                                            autocomplete="new-password" aria-describedby="error-contrasena">
+                                        <span class="mensaje-error" id="error-contrasena"></span>
+                                    </div>
+
+                                    <div class="pase-campo">
+                                        <label for="confirmarContrasena">Confirmar contraseña</label>
+                                        <input type="password" id="confirmarContrasena" name="confirmarContrasena" class="pase-input"
+                                            autocomplete="new-password" aria-describedby="error-confirmarContrasena">
+                                        <span class="mensaje-error" id="error-confirmarContrasena"></span>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="boton-principal pase-enviar">Crear cuenta</button>
+                                <p class="acceso-cambio">¿Ya tienes cuenta? <button type="button" data-ir="login">Inicia sesión</button></p>
+                            </form>
                         </div>
 
-                        <div class="campos">
-                            <div class="formulario-input campo-ancho">
-                                <label for="contrasenaLogin">Contraseña</label>
-                                <input type="password" id="contrasenaLogin" name="contrasenaLogin"
-                                    autocomplete="current-password" aria-describedby="error-contrasenaLogin">
-                                <span class="mensaje-error" id="error-contrasenaLogin"></span>
-                            </div>
+                        <div class="pase-talon">
+                            <figure>
+                                <img src="../Img/guajira.jpg" alt="Paisaje rocoso del Cabo de la Vela, en La Guajira"
+                                    loading="lazy" decoding="async">
+                                <figcaption>Cabo de la Vela, La Guajira</figcaption>
+                            </figure>
+                            <p class="pase-destino">
+                                <span>Destino</span>
+                                <strong id="paseDestino">Tus reservas</strong>
+                            </p>
+                            <dl class="pase-datos">
+                                <div>
+                                    <dt>Embarque</dt>
+                                    <dd>Cuando quieras</dd>
+                                </div>
+                                <div>
+                                    <dt>Equipaje</dt>
+                                    <dd>Tu plan guardado</dd>
+                                </div>
+                            </dl>
+                            <div class="pase-codigo" aria-hidden="true"></div>
                         </div>
-
-                        <button type="submit" class="boton-principal boton-enviar">Iniciar sesión</button>
-                        <p class="acceso-cambio">¿Aún no tienes cuenta? <button type="button" data-ir="registro">Crea una aquí</button></p>
-                    </form>
-
-                    <!-- CREAR CUENTA (mismos id que usa registro.js) -->
-                    <form id="formRegistro" class="acceso-form" role="tabpanel" aria-labelledby="tab-registro" novalidate hidden>
-                        <div class="campo-destino">
-                            <label for="nombre">¿Cómo te llamas?</label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Ej: Mariana Rojas"
-                                autocomplete="name" aria-describedby="error-nombre">
-                            <span class="ayuda">Regístrate para guardar tus reservas.</span>
-                            <span class="mensaje-error" id="error-nombre"></span>
-                        </div>
-
-                        <div class="campos">
-                            <div class="formulario-input">
-                                <label for="telefono">Teléfono</label>
-                                <input type="tel" id="telefono" name="telefono" placeholder="Ej: 3001234567"
-                                    autocomplete="tel" inputmode="numeric" aria-describedby="error-telefono">
-                                <span class="mensaje-error" id="error-telefono"></span>
-                            </div>
-
-                            <div class="formulario-input">
-                                <label for="correo">Correo electrónico (usuario)</label>
-                                <input type="email" id="correo" name="correo" placeholder="Ej: mariana@correo.com"
-                                    autocomplete="email" aria-describedby="error-correo">
-                                <span class="mensaje-error" id="error-correo"></span>
-                            </div>
-
-                            <div class="formulario-input">
-                                <label for="contrasena">Contraseña</label>
-                                <input type="password" id="contrasena" name="contrasena"
-                                    autocomplete="new-password" aria-describedby="error-contrasena">
-                                <span class="mensaje-error" id="error-contrasena"></span>
-                            </div>
-
-                            <div class="formulario-input">
-                                <label for="confirmarContrasena">Confirmar contraseña</label>
-                                <input type="password" id="confirmarContrasena" name="confirmarContrasena"
-                                    autocomplete="new-password" aria-describedby="error-confirmarContrasena">
-                                <span class="mensaje-error" id="error-confirmarContrasena"></span>
-                            </div>
-                        </div>
-
-                        <button type="submit" class="boton-principal boton-enviar">Crear cuenta</button>
-                        <p class="acceso-cambio">¿Ya tienes cuenta? <button type="button" data-ir="login">Inicia sesión</button></p>
-                    </form>
+                    </div>
                 </div>
 
+                <p class="acceso-ayuda">¿Problemas para ingresar? Escríbenos a <strong>correo@pasionviajera.com</strong>
+                    o llama al <strong>+57 300 000 0000</strong>, de lunes a viernes entre 9:00 y 18:00.</p>
             </div>
         </section>
     </main>
@@ -215,7 +202,7 @@
                 <h2 id="tituloPanelViaje">Resumen de tu viaje</h2>
                 <p id="panelResumen">0 destinos · 0 viajeros</p>
             </div>
-            <button type="button" class="panel-viaje-cerrar" data-bs-dismiss="offcanvas" aria-label="Cerrar resumen del viaje">&times;</button>
+            <button type="button" class="panel-viaje-cerrar" data-bs-dismiss="offcanvas" aria-label="Cerrar resumen del viaje"><i data-lucide="x">&times;</i></button>
         </div>
 
         <div class="panel-viaje-cuerpo">
@@ -224,7 +211,7 @@
                 <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M6 7h12a2 2 0 0 1 2 2v10H4V9a2 2 0 0 1 2-2Z"/><path d="M9 7V5a3 3 0 0 1 6 0v2M8 11v4m8-4v4"/></svg>
                 <h3>Tu próximo viaje te espera.</h3>
                 <p>Explora nuestros destinos y agrega los que te gustaría conocer.</p>
-                <a href="servicios.html" class="boton-principal">Explorar destinos <span aria-hidden="true">→</span></a>
+                <a href="servicios.html" class="boton-principal">Explorar destinos <i data-lucide="arrow-right"></i></a>
             </div>
 
             <ul class="viaje-lista" id="listaViaje"></ul>
@@ -238,7 +225,7 @@
                 </div>
             </dl>
             <p class="viaje-nota">Precio y disponibilidad sujetos a confirmación.</p>
-            <a href="reservas.html" class="viaje-continuar">Ver mi reserva <span aria-hidden="true">→</span></a>
+            <a href="reservas.html" class="viaje-continuar">Ver mi reserva <i data-lucide="arrow-right"></i></a>
             <button type="button" class="viaje-vaciar" id="vaciarViaje">Vaciar mi viaje</button>
         </div>
     </aside>
@@ -273,9 +260,10 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/lucide@1.70.0/dist/umd/lucide.min.js"></script>
     <script src="../JS/registro.js"></script>
     <script>
-        // Alterna entre "Iniciar sesión" y "Crear cuenta" y actualiza el banner.
+        // Alterna entre "Iniciar sesión" y "Crear cuenta" y actualiza el banner y el talón del pase.
         // Si la URL termina en #registro, abre directamente el registro.
         (function () {
             var vistas = {
@@ -283,17 +271,20 @@
                     form: document.getElementById('formLogin'),
                     tab: document.getElementById('tab-login'),
                     titulo: 'Iniciar sesión',
-                    texto: 'Entra para ver tus reservas y retomar tu próxima aventura.'
+                    texto: 'Tu cuenta es el pase a tus reservas: entra y retoma el viaje donde lo dejaste.',
+                    destino: 'Tus reservas'
                 },
                 registro: {
                     form: document.getElementById('formRegistro'),
                     tab: document.getElementById('tab-registro'),
                     titulo: 'Crea tu cuenta',
-                    texto: 'Regístrate para guardar tus reservas y planear tu próxima aventura.'
+                    texto: 'Con tu cuenta guardas cada reserva y revisas el estado de tus viajes.',
+                    destino: 'Tu primer viaje'
                 }
             };
             var heroTitulo = document.getElementById('heroTitulo');
             var heroTexto = document.getElementById('heroTexto');
+            var paseDestino = document.getElementById('paseDestino');
 
             function mostrar(nombre) {
                 Object.keys(vistas).forEach(function (clave) {
@@ -303,8 +294,18 @@
                 });
                 heroTitulo.textContent = vistas[nombre].titulo;
                 heroTexto.textContent = vistas[nombre].texto;
+                paseDestino.textContent = vistas[nombre].destino;
                 document.title = vistas[nombre].titulo + ' | Pasión viajera';
             }
+
+            var verClave = document.getElementById('verClave');
+            var campoClave = document.getElementById('contrasenaLogin');
+            verClave.addEventListener('click', function () {
+                var visible = campoClave.type === 'password';
+                campoClave.type = visible ? 'text' : 'password';
+                verClave.textContent = visible ? 'Ocultar' : 'Mostrar';
+                verClave.setAttribute('aria-pressed', visible ? 'true' : 'false');
+            });
 
             vistas.login.tab.addEventListener('click', function () { mostrar('login'); });
             vistas.registro.tab.addEventListener('click', function () { mostrar('registro'); });

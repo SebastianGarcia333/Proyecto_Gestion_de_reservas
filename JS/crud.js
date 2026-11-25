@@ -7,7 +7,10 @@ const claveDestinos = "pasionViajera.destinos";
 let contadorId = 504;
 let imagenActual = "";
 let lectorImagen = null;
+let idPorEliminar = "";
 const campos = ["nombre", "categoria", "duracion", "precio", "descripcion"];
+const modalEliminar = obtener("modalEliminar");
+const botonConfirmar = obtener("confirmarEliminar");
 
 function obtener(id) {
     return document.getElementById(id);
@@ -107,6 +110,14 @@ function validar() {
     return todoBien;
 }
 
+// El nombre del destino va en aria-label para que el lector de pantalla diga qué fila se edita o elimina.
+function botonAccion(icono, accion, texto, d, funcion, claseExtra) {
+    return '<button type="button" class="accion' + claseExtra + '" title="' + accion + '"' +
+        ' aria-label="' + accion + ' ' + textoSeguro(d.nombre) + '"' +
+        ' onclick="' + funcion + '(\'' + d.id + '\')">' +
+        '<i data-lucide="' + icono + '"></i><span class="accion-texto">' + texto + "</span></button>";
+}
+
 // Muestra la tabla (con buscador y filtro) y el resumen de arriba
 function dibujarTabla() {
     let texto = obtener("buscar").value.trim().toLowerCase();
@@ -128,14 +139,19 @@ function dibujarTabla() {
                 '<p class="destino-meta">' + textoSeguro(d.categoria) + " · " + d.duracion + " días</p></div></div></td>" +
                 '<td class="celda-precio">' + formatoPrecio(d.precio) + "</td>" +
                 '<td><div class="celda-acciones">' +
-                '<button class="accion" onclick="verDetalle(\'' + d.id + '\')">Ver</button>' +
-                '<button class="accion" onclick="editar(\'' + d.id + '\')">Actualizar</button>' +
-                '<button class="accion accion-eliminar" onclick="eliminar(\'' + d.id + '\')">Eliminar</button>' +
+                botonAccion("eye", "Ver detalle", "Ver", d, "verDetalle", "") +
+                botonAccion("square-pen", "Editar", "Editar", d, "editar", "") +
+                botonAccion("trash-2", "Eliminar", "Eliminar", d, "eliminar", " accion-eliminar") +
                 "</div></td></tr>";
         }
     }
 
     obtener("cuerpoTabla").innerHTML = filas;
+    // Si el CDN de Lucide no cargó, los botones conservan su texto visible.
+    if (window.lucide) {
+        lucide.createIcons({ root: obtener("cuerpoTabla") });
+        obtener("cuerpoTabla").classList.add("con-iconos");
+    }
     obtener("vacio").hidden = cantidad > 0;
     obtener("resumen").textContent = destinos.length + " destinos creados en este navegador.";
 }
@@ -213,7 +229,7 @@ function editar(id) {
     }
     obtener("idEditando").value = d.id;
     imagenActual = d.imagen;
-    obtener("tituloForm").textContent = "Actualizar " + d.nombre;
+    obtener("tituloForm").textContent = "Editar " + d.nombre;
     obtener("botonGuardar").textContent = "Guardar cambios";
     obtener("botonCancelar").hidden = false;
     obtener("formDestino").classList.add("editando");
@@ -239,7 +255,18 @@ function verDetalle(id) {
 }
 
 function eliminar(id) {
-    if (!confirm("¿Eliminar este destino del catálogo?")) return;
+    let destino = buscarPorId(id);
+    if (!destino) return;
+    idPorEliminar = id;
+    obtener("eliminarTexto").textContent = "Se quitará «" + destino.nombre + "» del catálogo. Esta acción no se puede deshacer.";
+    bootstrap.Modal.getOrCreateInstance(modalEliminar).show();
+}
+
+function confirmarEliminacion() {
+    let id = idPorEliminar;
+    if (!id) return;
+    idPorEliminar = "";
+    bootstrap.Modal.getInstance(modalEliminar).hide();
     if (!cargarDestinos()) return;
     let nuevosDestinos = destinos.filter((d) => d.id !== id);
     if (!guardarDestinos(nuevosDestinos)) return;
@@ -248,6 +275,16 @@ function eliminar(id) {
 }
 
 // Eventos
+botonConfirmar.addEventListener("click", confirmarEliminacion);
+modalEliminar.addEventListener("show.bs.modal", function () {
+    botonConfirmar.disabled = true;
+});
+modalEliminar.addEventListener("shown.bs.modal", function () {
+    botonConfirmar.disabled = false;
+});
+modalEliminar.addEventListener("hide.bs.modal", function () {
+    idPorEliminar = "";
+});
 obtener("formDestino").addEventListener("submit", guardar);
 obtener("buscar").addEventListener("input", dibujarTabla);
 obtener("filtroCategoria").addEventListener("change", dibujarTabla);

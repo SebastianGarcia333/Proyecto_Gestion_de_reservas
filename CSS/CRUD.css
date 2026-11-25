@@ -326,22 +326,23 @@
     white-space: nowrap;
 }
 
-/* Botones de acción de cada fila (los genera crud.js).
-   Sirve tanto con <button> sueltos como con las clases .boton-accion y .boton-accion-peligro */
-.tabla-destinos tbody td:last-child {
-    white-space: nowrap;
+/* Botones de acción de cada fila (los genera crud.js): ver, editar y eliminar.
+   Con Lucide cargado son cuadrados con ícono; el nombre queda en title y aria-label. */
+.celda-acciones {
+    display: flex;
+    gap: 0.4rem;
 }
 
-.tabla-destinos tbody td:last-child button+button,
-.boton-accion+.boton-accion {
-    margin-left: 0.35rem;
-}
-
-.tabla-destinos tbody td:last-child button,
-.boton-accion {
+.accion {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    min-width: 40px;
+    min-height: 40px;
     padding: 0.4rem 0.75rem;
     border: 1px solid rgba(18, 33, 46, 0.22);
-    border-radius: 6px;
+    border-radius: 8px;
     background-color: var(--blanco);
     color: var(--azul-oscuro);
     font: inherit;
@@ -352,28 +353,41 @@
     transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
-.tabla-destinos tbody td:last-child button:hover,
-.boton-accion:hover {
+.accion svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.con-iconos .accion {
+    padding: 0;
+}
+
+.con-iconos .accion-texto {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+.accion:hover,
+.accion:focus-visible {
     background-color: var(--azul-oscuro);
     border-color: var(--azul-oscuro);
     color: var(--blanco);
 }
 
-/* Estilo del boton eliminar, eliminar siempre en rojo para no confundir con editar */
-
-.tabla-destinos tbody td:last-child button.accion-eliminar,
-.tabla-destinos tbody td:last-child button[data-accion="eliminar"],
-.accion-eliminar,
-.boton-accion-peligro {
+/* Eliminar siempre en rojo para no confundirlo con editar */
+.accion-eliminar {
     background-color: rgba(155, 44, 31, 0.08);
     border-color: rgba(155, 44, 31, 0.45);
     color: var(--error);
 }
 
-.tabla-destinos tbody td:last-child button.accion-eliminar:hover,
-.tabla-destinos tbody td:last-child button[data-accion="eliminar"]:hover,
 .accion-eliminar:hover,
-.boton-accion-peligro:hover {
+.accion-eliminar:focus-visible {
     background-color: var(--error);
     border-color: var(--error);
     color: var(--blanco);
@@ -452,6 +466,101 @@
 
     .tarjeta-destino {
         position: static;
+    }
+}
+
+/* Tablet pequeña y celular: cada fila pasa a ser una card y las acciones quedan
+   siempre a la vista, sin desplazar la tabla de lado. */
+@media (max-width: 767.98px) {
+    .tabla-envoltura {
+        overflow: visible;
+        background: none;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .tabla-destinos {
+        min-width: 0;
+        table-layout: fixed;
+    }
+
+    .tabla-destinos thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+    }
+
+    .tabla-destinos tbody {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.75rem;
+    }
+
+    .tabla-destinos tbody tr {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-areas:
+            "destino destino"
+            "precio acciones";
+        align-items: center;
+        gap: 0.9rem 1rem;
+        position: relative;
+        padding: 1rem;
+        background-color: var(--blanco);
+        border: 1px solid var(--linea);
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(18, 33, 46, 0.06);
+    }
+
+    .tabla-destinos tbody td {
+        display: block;
+        padding: 0;
+        border-top: 0;
+    }
+
+    /* El ID va en la esquina para que el nombre use todo el ancho de la card */
+    .tabla-destinos tbody td:first-child {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    .tabla-destinos tbody td:nth-child(2) {
+        grid-area: destino;
+        padding-right: 3.5rem;
+        overflow-wrap: anywhere;
+    }
+
+    .tabla-destinos tbody td:nth-child(3) {
+        grid-area: precio;
+        overflow-wrap: anywhere;
+        white-space: normal;
+    }
+
+    .tabla-destinos tbody td:last-child {
+        grid-area: acciones;
+    }
+
+    .celda-acciones {
+        flex-wrap: wrap;
+    }
+
+    .accion {
+        min-width: 44px;
+        min-height: 44px;
+    }
+}
+
+@media (max-width: 420px) {
+    .tabla-destinos tbody tr {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "destino"
+            "precio"
+            "acciones";
     }
 }
 
