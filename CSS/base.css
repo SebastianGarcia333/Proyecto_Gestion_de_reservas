@@ -617,6 +617,23 @@ svg.lucide {
     .opciones-cuenta { top: 60px; right: 1rem; }
 }
 
+/* El nombre del viajero comparte la primera fila con el logo. Mi viaje y Menú van debajo. */
+@media (max-width: 440px) {
+    .custom-header .envoltura {
+        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: "marca sesion" "viaje menu" "panel panel";
+        row-gap: .2rem;
+        padding-block: .25rem;
+    }
+    .custom-header .cuenta-nav,
+    .custom-header .navbar-toggler { justify-self: end; }
+    .custom-header .boton-viaje { justify-self: start; }
+    .custom-header .boton-viaje-texto { display: inline; }
+    .cuenta-nav { position: relative; z-index: 1; }
+    .opciones-cuenta { top: calc(100% + 7px); right: 0; }
+}
+
 .aviso-cuenta {
     position: fixed;
     right: 1rem;
