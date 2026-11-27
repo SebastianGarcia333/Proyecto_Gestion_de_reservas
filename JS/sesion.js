@@ -1,40 +1,52 @@
-// El botón del nav pasa a "Cerrar sesión".
 (function () {
     const CLAVE_SESION = "pasionViajera_sesion";
+    const entrar = document.querySelector("a.btn-sesion");
+    const menu = document.querySelector(".menu-cuenta");
+    const resumen = menu.querySelector("summary");
 
     function obtenerSesion() {
         try {
             const sesion = JSON.parse(localStorage.getItem(CLAVE_SESION));
-            return sesion && typeof sesion.correo === "string" ? sesion : null;
+            if (typeof sesion?.nombre !== "string" || !sesion.nombre.trim() ||
+                typeof sesion.correo !== "string" || !sesion.correo.trim()) return null;
+            return sesion;
         } catch {
             return null;
         }
     }
 
-    function cerrarSesion() {
-        localStorage.removeItem(CLAVE_SESION);
-        window.location.reload();
+    function actualizarMenu() {
+        const sesion = obtenerSesion();
+        entrar.hidden = Boolean(sesion);
+        menu.hidden = !sesion;
+        menu.open = false;
+        menu.querySelector(".nombre-corto").textContent = sesion ? sesion.nombre.trim().split(/\s+/)[0] : "";
+        menu.querySelector(".nombre-cuenta").textContent = sesion?.nombre || "";
+        document.dispatchEvent(new Event("cambioDeSesion"));
     }
 
-    // Por si otras partes necesitan saber si hay sesión
-    window.sesionActual = obtenerSesion;
-
-    const boton = document.querySelector(".btn-sesion");
-    const sesion = obtenerSesion();
-    if (!boton || !sesion) return;
-
-    const primerNombre = sesion.nombre.split(" ")[0];
-    const texto = boton.querySelector(".btn-sesion-texto");
-
-    boton.classList.add("con-sesion");
-    boton.removeAttribute("aria-current");
-    boton.setAttribute("href", "#");
-    boton.setAttribute("title", "Cerrar sesión de " + primerNombre);
-    boton.setAttribute("aria-label", "Cerrar sesión de " + primerNombre);
-    if (texto) texto.textContent = primerNombre;
-
-    boton.addEventListener("click", (evento) => {
-        evento.preventDefault();
-        cerrarSesion();
+    menu.querySelector(".cerrar-sesion").addEventListener("click", () => {
+        localStorage.removeItem(CLAVE_SESION);
+        actualizarMenu();
+        entrar.focus();
     });
+    document.addEventListener("click", (evento) => {
+        if (menu.open && !menu.contains(evento.target)) menu.open = false;
+    });
+    document.addEventListener("keydown", (evento) => {
+        if (menu.open && evento.key === "Escape") {
+            menu.open = false;
+            resumen.focus();
+        }
+    });
+
+    // Si el viajero sale en otra pestaña, también se actualiza Contáctanos.
+    window.addEventListener("storage", (evento) => {
+        if (evento.key === CLAVE_SESION || evento.key === null) actualizarMenu();
+    });
+    window.addEventListener("pageshow", (evento) => {
+        if (evento.persisted) actualizarMenu();
+    });
+    window.sesionActual = obtenerSesion;
+    actualizarMenu();
 })();

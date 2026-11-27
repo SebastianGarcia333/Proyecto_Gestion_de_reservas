@@ -1,6 +1,5 @@
 // Inicio de sesión: valida el formulario y compara con las cuentas de registro.js
 (function () {
-    const CLAVE_USUARIOS = "pasionViajera_usuarios"; // la misma que usa registro.js
     const CLAVE_SESION = "pasionViajera_sesion";
     const form = document.getElementById("formLogin");
     if (!form) return;
@@ -16,15 +15,6 @@
     function limpiarError(campo) {
         campo.removeAttribute("aria-invalid");
         document.getElementById("error-" + campo.id).textContent = "";
-    }
-
-    function leerUsuarios() {
-        try {
-            const usuarios = JSON.parse(localStorage.getItem(CLAVE_USUARIOS));
-            return Array.isArray(usuarios) ? usuarios : [];
-        } catch {
-            return [];
-        }
     }
 
     form.addEventListener("submit", (evento) => {
@@ -59,9 +49,16 @@
         }
 
         // 3. Autenticación contra los usuarios guardados
-        const usuario = leerUsuarios().find(
-            (u) => u.correo === correo && u.contrasena === contrasena
-        );
+        let usuario;
+        try {
+            usuario = obtenerUsuarios().find(
+                (cuenta) => cuenta.correo.trim().toLowerCase() === correo && cuenta.contrasena === contrasena
+            );
+        } catch {
+            mostrarError(campoCorreo, "No pudimos leer las cuentas guardadas en este navegador.");
+            campoCorreo.focus();
+            return;
+        }
 
         if (!usuario) {
             mostrarError(campoClave, "Correo o contraseña incorrectos.");
@@ -70,13 +67,16 @@
         }
 
         // 4. Sesión iniciada: se guarda solo lo necesario
-        localStorage.setItem(CLAVE_SESION, JSON.stringify({
-            nombre: usuario.nombre,
-            correo: usuario.correo
-        }));
+        try {
+            localStorage.setItem(CLAVE_SESION, JSON.stringify({ nombre: usuario.nombre, correo }));
+        } catch {
+            mostrarError(campoCorreo, "No pudimos guardar tu sesión en este navegador.");
+            campoCorreo.focus();
+            return;
+        }
 
-        alert("¡Inicio de sesión exitoso! Bienvenido/a, " + usuario.nombre.split(" ")[0] + ".");
-        window.location.href = "../index.html";
+        // Inicio consume esta marca al llegar, así el saludo no se repite al recargar.
+        window.location.href = "../index.html#sesion-iniciada";
     });
 
     campoCorreo.addEventListener("input", () => limpiarError(campoCorreo));

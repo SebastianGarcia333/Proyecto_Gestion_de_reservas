@@ -237,6 +237,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/lucide@1.70.0/dist/umd/lucide.min.js"></script>
 
+    <script src="../JS/usuarios.js"></script>
     <script>
         // Mismas reglas de validación de antes; el error se muestra bajo el campo en lugar de con alert()
         const reglas = [
@@ -279,6 +280,51 @@
         });
 
         document.querySelector("form").addEventListener("submit", validarFormulario);
+
+        const usarDatos = document.getElementById("usarDatosCuenta");
+        const estadoDatos = document.getElementById("estadoDatosCuenta");
+        let correoAutocompletado = null;
+        const camposCompletados = new Map();
+
+        document.addEventListener("cambioDeSesion", () => {
+            const sesion = window.sesionActual();
+            usarDatos.hidden = !sesion;
+            if (correoAutocompletado && sesion?.correo !== correoAutocompletado) {
+                // Al cambiar de viajero retiramos los datos copiados y conservamos el resto del mensaje.
+                for (const [campo, valor] of camposCompletados) {
+                    if (campo.value === valor) campo.value = "";
+                }
+                camposCompletados.clear();
+                correoAutocompletado = null;
+                estadoDatos.textContent = "";
+            }
+        });
+
+        usarDatos.addEventListener("click", () => {
+            const sesion = window.sesionActual();
+            if (!sesion) return;
+
+            // El teléfono está en el registro. La sesión solo guarda el nombre y el correo.
+            let telefono;
+            try {
+                const correo = sesion.correo.trim().toLowerCase();
+                const cuenta = obtenerUsuarios().find((usuario) => usuario.correo.trim().toLowerCase() === correo);
+                telefono = cuenta?.telefono;
+            } catch {
+                telefono = "";
+            }
+            const datos = { nombre: sesion.nombre, correo: sesion.correo };
+            if (telefono) datos.telefono = telefono;
+            for (const [id, valor] of Object.entries(datos)) {
+                const campo = document.getElementById(id);
+                campo.value = valor;
+                camposCompletados.set(campo, campo.value);
+                limpiarError(id);
+            }
+            correoAutocompletado = sesion.correo;
+            estadoDatos.textContent = telefono ? "Nombre, correo y teléfono completados." :
+                "Nombre y correo completados. Revisa el teléfono antes de enviar.";
+        });
     </script>
 
     <script src="../JS/carrito.js" defer></script>

@@ -1,5 +1,4 @@
 const formulario = document.getElementById("formRegistro");
-const CLAVE_USUARIOS = "pasionViajera_usuarios";
 
 //validaciones
 // Cada regla recibe el valor del campo y, como segundo dato, todo el formulario
@@ -33,25 +32,6 @@ const reglas = [
         mensaje: "Las contraseñas no coinciden."
     }
 ];
-
-function obtenerUsuarios() {
-    // crear usuario
-    const datos = localStorage.getItem(CLAVE_USUARIOS);
-    if (datos === null) return [];
-
-    let usuarios;
-    try {
-        usuarios = JSON.parse(datos);
-    } catch {
-        throw new Error("No se pudieron leer las cuentas guardadas. Los datos almacenados están dañados.");
-    }
-
-    if (!Array.isArray(usuarios) || usuarios.some((usuario) => !usuario || typeof usuario.correo !== "string")) {
-        throw new Error("No se pudieron leer las cuentas guardadas por un formato de datos inválido.");
-    }
-
-    return usuarios;
-}
 
 function mostrarError(id, mensaje) {
     const campo = document.getElementById(id);
@@ -132,12 +112,14 @@ formulario.addEventListener("submit", (evento) => {
         return;
     }
 
-    alert("Cuenta creada. Ya puedes iniciar sesión.");
     formulario.reset();
 
     // Lleva a la pestaña de inicio de sesión (existe en login_registro.html)
     const pestanaLogin = document.getElementById("tab-login");
     if (pestanaLogin) pestanaLogin.click();
+    const correoLogin = document.getElementById("correoLogin");
+    correoLogin.focus();
+    mostrarAvisoCuenta("Cuenta creada", "Ya puedes iniciar sesión.", correoLogin);
 });
 
 reglas.forEach((regla) => {
