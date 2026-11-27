@@ -52,13 +52,28 @@
                 </button>
 
                 <!-- Sesión: esquina derecha -->
-                <a class="btn-sesion" href="login_registro.html" aria-current="page">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5" /><path d="M20 21a8 8 0 0 0-16 0" /></svg>
-                    <span class="btn-sesion-texto">Iniciar sesión</span>
-                </a>
+                <div class="cuenta-nav">
+                    <a class="btn-sesion" href="login_registro.html" aria-current="page">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3h5a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-5 M3 12h12 M10 7l5 5-5 5"/></svg><span class="btn-sesion-texto">Iniciar sesión</span>
+                    </a>
+                    <details class="menu-cuenta" hidden>
+                        <summary class="btn-sesion con-sesion"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5" /><path d="M20 21a8 8 0 0 0-16 0" /></svg><span class="nombre-corto"></span></summary>
+                        <div class="opciones-cuenta">
+                            <strong class="nombre-cuenta"></strong>
+                            <button type="button" class="cerrar-sesion"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h5 M9 12h12 M16 7l5 5-5 5"/></svg> Cerrar sesión</button>
+                        </div>
+                    </details>
+                </div>
             </div>
         </nav>
     </header>
+
+    <aside class="aviso-cuenta" aria-label="Aviso de cuenta" hidden>
+        <span class="aviso-visto" aria-hidden="true">&#10003;</span>
+        <div><strong class="aviso-titulo"></strong><p class="aviso-detalle"></p></div>
+        <button type="button" class="cerrar-aviso" aria-label="Cerrar aviso">&times;</button>
+    </aside>
+    <p class="visually-hidden" id="anuncioCuenta" role="status" aria-atomic="true"></p>
 
     <div class="envoltura">
         <p class="carrito-aviso" id="avisoCarrito" data-aviso-carrito role="status" hidden></p>

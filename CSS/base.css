@@ -223,7 +223,7 @@ body:has(.panel-viaje:is(.show, .showing, .hiding)) .avion-navbar {
         max-height: 48px;
     }
 
-    .custom-header .btn-sesion {
+    .custom-header .cuenta-nav {
         grid-area: sesion;
         margin-left: 0;
     }
@@ -497,13 +497,18 @@ svg.lucide {
 }
 
 /* Botón de sesión del header */
+.cuenta-nav {
+    position: relative;
+    margin-left: 0.6rem;
+    flex-shrink: 0;
+}
+
 .btn-sesion {
     position: relative;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     min-height: 44px;
-    margin-left: 0.6rem;
     padding: 0.4rem 0.7rem;
     border: 1px solid var(--naranja);
     border-radius: 8px;
@@ -533,34 +538,15 @@ svg.lucide {
     content: "";
 }
 
-/* Pantallas medianas y pequeñas: solo el ícono, junto a "Mi viaje" */
-.btn-sesion-texto {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-}
-
-/* La sesión aprovecha el margen exterior de la envoltura en pantallas anchas. */
-@media (min-width: 1600px) {
+/* En móvil el invitado tiene el icono de entrada. Con sesión mostramos siempre el nombre. */
+@media (max-width: 640px) {
     .btn-sesion-texto {
-        position: static;
-        width: auto;
-        height: auto;
-        clip: auto;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    }
-
-    .btn-sesion {
         position: absolute;
-        top: 50%;
-        right: 1.5rem;
-        max-width: calc((100% - 1180px) / 2 - 1.5rem);
-        margin-left: 0;
-        padding: 0.4rem 0.9rem;
-        transform: translateY(-50%);
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        white-space: nowrap;
+        clip-path: inset(50%);
     }
 }
 
@@ -574,3 +560,95 @@ svg.lucide {
 .btn-sesion.con-sesion:focus-visible {
     background-color: var(--naranja-hover);
 }
+
+.menu-cuenta summary { list-style: none; cursor: pointer; }
+.menu-cuenta summary::-webkit-details-marker { display: none; }
+.menu-cuenta summary::after {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border: solid currentColor;
+    border-width: 0 1.5px 1.5px 0;
+    transform: translateY(-2px) rotate(45deg);
+}
+.nombre-corto {
+    max-width: clamp(4.5rem, 16vw, 9rem);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.opciones-cuenta {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 7px);
+    z-index: 2;
+    width: 14rem;
+    max-width: calc(100vw - 2rem);
+    padding: 6px 8px;
+    border: 1px solid #d9d4c9;
+    border-radius: 11px;
+    background: #fbf8f1;
+    color: var(--azul-oscuro);
+    box-shadow: 0 6px 18px rgba(18, 33, 46, .15);
+}
+.nombre-cuenta {
+    display: block;
+    margin: 0 8px 3px;
+    padding: 8px 0 10px;
+    border-bottom: 1px solid #cec8bc;
+    overflow-wrap: anywhere;
+}
+.cerrar-sesion {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    width: 100%;
+    min-height: 46px;
+    padding: 6px 8px;
+    border: 0;
+    border-radius: 6px;
+    background: transparent;
+    color: inherit;
+}
+.cerrar-sesion:is(:hover, :focus-visible) { background: #efe9dd; }
+@media (max-width: 640px) {
+    .custom-header .envoltura { position: relative; }
+    .cuenta-nav { position: static; }
+    .opciones-cuenta { top: 60px; right: 1rem; }
+}
+
+.aviso-cuenta {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 1055;
+    display: grid;
+    grid-template-columns: 34px 1fr 44px;
+    align-items: center;
+    gap: 10px;
+    width: min(340px, calc(100% - 2rem));
+    padding: 9px 6px 9px 13px;
+    border: 1px solid #cbd9ce;
+    border-left: 4px solid #2c6956;
+    border-radius: 8px;
+    background: #fffefa;
+    color: var(--azul-oscuro);
+    box-shadow: 0 5px 22px rgba(18, 33, 46, .18);
+}
+/* En Inicio dejamos libre el botón de WhatsApp debajo del aviso. */
+body:has(.boton-chat-ayuda) .aviso-cuenta { bottom: 5.5rem; }
+.aviso-cuenta[hidden], .cuenta-nav [hidden] { display: none; }
+.aviso-visto {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #e1eee5;
+    color: #28634f;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+.aviso-detalle { margin: 0; font-size: .875rem; color: var(--texto-suave); }
+.cerrar-aviso { min-height: 44px; border: 0; border-radius: 6px; background: transparent; color: var(--texto-suave); font-size: 1.4rem; }
+.cerrar-aviso:is(:hover, :focus-visible) { background: #eef4ef; }

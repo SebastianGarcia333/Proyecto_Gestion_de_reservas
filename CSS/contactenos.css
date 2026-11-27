@@ -1,4 +1,17 @@
 /* Estilos propios de Contáctanos; la paleta, el header, la portada y el pie están en base.css */
+.usar-datos-cuenta {
+    justify-self: start;
+    min-height: 44px;
+    padding: 7px 12px;
+    border: 1px solid #638c91;
+    border-radius: 6px;
+    background: #ebf2ee;
+    color: #21545d;
+    font-weight: 600;
+}
+.usar-datos-cuenta:is(:hover, :focus-visible) { background: #dce9e4; }
+#estadoDatosCuenta { color: #295646; font-size: .875rem; }
+#estadoDatosCuenta:empty { margin: 0; height: 0; position: absolute; overflow: hidden; }
 
 /* Las dos columnas cambian a la vez, desde 992 px; por debajo el formulario ocupa todo el ancho */
 .contacto {
